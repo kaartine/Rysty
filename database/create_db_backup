@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# dumppa databasen hakemistoon KooVee+p‰iv‰m‰‰r‰. sen j‰lkeen pakkaa sen ja l‰hett‰‰ pakatun
+# tiedoston lintulaan. l‰hetyksen j‰lkeen pakattu tiedosto tuhotaan, luotu hakemisto s‰ilytet‰‰n.
+
+P=""
+
+NAME="KooVee_"$(date +%Y_%m_%d)
+FNAME=${NAME}".sql"
+
+echo "Dumping database to file: "
+echo ${NAME}
+
+pg_dump -C -O -f "FULL_"${FNAME} koovee
+
+pg_dump -O -f "w_scema_"${FNAME} koovee
+
+pg_dump -a -O -f "data_"${FNAME} koovee
+
+mkdir ${NAME}
+mv "FULL_"${FNAME} "w_scema_"${FNAME} "data_"${FNAME} ${NAME}
+
+tar -cjf ${NAME}".tar.bz2" ${NAME}
+
+
+# L‰hett‰‰ pakatut tiedostot palvelimelle talteen
+scp -r ${NAME}".tar.bz2" kaartine@ssh2.cs.tut.fi:/home/kaartine/kooveeII/dbbackup
+rm ${NAME}".tar.bz2"
+
+echo "done"

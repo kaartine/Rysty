@@ -1,0 +1,6 @@
+#!/bin/bash
+dropdb koovee
+createdb -O rysty koovee
+psql koovee -f ../doc/suunnittelu/tietokannaluonti.sql
+psql koovee -f populate.sql
+psql koovee -f oikeudet.sql
