@@ -1,0 +1,150 @@
+
+Relaatiokaavio:
+
+
+Henkilo(@hloID, etunimi, sukunimi, syntym‰aika, paino, pituus, kuva, kuvaus, lempinimi)
+
+Pelaaja(pelaajaID->HENKILO(hloID), katisyys, pelinumero, pelipaikka, maila)
+
+Toimi(@tehtava)
+
+Yhteystieto(@yhtietoID, puhelinumero, katuosoite, faxi, email, postinumero, postitoimipaikka, maa, selite)
+
+Halli(@halliID, kenttien_lkm, lisatieto, alusta)
+
+Tapahtuma(@tapahtumaID, paikka, aika, kuvaus)
+
+Tyyppi(@tyyppiID, @nimi)
+
+Peli(kotimaalit, vierasmaalit, tuomari1-2, toimitsija1-3, huomio, aikalis‰A-B, yleisˆm‰‰r‰)
+
+Pelaaja_tilasto(@tilastoID, plusmiinus, numero, kapteeni, maalivahti, kapteeniksi tulo aika, maalivahdiksi tulo aika, peliaika, torjunnat, p‰‰stetyt maalit)
+
+Tilastomerkinta(@timerkintaID, tapahtumisaika)
+
+Maali(rankku, tyypppi, tyhj‰, siirrangaikana)
+
+Epaonnisrankku(tyyppi, siirrangaikana)
+
+Rangaistus(syy, minuutit, p‰‰ttymisaika)
+
+Seura(@seuraID, nimi, perustamisvuosi, lis‰tieto)
+
+Kaudenjoukkue(@kaudenjID, lyhytnimi, pitk‰nimi, kuva, email, kotipaikka, maskotti, kuvaus)
+
+Kausi(@vuosi)
+
+Sarja(sarjaID, nimi, kuvaus, j‰rjest‰j‰)
+
+Uutinen(uutineID, pvm, ilmoittaja, otsikko, uutinen)
+
+Kayttajat(@tunnus, salasana)
+
+Yll‰pito_oikeudet()
+
+Lis‰‰_muokkaa_poista_oikeudet()
+
+Kokousmuistio_oikeudet()
+
+Omat_tiedot_oikeudet()
+
+-----------
+
+PERIYTYMINEN
+============
+
+Henkilo(@hloID, etunimi, sukunimi, syntym‰aika, paino, pituus, kuva, kuvaus, lempinimi, valmentaja)
+
+Pelaaja(pelaajaID->HENKILO(hloID), katisyys, pelinumero, pelipaikka, maila)
+
+Tapahtuma(@tapahtumaID, paikka, aika, kuvaus)
+
+Peli(@peliID->TAPAHTUMA(@tapahtumaID), kotimaalit, vierasmaalit, tuomari1-2, toimitsija1-3, huomio, aikalis‰A-B, yleisˆm‰‰r‰)
+
+Tilastomerkinta(@timerkintaID, tapahtumisaika)
+
+Maali(maaliID->TILASTOMERKINTA(@timerkintaID), rankku, tyypppi, tyhj‰, siirrangaikana)
+
+Epaonnisrankku(epaonrankkuID->TILASTOMERKINTA(@timerkintaID), tyyppi, siirrangaikana)
+
+Rangaistus(rangaistusID->TILASTOMERKINTA(@timerkintaID), syy, minuutit, p‰‰ttymisaika)
+
+
+-----------
+
+Suhteet 1-1
+===========
+
+Yhteystieto(@yhtietoID, puhelinumero, katuosoite, faxi, email, postinumero, postitoimipaikka, maa, selite)
+
+Halli(@halliID, @yhtietoID->YHTEYSTIETO, kenttien_lkm, lisatieto, alusta)
+
+Henkilo(@hloID, @yhtietoID->YHTEYSTIETO, etunimi, sukunimi, syntym‰aika, paino, pituus, kuva, kuvaus, lempinimi)
+
+
+-----------
+
+Suhteet 1-*
+===========
+
+Halli(@halliID, kenttien_lkm, lisatieto, alusta)
+
+Kaudenjoukkue(@kaudenjID, kotihalli->HALLI(halliID), seura->SEURA(seuraID), kausi->KAUSI(vuosi), lyhytnimi, pitk‰nimi, kuva, email, kotipaikka, maskotti, kuvaus)
+
+Tapahtuma(@tapahtumaID, vastuuhlo->HENKILO(hloID), tyyppi->TYYPPI(tyypiID), paikka, aika, kuvaus)
+
+Sarja(@sarjaID, kausi->KAUSI(vuosi), nimi, kuvaus, j‰rjest‰j‰)
+
+Peli(@peliID->TAPAHTUMA(@tapahtumaID), vierasjoukkue->KAUDENJOUKKUE(kaudenjID), kotijoukkue->KAUDENJOUKKUE(kaudenjID), sarja->SARJA(sarjaID), 
+ toimihenkilo1->HENKILO(hloID), toimihenkilo2->HENKILO(hloID), toimihenkilo3->HENKILO(hloID), toimihenkilo4->HENKILO(hloID),
+ toimihenkilo5->HENKILO(hloID), pelipaikka->HALLI(halliID), kotimaalit, vierasmaalit, tuomari1-2, toimitsija1-3, huomio, aikalis‰A-B,
+ yleisˆm‰‰r‰)
+
+Pelaaja_tilasto(@tilastoID, peli->PELI(peliID), pelaaja->HENKILO(hloID), plusmiinus, numero, kapteeni, maalivahti, kapteeniksi tulo aika, maalivahdiksi tulo aika, peliaika, torjunnat, p‰‰stetyt maalit)
+
+Tilastomerkinta(@timerkintaID, peli->PELI(peliID), tapahtumisaika)
+
+Maali(maaliID->TILASTOMERKINTA(@timerkintaID), tekija->HENKILO(hloID), syottaja->HENKILO(hloID), rankku, tyypppi, tyhj‰, siirrangaikana)
+
+Epaonnisrankku(epaonrankkuID->TILASTOMERKINTA(@timerkintaID), tekija->HENKILO(hloID), tyyppi, siirrangaikana)
+
+Rangaistus(rangaistusID->TILASTOMERKINTA(@timerkintaID), pelaaja->HENKILO(hloID), syy, minuutit, p‰‰ttymisaika)
+
+Kayttajat(@tunnus, henkilo->HENKILO(hloID), salasana)
+
+
+Suhteet *-*
+===========
+
+
+Toimi(@tehtava, @kaudenjoukkue->KAUDENJOUKKUE(kaudenjID), @henkilo->HENKILO(hloID))
+
+Osallistuja(@tapahtuma->TAPAHTUMA(tapahtumaID), @osallistuja->HENKILO(hloID))
+
+Pelaajapelaa(@joukkue->KAUDENJOUKKUE(kaudenjID), @pelaaja->HENKILO(hloID))
+
+Joukkuepelaa(@sarja->SARJA(sarjaID), @kaudenjoukkue->KAUDENJOUKKUE(kaudenjID))
+
+
+-------------
+
+
+Tyyppi(@tyyppiID, @nimi)
+
+Kausi(@vuosi)
+
+Uutinen(uutineID, pvm, ilmoittaja, otsikko, uutinen)
+
+Yll‰pito_oikeudet()
+
+Lis‰‰_muokkaa_poista_oikeudet()
+
+Kokousmuistio_oikeudet()
+
+Omat_tiedot_oikeudet()
+
+
+
+
+
+

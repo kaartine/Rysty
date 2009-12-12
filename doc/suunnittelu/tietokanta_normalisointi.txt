@@ -1,0 +1,70 @@
+NORMALISOINTI
+=============
+
+
+Henkilo(@hloID, etunimi, sukunimi, syntymaaika, paino, pituus, kuva, kuvaus, lempinimi)
+
+Pelaaja(pelaajaID->HENKILO(hloID), katisyys, maila)
+
+Tyyppi(@tyyppi)
+
+Tapahtuma(@tapahtumaID, vastuuhlo->HENKILO(hloID), tyyppi->TYYPPI, paikka, paiva, aika, kuvaus)
+
+Peli(@peliID->TAPAHTUMA(@tapahtumaID), kotimaalit, vierasmaalit, tuomari1, tuomari2, tuomari3, toimitsija1, toimitsija2, toimitsija3, huomio, aikalisaA, aikalisaB, yleisomaara)
+
+Tilastomerkinta(@timerkintaID, tapahtumisaika)
+
+Maali(@maaliID->TILASTOMERKINTA(@timerkintaID), tekija->HENKILO(hloID), syottaja->HENKILO(hloID), rankku, tyypppi, tyhjä, siirrangaikana)
+
+Epaonnisrankku(@epaonrankkuID->TILASTOMERKINTA(@timerkintaID), tekija->HENKILO(hloID), tyyppi, siirrangaikana)
+
+Rangaistus(@rangaistusID->TILASTOMERKINTA(@timerkintaID), pelaaja->HENKILO(hloID), syy, minuutit, paattymisaika)
+
+Yhteystieto(@yhtietoID, puhelinumero, faxi, email, katuosoite, postinumero, postitoimipaikka, maa, selite)
+
+Halli(@halliID, yhtietoID->YHTEYSTIETO, kenttien_lkm, lisatieto, alusta)
+
+Henkilo(@hloID, yhtietoID->YHTEYSTIETO, etunimi, sukunimi, syntymäaika, paino, pituus, kuva, kuvaus, lempinimi)
+
+Seura(seuraID, nimi, perustamisvuosi, lisätieto)
+
+Kaudenjoukkue(@kaudenjID, kotihalli->HALLI(halliID), seura->SEURA(seuraID), kausi->KAUSI(vuosi), lyhytnimi, pitkänimi, kuva, logo, email, kotipaikka, maskotti, kuvaus)
+
+Sarja(@sarjaID, kausi->KAUSI(vuosi), nimi, kuvaus, jarjestaja)
+
+Tilastoimatonpeli(@peliID->TAPAHTUMA(@tapahtumaID), sarja->SARJA(sarjaID), vierasjoukkue->KAUDENJOUKKUE(kaudenjID), kotijoukkue->KAUDENJOUKKUE(kaudenjID), kotimaalit, vierasmaalit)
+
+Peli(@peliID->TAPAHTUMA(@tapahtumaID), vierasjoukkue->KAUDENJOUKKUE(kaudenjID), kotijoukkue->KAUDENJOUKKUE(kaudenjID), sarja->SARJA(sarjaID),
+ toimihenkilo1->HENKILO(hloID), toimihenkilo2->HENKILO(hloID), toimihenkilo3->HENKILO(hloID), toimihenkilo4->HENKILO(hloID),
+ toimihenkilo5->HENKILO(hloID), pelipaikka->HALLI(halliID), kotimaalit, vierasmaalit, tuomari1, tuomari2, tuomari3, 
+ toimitsija1, toimitsija2, toimitsija3, huomio, aikalisaA, aikalisaB, yleisomaara)
+
+Pelaaja_tilasto(@tilastoID, peliID->PELI, pelaaja->HENKILO(hloID), plusmiinus, numero, kapteeni, maalivahti, kapteeniksi tulo aika, maalivahdiksi tulo aika, peliaika, torjunnat, paastetyt_maalit)
+
+Tilastomerkinta(@timerkintaID, peliID->PELI, tapahtumisaika)
+
+Toimi(@tehtava, @kaudenjoukkue->KAUDENJOUKKUE(kaudenjID), @henkilo->HENKILO(hloID))
+
+Osallistuja(@tapahtumaID->TAPAHTUMA, @osallistuja->HENKILO(hloID))
+
+Pelaajat(@joukkue->KAUDENJOUKKUE(kaudenjID), @pelaaja->HENKILO(hloID), pelinumero, pelipaikka)
+
+SarjanJoukkueet(@sarja->SARJA(sarjaID), @kaudenjoukkue->KAUDENJOUKKUE(kaudenjID))
+
+Tyyppi(@tyyppiID, @nimi)
+
+Kausi(@vuosi)
+
+Uutinen(@uutineID, pvm, ilmoittaja, otsikko, uutinen)
+
+Kayttajat(@tunnus, salasana, henkilo->HENKILO(hloID))
+
+Yllapito_oikeudet(@tunnus->KAYTTAJAT)
+
+Lisää_muokkaa_poista_oikeudet(@tunnus->KAYTTAJAT)
+
+Joukkueenalueoikeudet(@tunnus->KAYTTAJAT)
+
+Omat_tiedot_oikeudet(@tunnus->KAYTTAJAT)
+
+

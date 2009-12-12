@@ -1,0 +1,48 @@
+TAVOITTEET
+
+- Tietokantahallintaa www-pohjaisella käyttöliittymällä yhden seuran joukkeille: tilastot ja muut yleiset tiedot peleistä, pelaajista (tai muista jäsenistä), joukkueista, kausista ja sarjoista
+
+
+----------------------------------------------------------------------------------------
+
+- Tilat: Julkinen (vierailija), rajattu (omien tietojen muuttaminen) ja ylläpito (tietokannan kokonaishallinta
+
+- Julkinen tila: Pelitulokset, uutiset, tapahtumat (aikataulut), tilastot, pelaajatiedot (ei muutos oikeutta, rajattu näkymä pelaajatietoihin [yhteystietojen selaaminen rajoitettu])
+
+- Rajattu tila: sisäänkirjautuminen, Julkinen tilan näkymät, omien tietojen muokkaaminen, yhteystietojen selaaminen, joukkueen sisäisten ohjeiden ja muistioiden lukuoikeus, muistioiden lisäys ja poisto (hierarkinen hakemistorakenne), tapahtumien lisäys ja muokkaus, joukkueen tiedotteiden lisäys ja muokkaus, 
+
+- Ylläpitotilat: sisäänkirjautuminen, käyttöoikeuksien ja salasanojen lisäys ja muokkaus, pelaajien/pelipaikkojen/sarjojen lisäys ja poisto (oikeudet koskevat oman joukkueen tietoja), joukkueiden lisäys ja poisto. Jokaiselle käyttäjälle voidaan rajata näkyvyys ja muokkaus oikeuksia resurssi kohtaisesti.
+
+- Resurssit: 
+	- joukkue
+	- joukkueen jäsen (pelaaja, valmentaja, huoltaja, ...)
+	- sarja
+	- tapahtuma (talkoot, reenit, peli, ...)
+	- uutinen
+	- muistio (esim. kokouksen pöytäkirja, ...)
+	- käyttäjät
+
+----------------------------------------------------------------------------------------
+
+- Tietokanta suunnitellaan monen sarjan, kauden ja joukkueen tietojen/tilastojen ylläpitoon
+
+- Tilastojen/tietojen määrittäminen pelikohtaisesti (pelinumerot, pelipaikat, yms tietojen riippumattomuus)
+
+- Käytettävyys: syötteiden oikeellisuuden tarkistus, saman tiedon kahteen kertaan lisäämisen estäminen (refresh post-data), käyttöliittymän looginen suunnittelu käyttäjän näkökulmasta, 
+
+- Samanaikaisuuden hallinta: sisäänkirjautuminen, tietojen lähettäminen/muuttaminen, tietokantaoperaatiot, 
+
+- Mikäli lisätään sama joukkue, sarja, tapahtuma tai pelaaja kahteen kertaan eri nimillä, jälkeen päin täytyy olla mahdollista yhdistää tiedot.
+
+----------------------------------------------------------------------------------------
+
+- sarjojen lisäys ja poisto joukkueen ylläpitotilassa:
+Joukkue voi lisätä uuden harjoituspelin, turnauksen, sarjan ja nimetä kyseiseen tapahtumaan osallistuvat joukkueet
+
+- Tapahtumaan nimettyjen tietokantaan rekisteröityneiden joukkueiden ylläpitäjälle lähetetään varmistus osallistumisesta. Mikäli joukkuetta ei ole rekisteröity sen tiedot tallennetaan vain tapahtuman luojan tietoihin
+
+
+----------------------------------------------------------------------------------------
+
+Palaveri tiistaina 7.9.2004, kesto: 2h/nenä
+

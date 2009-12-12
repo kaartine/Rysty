@@ -1,0 +1,159 @@
+Arvoalueet:
+
+Tietohakemiston ja relaatiokaavion merkint‰tavat 
+Merkint‰	Selitys
++ 		ja
+( ) 		optionaalinen (voi puuttua)
+{ } 		toisto (0-N kertaa)
+n{ }m 		toisto n-m kertaa
+n-m 		v‰li n:st‰ m:‰‰n
+[ ] 		Vaihtoehtoja
+| 		Vaihtoehtojen erotin
+@ 		Avainominaisuus
+* 		Selite muodossa * teksti *
+/ 		Automaattisesti t‰ytett‰v‰ tai laskettava kentt‰
+M 		8-bittisen ascii-merkistˆn kirjain, numero tai muu kirjoitusmerkki. 
+K 		A-÷ | a-ˆ
+N 		0-9
+P 		P‰iv‰ys, josta pv, kk ja vuosi selvi‰v‰t yksik‰sitteisesti
+T 		Kellonaika, josta tunnit, minuutit ja sekunnit selvi‰v‰t yksik‰sitteisesti
+D 		Bin‰‰rimuotoista dataa
+B 		Totuusarvo yksi bitti, 1 = tosi ja 0 = ep‰tosi
+
+    * Yksitt‰iset kirjoitettavat merkit esitet‰‰n ' -merkkien v‰liss‰. Esimerkiksi 'A'.
+    * Kirjoitettavat merkkijonot esitet‰‰n lainausmerkkien v‰liss‰. Esimerkiksi "Aasi".
+
+
+Henkilo		etunimi, sukunimi, syntym‰aika, paino, pituus, kuva, kuvaus, lempinimi
+etunimi		1{M}40
+sukunimi	1{M}40
+syntym‰aika	P
+paino		NN'.'N		* Paino ilmoitetaan kiloissa esim. 75.5 kg *
+pituus		1{N}3		* Pituus ilmoitetaan senttimetreiss‰ *
+kuva		D
+kuvaus		1{M}1000
+lempini		1{M}40
+
+Pelaaja		k‰tisyys, pelinumero, pelipaikka, maila
+k‰tisyys	['L'|'R']
+pelinumero	NN
+pelipaikka	['OL','K','VL','P','M']	* OL = oikealaita, K = keskushykk‰‰j‰, VL=vasen laita, P=puolustaja ja M = maalivahti *
+
+Toimi		teht‰v‰
+teht‰v‰		1{M}20
+
+Yhteystieto		puhelinumero, katuosoite, faxi, email, postinumero, postitoimipaikka, maa, selite
+puhelinumero		7{N | '-' | '+' | ' ' | '(' | ')'}30 *Kansainv‰lisess‰ muodossa (esim: +358-(0)3-3434123)*
+katuosoite		1{M}100
+postinumero		0{M}50 *Voi olla myˆs zip-koodi*
+postitoimipaikka	1{M}50 *Katkaistaan tarvittaessa*
+maa			1{K | ' ' | ''' | '.' | ',' | '-'}50 *Tallennetaan maan englanninkielinen nimi, Oletuksena "Finland"*
+selite			0{M}100
+
+Halli		kenttien lkm, lis‰tieto, alusta
+kenttien lkm	1-99
+lis‰tieto	1[M]255
+alusta		1[M]255
+
+Tyyppi		tyyppi
+tyyppi		1{M}20	*esim. sarapeli, harjpeli, talkoot, reenit*
+
+Tapahtuma	paikka, aika, kuvaus
+paikka		1{M}80
+aika		T
+p‰iv‰		P
+kuvaus		1{M}1000
+
+Tyyppi		nimi
+nimi		1{M}40
+
+TilastoimatonPeli	kotimaalit, vierasmaalit
+kotimaalit	NN
+vierasmaalit	NN
+
+Peli	kotimaalit, vierasmaalit, tuomari1-2, toimitsija1-3, huomio, aikalis‰A-B, yleisˆm‰‰r‰
+kotimaalit	NN
+vierasmaalit	NN
+tuomari1	1{M}80
+tuomari2	1{M}80
+toimitsija1	1{M}80
+toimitsija2	1{M}80
+toimitsija3	1{M}80
+huomio		1{M}1000
+aikalis‰A	T
+aikalis‰B	T
+yleisˆm‰‰r‰	[(-1)] | NN *-1 = vapaap‰‰sy*
+
+Pelaaja tilasto		plusmiinus, numero, kapteeni, maalivahti, kapteeniksi tulo aika, maalivahdiksi tulo aika, peliaika, torjunnat, p‰‰stetyt maalit
+plusmiinus		(-)+NN
+numero			1-99	*pelinumero*
+kapteeni		B	*oletus 0*
+maalivahti		B	*oletus 0*
+kapteeniksi tulo aika	T
+maalivahdiksi tulo aika	T
+peliaika		T
+torjunnat		0-999
+p‰‰stetyt maalit	0-99	*maalivahdin p‰‰st‰m‰t maalit*
+
+Tilastomerkint‰		tapahtumisaika
+tapahtumisaika		T
+
+Maali		rankku, tyypppi, tyhj‰, siirrangaikana
+rankku		B			*oletus 0*
+tyyppi		['NO'|'TY'|'YV'|'AV']	*NO=normaali, TY=tyhj‰ maali, YV=ylivoima, AV=alivoima oletus NO*
+tyhj‰		B			*oletus 0*
+siirrangaikana	B			*oletus 0*
+
+Ep‰onnisrankku	tyyppi, siirrangaikana
+tyyppi		['Y'|'A']	*Y=ylivoima, A=alivoima oletus T*
+siirrangaikana	B		*oletus 1*
+
+Rangaistus	syy, minuutit, p‰‰ttymisaika
+syy		0-99|TOR|OR
+minuutit	[2,5,10,20]
+p‰‰ttymisaika	T
+
+Seura		nimi, perustamisvuosi, lis‰tieto
+nimi		1{M}40
+perustamisvuosi	NNNN
+lis‰tieto	1{M}1000
+
+Kaudenjoukkue	lyhytnimi, pitk‰nimi, kuva, logo, email, kotipaikka, maskotti, kuvaus
+lyhytnimi	1{M}10
+pitk‰nimi	1{M}40
+kuva		D
+logo		D
+email		(1{M}128 '@' 1{M}128 '.' 1{K}4) | (0{M}0)
+kotipaikka	1{M}40
+maskotti	1{M}40
+kuvaus		1{M}1000
+
+Kausi		vuosi
+vuosi		NNNN
+
+Sarja		nimi, kuvaus, j‰rjest‰j‰
+nimi		1{M}40
+kuvaus		1{M}1000
+j‰rjest‰j‰	1{M}40
+
+Uutinen		pvm, ilmoittaja, otsikko, uutinen
+pvm		P *oletuksen‰ t‰m‰ p‰iv‰*
+ilmoittaja	1{M}40
+otsikko		1{M}40
+uutinen		1{M}1000
+
+K‰ytt‰j‰t	tunnus, salasana
+tunnus		1{M}8
+salasana	1{M}255
+
+Yll‰pito_oikeudet	*ei atribuutteja*
+
+Lis‰‰_muokkaa_poista_oikeudet	*ei atribuutteja*
+
+Kokousmuistio_oikeudet	*ei atribuutteja*
+
+Omat_tiedot_oikeudet	*ei atribuutteja*
+
+
+
+

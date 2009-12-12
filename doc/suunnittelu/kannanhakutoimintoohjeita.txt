@@ -1,0 +1,47 @@
+pelin tuloksen syöttö:
+ensin valitaan pukeutuneet pelaajat, jos joukkueella ei ole merkitty kantaan yhtään pelaajaa ei sille voi merkitä tilastomerkintöjä ja syötetään koti- sekä vierasmaalit
+->next
+pukeutuneista pelaajista on vain mahdollista valita maalintekijät ja syöttäjät
+
+pelin tilastomerkinnässä aika voi olla null, eli aika ei ole tiedossa.
+
+
+toiminto:
+pelit tietyllä aikavälillä, tietyssä sarjassa
+    -pelit
+       -aikaväli
+	   -sarja(tietty)
+	   -järjestys(sort)
+
+	yksittäisen pelin tiedot
+	-pelin tiedot
+		-peli ID
+
+	-tapahtumat
+		-aikaväli
+		-tyyppi(harjoitus)
+
+ -joukkueen sisäinen pistepörssi
+	-aikaväli
+	-sarja(monta sarjaa eli ura)
+	-järjestys(sort)
+
+		-pelit
+			-tulos
+				-menneet
+				-tulevat
+	-joukkue
+	-pelaajat
+
+ -
+
+actionit:
+ -lisää
+ -muokkaa
+ -poista
+ -näytä (default)
+ -vahvistus
+
+atribuuttit:
+ -sort
+ -tyyppi

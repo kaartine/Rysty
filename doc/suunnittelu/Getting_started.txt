@@ -1,0 +1,65 @@
+
+
+- Getting started:
+
+- Ensin luo joukkue(et)
+- Valitse oletusjoukkue
+- Luo Henkilö ja käyttäjä ja anna oikeudet
+- Luo sarja, lisää alkamisvuosi(lisää automaattisesti kausi tauluun), laita sarjatyyppi tai luo uusi tyyppi
+- Luo joukkue(ita)(jos ei seuroja niin linkki lisää seura ja kun seura lisätty palaa takaisin ja muistaa tiedot)
+- Lisää joukkeita sarjaan
+- Luo Henkilöitä (pelaaja, valmentaja)
+	- mahdollinen kuva	
+- Lisää pelejä sarjaan (jos ei halleja niin linkki lisää halli ja kun halli lisätty palaa takaisin ja muistaa tiedot)
+- Lisää halli
+(peli pelattu)
+- Lisää pelin pöytäkirja
+	Wizard
+	
+	- 1. kotimaalit ja vierasmaalit, tuomarit, toimitsijat, huomio kenttä, aikalisä A ja B, yleisömäärä, rasti jos et halua merkitä kokoonpanoa ja maalintekijöitä
+	
+	- 2. kokoonpano listataan kaikki joukkueen (pelin) kauden pelaajat (myös toimihenkilöt) ja rasti viereen kuuluuko pelin kokoonpanoon ja numero jonka voi vaihtaa, lisää uusi tai vanha henkilö(ei pelaaja) menee uudelle sivulle jossa henkilön voi myös lisätä joukkueeseen ruksimalla kyseinen vaihtoehto, sivulta palataan takaisin ja muistetaan kaiken,
+	koti- ja vierasepäonnistuneiden rankkareiden lukumäärä(!?), koti- ja vierasrangaistusten lukumäärä erikseen(lkm ei minuutti), LISÄKSI talletetaan: 
+		* pelaajilta pelinumero, +/-, peliaika, (lisätiedot)
+		* maalivahdeilta torjunnat, peliaika, tuloaika, päästetyt maalit, (lisätiedot)
+		* kapteeneilta tuloaika
+		* toimihenkilöiltä toimenkuva
+		
+	- 3. Maali- ja rangaistusmerkinnät:
+		* Maalimerkintä: aika, pelinumero + tekijä, pelinumero + syöttäjä / Mahdollinen rangaistuslaukaus (RL), ylivoima/alivoima/tasakentällinen, tyhjä maali, siirretty rangaistus, epäonnistuneet rankkarit (oma taulukkonsa, erotetaan maalintekijöistä)
+		*Rangaistusmerkintä: alkuaika, loppuaika, pelinumero + tekijä, syy (pelkkä numero), minuuttimäärä
+	
+	- 4. Onko tiedot oikein, valmis- ja edellinen-painike
+- Lisää peliin kuva(t), tarina ja videoita
+	Miten tehdään? jokaiselle pelille oma hakemisto ja sen alle kuvat,
+ja video hakemisot joihin voisi viitata esim. tarinasta jos haluaa vai
+laitetaanko tarina kantaan ja muut hakemistoihin. Näitä pitää myös pystyä
+poistamaan. Esim peli koovee2-pirpi, tietokannan peli id 23 hakemistoon peli_23
+
+
+- Merge players (jos on luotu sama pelaajaa vahingossa kahdella eri nimellä) (yhdistä henkilöihin liittyvät merkinnät ja poista sen jälkeen toinen henkilö) vaatii lisää/poista- oikeudet
+	
+- Tapahtuman lisäys, lista joukkueen pelaajista, rasti ruutuun ketkä osallistuu, tapahtuman tyypin valinta, paikka, aika
+
+- Tapahtumaan ilmoittautuminen ja peruminen(vaatii syyn onnistuakseen) kirjataan aika koska ilmoitustapahtui. henkilö voi ilmoittautua vain oman joukkueen tapahtumiin. aluksi ilmoittauneiden lista on tyhjä.
+
+- Uutisen lisäys, lisääjän nimi automaattisesti login tunnuksesta, automaattisesti myös pvm
+
+- Intranet (KooVeeNet)
+    - dokumentin lisäys/poisto, upload dialogi tiedostolle
+    - arkistointi (kansioiden luonti ja poisto)
+    - arkistojen selailu
+    
+- Ylläpito
+    - käyttäjän luonti, valitse henkilö kenelle käyttäjätunnus annetaan tai
+luo uusi henkilö ja käyttäja yhdistetään suoraan uuteen käyttäjätunnukseen
+    - käyttäjän oikeuksien muokkaaminen(lisäys, poisto)
+    - käyttäjän poisto, poistaa käyttöoikeudet henkilöltä, henkilöä ei
+poisteta samalla.
+    
+- Omien tietojen muokkaus ja salasanan vaihto
+
+- Tilastojen katselu
+    - järjestäminen jokaisen sarakkeen mukaan laskevassa tai nousevassa järjestyksessä.
+    - sarja,kausi,pelaaja valittavissa
+        

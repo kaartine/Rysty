@@ -1,0 +1,173 @@
+Toiminnot
+--------------------
+* vaatii sisäänkirjautumisen
+
+Henkilö
+	*lisääminen
+	*tietojen muokkaus
+	*valitseminen joukkueeseen
+	*poistaminen joukkueeseen
+
+
+Joukkue
+	*lisääminen
+	*pelaajan liittäminen joukkueeseen
+	*tietojen muokkaus
+
+Tapahtuma
+	*lisääminen
+	*poisto
+	*muokkaaminen
+	*toistuva tapahtuma
+	*ilmoittautuminen
+	*ilmoittautumisen peruminen
+
+Peli
+	*uuden pelin lisääminen
+		uuden joukkueen lisääminen mikäli sitä ei ole olemassa
+	*pelin poistaminen jos sitä ei ole pelattu
+	*pelatun pelin asettaminen "näkymättömäksi"
+	*tuloksen syöttäminen
+		tuloksen syöttäminen ilman tietoa pelaajista tai maalintekijöistä
+		uuden henkilön syöttäminen järjestelmään tulosta lisättäessä
+		Suomen Salibandyliitto RY virallisen kaikki pöytäkirjan tiedot pitää olla mahdollista syöttää
+		syötettyjen tietojen muokkaaminen
+	*jutun lisääminen peliin
+	*kuvien lisääminen peliin
+	*videon lisääminen peliin
+
+Sarja
+	*lisääminen
+	*poistaminen (onnistuu vain jos sarjassa ei ole pelattuja pelejä)
+	*tietojen muokkaus
+	*joukkueiden lisääminen
+	*joukkueiden poistaminen
+
+
+Tilasto
+	kausittain
+	kaikista kausista
+	pelaajakohtaiset
+		pisteet per peli
+		maalit
+		jäähyt
+		syötöt
+		pelatut pelit
+		pelatut pelit / sarja
+		+/-
+	joukkuekohtaiset
+		maalit
+		maalite per peli
+		pisteet
+		sarjataulukko
+
+Joukkueen sisäiset sivut
+	*kansioiden lisääminen
+	*kansioiden poistaminen
+	*kansioiden uudelleen nimeäminen
+	*tiedostojen lisääminen kansioihin
+	*lisätietoja henkilöistä esim. puhelinnumero
+	*ilmoittautuminen tapahtumaan
+
+uutiset
+	selailu
+	*lisääminen
+	*muokkaus
+
+
+Seuraavat ominaisuudet tallennetaan
+--------------
+* vain sisään kirjautuneet voivat nähdä
++ historia tietoa (ei voi muuttua myöhemmin)
+$ voidaan laskea muista tiedoista
+
+
+Henkilö (voi olla pelaaja, tuomari, yhteyshenkilö, tuomari, ...)
+	etunimi
+	sukunimi
+	*puh.
+	*email
+	*osoite
+	kuva
+
+Pelaaja on Henkilö
+	oletus pelinumero
+	kätisyys
+	pelipaikka
+
+Joukkue
+	nimi
+	kotisivut (linkki)
+	yhteyshenkilö
+	yhteystiedot
+	perustamisvuosi
+	+pelaajat (eri kausilta)
+	+kuva
+
++Tapahtuma
+	nimi
+	aika
+	kesto
+	paikka
+	ilmoittatuneet
+	paikalla olleet
+
++Peli on Tapahtuma
+	kotijoukkue A
+	vierasjoukkue B
+	pelaajat
+		pelinumero
+		+/- tilastot
+		maalivahti ja kapteeni merkinnät (myös mahdolliset vaihtoajat)
+		maalimerkinnät
+			aika
+			tekijä
+			syöttäjä
+			tasavoima
+			alivoima
+			siirretyn rangaistuksen aikana
+			tyhjämaali
+		rangaistukset
+			numero (voi olla myös TH)
+			min
+			syy
+			rangaistus annettu
+			rangaistus päättyy
+	toimihenkilöt
+		mahdollinen tehtävä (valmentaja, lääkäri, ...)
+	sarja
+	päiväys
+	ottelunumero
+	paikka
+	yleisömäärä (VP tai numero )
+	ottelu alkoi
+	ottelu päättyi
+	toimitsijat (1-3 kpl)
+		sukunimi etunimi
+	erotuomarit 2 kpl
+		sukunimi etunimi
+	$voittaja (tai tasapeli)
+	huomio kenttä
+	aikalisä
+	protesti
+	juttu
+	kuvia
+	video kuvaa
+
+Sarja
+	osallistuvat joukkueet
+	kausi
+	nimi
+	erän pituus
+
+Pelipaikka
+	nimi
+	osoite
+	kuva
+
+Uutinen
+	pvm
+	kirjoittaja
+	juttu
+
+
