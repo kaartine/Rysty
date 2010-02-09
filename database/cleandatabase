@@ -1,6 +1,6 @@
 #!/bin/bash
-dropdb koovee
-createdb -O rysty koovee
-psql koovee -f ../doc/suunnittelu/tietokannaluonti.sql
-psql koovee -f populate.sql
-psql koovee -f oikeudet.sql
+dropdb rysty
+createdb -O kaartine rysty
+psql rysty -f ../doc/suunnittelu/tietokannaluonti.sql
+#psql rysty -f populate.sql
+psql rysty -f oikeudet.sql

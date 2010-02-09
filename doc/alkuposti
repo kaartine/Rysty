@@ -1,0 +1,52 @@
+Lähtökohtana käytetään hypermedian perusteet- kurssilla tehtyä työtä KooVee II kotisivut. Kauden vaihtuessa huomasimme sivujen jatkokehityksen lähes mahdottomaksi ja uusien ominaisuuksien lisäämisen liian vaikeaksi.
+
+==========================================================================
+Haluaisimme suorittaa opintojakson 7303016 Hypermedian projektityön nyt 
+alkavana lukukautena. Ehdotamme seuraavaa aihetta:
+
+Työn nimi: Raatelija versio 2.0
+
+Lyhyt kuvaus työstä:
+Työn tarkoituksena on suunnitella täysin uusi www-sivusto KooVee II:en käyttöön ja luoda helposti muille joukkueille siirrettävissä oleva ohjelmisto. Ulkoasu erotetaan toteutuksesta MVC-mallin mukaisesti.
+
+Tietokantahallintaa www-pohjaisella käyttöliittymällä yhden organisaation salibandy joukkeille. Järjestelmällä hallitaan mm. joukkueista, joukkueiden tilastointia peleistä, pelaajista (tai muista jäsenistä), kokoonpanoista, kausista ja sarjoista sekä tapahtumista.
+
+Järjestelmästä löytyy julkinen (vierailija) tila sekä sisäänkirjautumista vaativa rajattu tila (ei julkisen tiedon muokkaus ja katselu)
+
+- Julkinen tila: Pelitulokset, uutiset, tapahtumat (aikataulut), tilastot, pelaajatiedot (ei muutos oikeutta, rajattu näkymä pelaajatietoihin [yhteystietojen selaaminen rajoitettu])
+
+- Rajattu tila: sisäänkirjautuminen, Julkinen tilan näkymät, omien tietojen muokkaaminen, yhteystietojen selaaminen, joukkueen sisäisten ohjeiden ja muistioiden lukuoikeus, muistioiden lisäys ja poisto (hierarkinen hakemistorakenne), tapahtumien lisäys ja muokkaus, joukkueen tiedotteiden lisäys ja muokkaus, käyttöoikeuksien ja salasanojen lisäys ja muokkaus, pelaajien/pelipaikkojen/sarjojen lisäys ja poisto, joukkueiden lisäys ja poisto. Jokaiselle käyttäjälle voidaan myöntää muokkaus oikeuksia resurssikohtaisesti.
+
+- Resurssit: 
+	- joukkue
+	- joukkueen jäsen (pelaaja, valmentaja, huoltaja, ...)
+	- sarja
+	- tapahtuma (talkoot, reenit, peli, ...)
+	- uutinen
+	- muistio (esim. kokouksen pöytäkirja, ...)
+	- käyttäjät
+
+Työn toteutus perustuu Apachen http-palvelimeen sekä 
+php/PostgreSQL-sovellukseen.
+
+Työ valmis: xx.xx.200x
+Työ on tyypiltään: toteutustyö
+Työllä on ulkopuolinen tilaaja: ei
+
+Oma nimi: Jukka Kaartinen
+Opiskelijanumero: 165168
+Hypermedian perusteet suoritettu: kyllä
+Rakenteiset dokumentit suoritettu: kyllä
+
+Oma nimi: Teemu Lahtela
+Opiskelijanumero: 158753
+Hypermedian perusteet suoritettu: kyllä
+Rakenteiset dokumentit suoritettu: ei
+
+Oma nimi: Teemu Siitarinen
+Opiskelijanumero: 160649
+Hypermedian perusteet suoritettu: kyllä
+Rakenteiset dokumentit suoritettu: kyllä
+
+Vanhat kotisivut
+Kotisivu: http://olut.ton.tut.fi/~koovee2

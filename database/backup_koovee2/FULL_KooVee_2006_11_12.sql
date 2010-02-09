@@ -10,10 +10,10 @@ SET check_function_bodies = false;
 -- Name: koovee; Type: DATABASE; Schema: -; Owner: kaartine
 --
 
-CREATE DATABASE koovee WITH TEMPLATE = template0 ENCODING = 'SQL_ASCII';
+CREATE DATABASE rysty WITH TEMPLATE = template0 ENCODING = 'SQL_ASCII';
 
 
-\connect koovee kaartine
+\connect rysty kaartine
 
 SET client_encoding = 'SQL_ASCII';
 SET check_function_bodies = false;

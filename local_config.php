@@ -12,20 +12,20 @@
 */
 
 // Debug moodi
-$DEBUG = FALSE;
+$DEBUG = TRUE;
 
 $JOUKKUEENNIMI = 'KooVee II';
-$WEBADDRESS = "murskain.mine.nu/~koovee2";
+$WEBADDRESS = "127.0.0.1/~kaartine/rysty";
 $HOMEDIR = "/home/koovee2";
 
 // Tietokannan salasana
-$dbuser = "dbname=koovee";
+$dbuser = "dbname=rysty";
 
 $_SESSION['defaultjoukkue'] = '1';
 
 $_SESSION['peliaika'] = 45;
 
-$_SESSION['defaultkausi'] = '2007';
+$_SESSION['defaultkausi'] = '2010';
 $_SESSION['defaultsarjaid'] = '1007';
 
 // Kuinka monta tuntia pipari muistetaan
