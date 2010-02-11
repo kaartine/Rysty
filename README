@@ -1,1 +1,4 @@
 Kotisivumoottori joka on suunniteltu salibandy seuran tarpeisiin.
+
+Moottori on toteuttettu PHP:llä mutta uusien tuulien tiimoilta se
+siirretään railsiin.
