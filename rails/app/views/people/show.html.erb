@@ -1,0 +1,38 @@
+<p>
+  <b>First ame:</b>
+  <%=h @person.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @person.last_name %>
+</p>
+
+<p>
+  <b>Birthday:</b>
+  <%=h @person.birthday %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%=h @person.height %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%=h @person.weight %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @person.description %>
+</p>
+
+<p>
+  <b>Nick name:</b>
+  <%=h @person.nick_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
