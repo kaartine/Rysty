@@ -1,4 +1,8 @@
 class PeopleController < ApplicationController
+  before_filter :find_person,
+    :only => [:show, :edit, :destrou, :update]
+    
+
   # GET /people
   # GET /people.xml
   def index
@@ -13,11 +17,21 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.xml
   def show
-    @person = Person.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @person }
+    begin
+      #@person = Person.find(params[:id])
+    rescue 
+      respond_to do |format|
+        format.html { redirect_to(people_url) }
+        format.xml  { head :ok }
+      end
+    end
+
+    if @person != nil
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml  { render :xml => @person }
+      end
     end
   end
 
@@ -34,13 +48,13 @@ class PeopleController < ApplicationController
 
   # GET /people/1/edit
   def edit
-    @person = Person.find(params[:id])
+    #@person = Person.find(params[:id])
   end
 
   # POST /people
   # POST /people.xml
   def create
-    @person = Person.new(params[:person])
+    #@person = Person.new(params[:person])
 
     respond_to do |format|
       if @person.save
@@ -57,7 +71,7 @@ class PeopleController < ApplicationController
   # PUT /people/1
   # PUT /people/1.xml
   def update
-    @person = Person.find(params[:id])
+    #    @person = Person.find(params[:id])
 
     respond_to do |format|
       if @person.update_attributes(params[:person])
@@ -82,4 +96,9 @@ class PeopleController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private 
+    def find_person 
+      @person = Person.find(params[:id])
+    end 
 end

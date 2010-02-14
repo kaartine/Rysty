@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  number: 1
+  stick: MyString
+  right_handed: false
+  position: MyString
+  person: 
+
+two:
+  number: 1
+  stick: MyString
+  right_handed: false
+  position: MyString
+  person: 

@@ -1,0 +1,24 @@
+<h1>Players#index</h1>
+<p>Find me in app/views/players/index.html.erb</p>
+
+<h1>Players for <%= @person.title %></h1> 
+
+<table>  
+<tr>  
+<th>Player</th>  <th>Body</th>  
+</tr> 
+
+<% for player in @players %>  
+<tr>  
+<td><%=h comment.commenter %></td>  
+<td><%=h comment.body %></td>  
+<td><%= link_to 'Show', post_comment_path(@post, comment) %></td>  
+<td>  <%= link_to 'Edit', edit_post_comment_path(@post, comment) %>  </td>  
+<td>  <%= link_to 'Destroy', post_comment_path(@post, comment), :confirm => 'Are you sure?', :method => :delete %>  </td>  
+</tr>
+
+<% end %> 
+</table> <br /> 
+
+<%= link_to 'New comment', new_post_comment_path(@post) %> 
+<%= link_to 'Back to Post', @post %> 

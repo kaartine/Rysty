@@ -1,40 +1,5 @@
 <h1>Editing person</h1>
 
-<% form_for(@person) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.label :birthday %><br />
-    <%= f.date_select :birthday %>
-  </p>
-  <p>
-    <%= f.label :height %><br />
-    <%= f.text_field :height %>
-  </p>
-  <p>
-    <%= f.label :weight %><br />
-    <%= f.text_field :weight %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :nick_name %><br />
-    <%= f.text_field :nick_name %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @person %> |
-<%= link_to 'Back', people_path %>
+<%= render :partial => "form" %> 
+<%= link_to 'Show', @person %> | 
+<%= link_to 'Back', people_path %> 
