@@ -1,12 +1,12 @@
 class PlayersController < ApplicationController
   def index
-    @person = Pearson.find(params[:person_id])  
-    @players = @person.players 
+    @person = Person.find(params[:person_id])
+    @players = @person.players
   end
 
   def show
-    @person = Pearson.find(params[:person_id])  
-    @players = @person.players.find(params[:id]) 
+    @person = Person.find(params[:person_id])
+    @players = @person.players.find(params[:id])
   end
 
   def new

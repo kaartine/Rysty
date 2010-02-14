@@ -33,6 +33,22 @@
   <%=h @person.nick_name %>
 </p>
 
+<h2>Players</h2>
+<% @person.players.each do |c| %>
+<p>
+<b>Player:</b>
+<%=h c.player %>
+</p>
+<p>
+<b>Number:</b><%=h c.number %>
+<b>Stick:</b><%=h c.stick %>
+<b>Position:</b><%=h c.position %>
+<b>Handed:</b><%=h c.handed %>
+</p> 
+<% end %>
+<%= link_to 'Edit Person', edit_person_path(@person) %> |
+<%= link_to 'Back to People', people_path %> |
+<%= link_to 'Manage Players', person_players_path(@person) %>
 
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+ 
+

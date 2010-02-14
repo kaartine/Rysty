@@ -1,24 +1,23 @@
-<h1>Players#index</h1>
-<p>Find me in app/views/players/index.html.erb</p>
+<h1>Players for <%= @person.last_name %></h1> 
 
-<h1>Players for <%= @person.title %></h1> 
-
-<table>  
-<tr>  
+<table>
+<tr>
 <th>Player</th>  <th>Body</th>  
-</tr> 
-
-<% for player in @players %>  
-<tr>  
-<td><%=h comment.commenter %></td>  
-<td><%=h comment.body %></td>  
-<td><%= link_to 'Show', post_comment_path(@post, comment) %></td>  
-<td>  <%= link_to 'Edit', edit_post_comment_path(@post, comment) %>  </td>  
-<td>  <%= link_to 'Destroy', post_comment_path(@post, comment), :confirm => 'Are you sure?', :method => :delete %>  </td>  
 </tr>
 
-<% end %> 
-</table> <br /> 
+<% for player in @players %>
+<tr>
+<td><%=h player.number %></td>
+<td><%=h player.stick %></td>
+<td><%=h player.handed %></td>
+<td><%=h player.position %></td>
+<td><%= link_to 'Show', person_player_path(@person, player) %></td>
+<td><%= link_to 'Edit', edit_person_player_path(@person, player) %>  </td>  
+<td><%= link_to 'Destroy', post_player_path(@person, player), :confirm => 'Are you sure?', :method => :delete %>  </td>  
+</tr>
 
-<%= link_to 'New comment', new_post_comment_path(@post) %> 
-<%= link_to 'Back to Post', @post %> 
+<% end %>
+</table> <br />
+
+<%= link_to 'New comment', new_person_player_path(@person) %> 
+<%= link_to 'Back to Person', @person %>
