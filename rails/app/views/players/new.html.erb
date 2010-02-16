@@ -1,2 +1,22 @@
-<h1>Players#new</h1>
-<p>Find me in app/views/players/new.html.erb</p>
+<h1>New player</h1> 
+
+<% form_for([@person, @player]) do |f| %>  
+
+<%= f.error_messages %>  
+
+<p>  
+<%= f.label :number %><br />  
+<%= f.text_field :number %>
+</p>  
+
+<p>  
+<%= f.label :stick %><br />  
+<%= f.text_field :stick %>  
+</p>  
+
+<p>  
+<%= f.submit "Create" %>  
+</p> 
+<% end %> 
+
+<%= link_to 'Back', person_players_path(@person) %> 
