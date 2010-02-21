@@ -1,4 +1,19 @@
-<%= link_to "People", people_path %> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>People: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+</head>
+<!-- <body style="background: #EEEEEE;"> -->
+
+
+<%=t :hello %>
+<%=t :moi %>
+<%=t :hell %>
+
 
 <table width = "100%" summary="" title="" cellpadding = "0" cellspacing="0" border="0">
     <tr>
@@ -36,7 +51,11 @@
       </td>
     </tr>
     <tr>
-      <td bgcolor="#333382" valign="top"  class="menu">
+      <td valign="top"  class="menu">
+      	<%=t :stats %>: <br />
+        <%=link_to t(:players), people_path %><br />
+        Teams            <br />
+
       </td>
       <td class="middle" valign="top" colspan="2">
       </td>
@@ -50,3 +69,6 @@
       </td>
     </tr>
   </table>
+  
+  </body>
+</html>
