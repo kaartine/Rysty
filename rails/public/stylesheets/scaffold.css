@@ -89,6 +89,43 @@ h1 {
     margin-top: 15px;
 }
 
+.topleftbox {
+    background-color: #333377;
+    padding-top: 0px;
+    padding-left: 0px;
+    border-left: solid;
+    border-top: solid;
+    border-bottom: none;
+    border-color: gray;
+    border-width: 1px;
+}
+
+.middleleftbox {
+    background-color: #333377;
+    padding-top: 0px;
+    padding-left: 0px;
+    border-left: solid;
+    border-top: none;
+    border-bottom: none;
+    border-color: gray;
+    border-width: 1px;
+}
+
+.bottomleftbox {
+    background-color: #333377;
+    padding-top: 0px;
+    padding-left: 0px;
+    border-left: solid;
+    border-top: none;
+    border-bottom: solid;
+    border-color: gray;
+    border-width: 1px;
+}
+
+
+/* not in use */
+
+
 .banner {
     border-right: solid;
     border-top: solid;
@@ -115,17 +152,6 @@ h1 {
     border-color: gray;
     border-width: 1px;
     padding-bottom: 15px;
-}
-
-.logo {
-    background-color: #333377;
-    padding-top: 0px;
-    padding-left: 0px;
-    border-left: solid;
-    border-top: solid;
-    border-bottom: none;
-    border-color: gray;
-    border-width: 1px;
 }
 
 
