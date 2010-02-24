@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
   before_filter :find_person,
-    :only => [:show, :edit, :destrou, :update]
+    :only => [:show, :edit, :destroy, :update]
     
   layout "main"
     
@@ -19,7 +19,6 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.xml
   def show
-
     begin
       #@person = Person.find(params[:id])
     rescue 
@@ -99,7 +98,7 @@ class PeopleController < ApplicationController
     end
   end
   
-  private 
+  private
     def find_person 
       @person = Person.find(params[:id])
     end 

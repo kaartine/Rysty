@@ -2,22 +2,21 @@
 
 <table>
 <tr>
-<th>Player</th>  <th>Body</th>  
+<th>Player</th>  <th>Body</th>
 </tr>
 
 <% for player in @players %>
 <tr>
 <td><%=h player.number %></td>
 <td><%=h player.stick %></td>
-<td><%=h player.handed %></td>
 <td><%=h player.position %></td>
 <td><%= link_to 'Show', person_player_path(@person, player) %></td>
-<td><%= link_to 'Edit', edit_person_player_path(@person, player) %>  </td>  
-<td><%= link_to 'Destroy', post_player_path(@person, player), :confirm => 'Are you sure?', :method => :delete %>  </td>  
+<td><%= link_to 'Edit', edit_person_player_path(@person, player) %>  </td>
+<td><%= link_to 'Destroy', person_player_path(@person, player), :confirm => 'Are you sure?', :method => :delete %>  </td>  
 </tr>
 
 <% end %>
 </table> <br />
 
-<%= link_to 'New comment', new_person_player_path(@person) %> 
+<%= link_to 'New player', new_person_player_path(@person) %> 
 <%= link_to 'Back to Person', @person %>

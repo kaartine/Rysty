@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :people, :has_many => :players
+  map.resources :head_lines, :has_one => :person
   
   # The priority is based upon order of creation: first created -> highest priority.
 

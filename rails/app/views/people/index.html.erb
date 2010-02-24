@@ -15,11 +15,12 @@
   <tr>
     <td><%=h person.first_name %></td>
     <td><%=h person.last_name %></td>
-    <td><%=h person.birthday %></td>
+	<td><%=h person.birthday %></td>
     <td><%=h person.height %></td>
     <td><%=h person.weight %></td>
     <td><%=h person.description %></td>
     <td><%=h person.nick_name %></td>
+	<td><%=h person.left_handed %></td>
     <td><%= link_to 'Show', person %></td>
     <td><%= link_to 'Edit', edit_person_path(person) %></td>
     <td><%= link_to 'Destroy', person, :confirm => 'Are you sure?', :method => :delete %></td>

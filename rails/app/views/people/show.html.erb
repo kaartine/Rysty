@@ -33,13 +33,18 @@
   <%=h @person.nick_name %>
 </p>
 
+<p>
+  <b>Left handed:</b>
+  <%=h @person.left_handed %>
+</p>
+
+
 <h2>Player in teams:</h2>
 <% @person.players.each do |c| %>
 <p>
 <b>Number:</b><%=h c.number %><br />
 <b>Stick:</b><%=h c.stick %><br />
 <b>Position:</b><%=h c.position %><br />
-<b>Handed:</b><%=h c.right_handed %><br />
 </p> 
 <% end %>
 <%= link_to 'Edit Person', edit_person_path(@person) %> |

@@ -1,19 +1,21 @@
 class PlayersController < ApplicationController
 
+  before_filter :find_person_and_player,
+    :only => [:show, :edit]
+    
+  layout "main"
+
   def index 
     @person = Person.find(params[:person_id])  
     @players = @person.players 
   end  
    
-  def show 
-    @person = Person.find(params[:person_id])  
-    @player = @person.players.find(params[:id])  
-  end  
+  def show
+  end
   
-  def new 
+  def new
     @person = Person.find(params[:person_id]) 
-    @player = 
-    @person.players.build 
+    @player = @person.players.build
   end  
     
   def create 
@@ -27,9 +29,7 @@ class PlayersController < ApplicationController
     end
   end  
    
-  def edit 
-    @person = Person.find(params[:person_id])  
-    @player = @person.players.find(params[:id])  
+  def edit
   end  
    
   def update 
@@ -49,7 +49,13 @@ class PlayersController < ApplicationController
     @player.destroy respond_to do |format| 
       format.html { redirect_to person_players_path(@person) } 
       format.xml { head :ok } 
-    end  
+    end
+  end
+  
+  private
+  def find_person_and_player
+    @person = Person.find(params[:person_id])
+    @player = @person.players.find(params[:id])
   end
  
 end 

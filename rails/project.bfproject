@@ -1,0 +1,11 @@
+name: Rysty
+files: /home/kaartine/workspace/Rysty/rails/app/controllers/players_controller.rb
+basedir: /home/kaartine/workspace/Rysty/rails/app/controllers/
+webdir: 
+template: 
+word_wrap: 0
+savedir: /home/kaartine/workspace/Rysty/rails/app/controllers
+view_html_toolbar: 1
+view_custom_menu: 1
+view_main_toolbar: 1
+view_left_panel: 1

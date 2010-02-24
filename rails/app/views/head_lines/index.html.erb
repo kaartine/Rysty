@@ -1,0 +1,27 @@
+<% for head_line in @head_lines %>
+<hr />
+<table>
+    <tr id="" >
+        <td><%=h head_line.id %><br />
+          <b><%=h head_line.title %></b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><%=h head_line.content %></p>
+        </td>
+        <tr>
+            <td><%=h head_line.person %></td> 
+        </tr>
+        <tr>
+            <td>
+                <%= link_to 'Edit', edit_head_line_path(head_line) %><br />
+                <%= link_to 'Destroy', head_line, :confirm => 'Are you sure?', :method => :delete %>
+            </td>
+        </tr>
+    </tr>   
+</table>
+<hr />
+<% end %>
+
+<%= link_to 'Add news', new_head_line_path %><br />
