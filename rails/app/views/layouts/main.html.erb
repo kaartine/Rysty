@@ -44,8 +44,9 @@
         <td valign="top" class="middleleftbox">
             <%=t :stats %>:<br />
             <li>
+            	<ul><%=link_to t(:clubs), clubs_path %><br /></ul>
 	            <ul><%=link_to t(:players), people_path %></ul>
-	            <ul>Teams</ul>
+	            <ul><%=link_to t(:teams), teams_path %></ul>
 	            <ul><%=link_to t(:news), head_lines_path %><br /></ul>
             </li>
         </td>

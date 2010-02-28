@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100224202000) do
+ActiveRecord::Schema.define(:version => 20100228061827) do
+
+  create_table "clubs", :force => true do |t|
+    t.string   "name"
+    t.date     "founded"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "head_lines", :force => true do |t|
     t.date     "posted"
@@ -43,9 +51,15 @@ ActiveRecord::Schema.define(:version => 20100224202000) do
   end
 
   create_table "teams", :force => true do |t|
-    t.string   "name"
-    t.date     "founded"
-    t.string   "club"
+    t.string   "short_name"
+    t.string   "long_name"
+    t.string   "string"
+    t.string   "email"
+    t.string   "home_town"
+    t.integer  "stadium_id"
+    t.string   "mascot"
+    t.string   "description"
+    t.integer  "club_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
