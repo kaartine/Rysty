@@ -30303,3 +30303,814 @@ Processing HeadLinesController#index (for 127.0.0.1 at 2010-02-24 22:38:57) [GET
 Rendering template within layouts/main
 Rendering head_lines/index
 Completed in 45ms (View: 35, DB: 3) | 200 OK [http://127.0.0.1/head_lines]
+
+
+Processing HeadLinesController#index (for 127.0.0.1 at 2010-02-28 07:43:14) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (100.3ms)[0m   [0mSELECT * FROM "head_lines" [0m
+Rendering template within layouts/main
+Rendering head_lines/index
+Completed in 387ms (View: 204, DB: 101) | 200 OK [http://127.0.0.1/head_lines]
+
+
+Processing HeadLinesController#edit (for 127.0.0.1 at 2010-02-28 07:43:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (9.5ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/edit
+
+
+ActionView::MissingTemplate (Missing template head_lines/edit.erb in view path /home/kaartine/workspace/Rysty/rails/app/views:):
+    /vendor/rails/actionpack/lib/action_view/template.rb:95:in `find_full_path'
+    /vendor/rails/actionpack/lib/action_view/template.rb:16:in `initialize'
+    /vendor/rails/actionpack/lib/action_view/base.rb:334:in `new'
+    /vendor/rails/actionpack/lib/action_view/base.rb:334:in `_unmemoized__pick_template'
+    /vendor/rails/activesupport/lib/active_support/memoizable.rb:70:in `_pick_template'
+    /vendor/rails/actionpack/lib/action_view/base.rb:256:in `render'
+    /vendor/rails/actionpack/lib/action_view/base.rb:369:in `_render_with_layout'
+    /vendor/rails/actionpack/lib/action_view/base.rb:254:in `render'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1177:in `render_for_file'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1251:in `default_render'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1257:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:103:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:74:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:60:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+
+Rendering /home/kaartine/workspace/Rysty/rails/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing HeadLinesController#edit (for 127.0.0.1 at 2010-02-28 07:45:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (1.5ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/edit
+Rendered head_lines/_form (5.2ms)
+Completed in 31ms (View: 17, DB: 2) | 200 OK [http://127.0.0.1/head_lines/1/edit]
+
+
+Processing HeadLinesController#update (for 127.0.0.1 at 2010-02-28 07:45:10) [PUT]
+  Parameters: {"head_line"=>{"title"=>"Hurraa", "content"=>"Tää alko toimii. Jep jep."}, "commit"=>"Save", "authenticity_token"=>"3663083594913d8da6de20f86cea05ed8cced4ef", "id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (1.5ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to #<Head_line:0xb6cd5abc>
+Completed in 87ms (DB: 3) | 302 Found [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#show (for 127.0.0.1 at 2010-02-28 07:45:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (5.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/show
+
+
+ActionView::MissingTemplate (Missing template head_lines/show.erb in view path /home/kaartine/workspace/Rysty/rails/app/views:):
+    /vendor/rails/actionpack/lib/action_view/template.rb:95:in `find_full_path'
+    /vendor/rails/actionpack/lib/action_view/template.rb:16:in `initialize'
+    /vendor/rails/actionpack/lib/action_view/base.rb:334:in `new'
+    /vendor/rails/actionpack/lib/action_view/base.rb:334:in `_unmemoized__pick_template'
+    /vendor/rails/activesupport/lib/active_support/memoizable.rb:70:in `_pick_template'
+    /vendor/rails/actionpack/lib/action_view/base.rb:256:in `render'
+    /vendor/rails/actionpack/lib/action_view/base.rb:369:in `_render_with_layout'
+    /vendor/rails/actionpack/lib/action_view/base.rb:254:in `render'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1177:in `render_for_file'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:905:in `render_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:135:in `send'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:135:in `custom'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:164:in `call'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:164:in `respond'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:158:in `each'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:158:in `respond'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    /app/controllers/head_lines_controller.rb:26:in `show'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:103:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:74:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:60:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+
+Rendering /home/kaartine/workspace/Rysty/rails/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing HeadLinesController#show (for 127.0.0.1 at 2010-02-28 07:48:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (1.6ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/show
+
+
+ActionView::TemplateError (undefined local variable or method `head_line' for #<ActionView::Base:0xb6e7e058>) on line #1 of app/views/head_lines/show.html.erb:
+1:         <%=h head_line.id %><br />
+2:           <b><%=h head_line.title %></b>
+3:         
+4:             <%=h head_line.content %>
+
+    app/views/head_lines/show.html.erb:1
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `send'
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:73:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:256:in `render'
+    vendor/rails/actionpack/lib/action_view/base.rb:369:in `_render_with_layout'
+    vendor/rails/actionpack/lib/action_view/base.rb:254:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1177:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:905:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:135:in `send'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:135:in `custom'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:164:in `call'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:164:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:158:in `each'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:158:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/head_lines_controller.rb:26:in `show'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    vendor/rails/railties/lib/webrick_server.rb:103:in `handle_dispatch'
+    vendor/rails/railties/lib/webrick_server.rb:74:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    vendor/rails/railties/lib/webrick_server.rb:60:in `dispatch'
+    vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /home/kaartine/workspace/Rysty/rails/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (26.7ms)
+Rendered /home/kaartine/workspace/Rysty/rails/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.9ms)
+Rendering /home/kaartine/workspace/Rysty/rails/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing HeadLinesController#show (for 127.0.0.1 at 2010-02-28 07:49:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (1.8ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/show
+Completed in 34ms (View: 16, DB: 3) | 200 OK [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#show (for 127.0.0.1 at 2010-02-28 07:49:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (1.6ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/show
+Completed in 32ms (View: 17, DB: 3) | 200 OK [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#edit (for 127.0.0.1 at 2010-02-28 07:49:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (1.8ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/edit
+Rendered head_lines/_form (5.3ms)
+Completed in 32ms (View: 17, DB: 3) | 200 OK [http://127.0.0.1/head_lines/1/edit]
+
+
+Processing HeadLinesController#update (for 127.0.0.1 at 2010-02-28 07:49:56) [PUT]
+  Parameters: {"head_line"=>{"title"=>"Hurraa", "content"=>"Tää alko toimii. jep jep"}, "commit"=>"Save", "authenticity_token"=>"3663083594913d8da6de20f86cea05ed8cced4ef", "id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (1.8ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to #<Head_line:0xb6dbc548>
+Completed in 20ms (DB: 3) | 302 Found [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#show (for 127.0.0.1 at 2010-02-28 07:49:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (1.6ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/show
+Completed in 31ms (View: 16, DB: 2) | 200 OK [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#index (for 127.0.0.1 at 2010-02-28 07:50:02) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (3.1ms)[0m   [0mSELECT * FROM "head_lines" [0m
+Rendering template within layouts/main
+Rendering head_lines/index
+Completed in 110ms (View: 99, DB: 4) | 200 OK [http://127.0.0.1/head_lines]
+
+
+Processing HeadLinesController#edit (for 127.0.0.1 at 2010-02-28 07:50:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (1.8ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/edit
+Rendered head_lines/_form (5.5ms)
+Completed in 32ms (View: 17, DB: 3) | 200 OK [http://127.0.0.1/head_lines/1/edit]
+
+
+Processing HeadLinesController#show (for 127.0.0.1 at 2010-02-28 07:50:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (1.6ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/show
+Completed in 31ms (View: 16, DB: 2) | 200 OK [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#index (for 127.0.0.1 at 2010-02-28 07:50:18) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (2.3ms)[0m   [0mSELECT * FROM "head_lines" [0m
+Rendering template within layouts/main
+Rendering head_lines/index
+Completed in 43ms (View: 34, DB: 3) | 200 OK [http://127.0.0.1/head_lines]
+
+
+Processing HeadLinesController#update (for 127.0.0.1 at 2010-02-28 07:50:21) [PUT]
+  Parameters: {"head_line"=>{"title"=>"Hurraa", "content"=>"Tää alko toimii. ejp jep\r\n"}, "commit"=>"Save", "authenticity_token"=>"3663083594913d8da6de20f86cea05ed8cced4ef", "id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (2.4ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to #<Head_line:0xb6ce85e0>
+Completed in 21ms (DB: 4) | 302 Found [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#show (for 127.0.0.1 at 2010-02-28 07:50:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (3.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (1.6ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/show
+Completed in 106ms (View: 17, DB: 12) | 200 OK [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#show (for 127.0.0.1 at 2010-02-28 07:52:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (1.6ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/show
+Completed in 32ms (View: 16, DB: 2) | 200 OK [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#edit (for 127.0.0.1 at 2010-02-28 07:52:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (1.7ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/edit
+Rendered head_lines/_form (5.4ms)
+Completed in 32ms (View: 17, DB: 3) | 200 OK [http://127.0.0.1/head_lines/1/edit]
+
+
+Processing HeadLinesController#update (for 127.0.0.1 at 2010-02-28 07:52:13) [PUT]
+  Parameters: {"head_line"=>{"title"=>"Hurraa", "content"=>"Tää alko toimii. ejp"}, "commit"=>"Save", "authenticity_token"=>"3663083594913d8da6de20f86cea05ed8cced4ef", "id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (1.8ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to #<Head_line:0xb6d84ecc>
+Completed in 20ms (DB: 3) | 302 Found [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#show (for 127.0.0.1 at 2010-02-28 07:52:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (1.8ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/show
+Completed in 31ms (View: 16, DB: 3) | 200 OK [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#index (for 127.0.0.1 at 2010-02-28 07:52:19) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (3.5ms)[0m   [0mSELECT * FROM "head_lines" [0m
+Rendering template within layouts/main
+Rendering head_lines/index
+Completed in 45ms (View: 34, DB: 4) | 200 OK [http://127.0.0.1/head_lines]
+
+
+Processing HeadLinesController#edit (for 127.0.0.1 at 2010-02-28 07:52:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (1.8ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/edit
+Rendered head_lines/_form (5.4ms)
+Completed in 33ms (View: 17, DB: 3) | 200 OK [http://127.0.0.1/head_lines/1/edit]
+
+
+Processing HeadLinesController#update (for 127.0.0.1 at 2010-02-28 07:52:26) [PUT]
+  Parameters: {"head_line"=>{"title"=>"Hurraa", "content"=>"Tää alko toimii. jep"}, "commit"=>"Save", "authenticity_token"=>"3663083594913d8da6de20f86cea05ed8cced4ef", "id"=>"1"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (1.6ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Redirected to #<Head_line:0xb6dd0c50>
+Completed in 19ms (DB: 3) | 302 Found [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#show (for 127.0.0.1 at 2010-02-28 07:52:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (1.7ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/show
+Completed in 32ms (View: 16, DB: 3) | 200 OK [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#update (for 127.0.0.1 at 2010-02-28 07:53:04) [PUT]
+  Parameters: {"head_line"=>{"title"=>"Hurraa", "content"=>"Tää alko toimii. jep"}, "commit"=>"Save", "authenticity_token"=>"3663083594913d8da6de20f86cea05ed8cced4ef", "id"=>"1"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (1.6ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mHead_line Update (0.5ms)[0m   [0mUPDATE "head_lines" SET "updated_at" = '2010-02-28 05:53:04.819105', "content" = E'Tää alko toimii. jep' WHERE "id" = 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to #<Head_line:0xb6cde784>
+Completed in 21ms (DB: 4) | 302 Found [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#show (for 127.0.0.1 at 2010-02-28 07:53:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (1.6ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/show
+Completed in 33ms (View: 17, DB: 2) | 200 OK [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#edit (for 127.0.0.1 at 2010-02-28 07:56:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (1.5ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/edit
+Rendered head_lines/_form (5.4ms)
+Completed in 32ms (View: 17, DB: 3) | 200 OK [http://127.0.0.1/head_lines/1/edit]
+
+
+Processing HeadLinesController#update (for 127.0.0.1 at 2010-02-28 07:56:46) [PUT]
+  Parameters: {"head_line"=>{"title"=>"Hurraa", "content"=>"Tää alko toimii. jep"}, "commit"=>"Save", "authenticity_token"=>"3663083594913d8da6de20f86cea05ed8cced4ef", "id"=>"1"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (1.6ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Redirected to #<Head_line:0xb6e00e78>
+Completed in 20ms (DB: 3) | 302 Found [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#show (for 127.0.0.1 at 2010-02-28 07:56:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (1.7ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/show
+Completed in 32ms (View: 16, DB: 3) | 200 OK [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#edit (for 127.0.0.1 at 2010-02-28 07:56:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (1.6ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/edit
+Rendered head_lines/_form (5.3ms)
+Completed in 32ms (View: 17, DB: 2) | 200 OK [http://127.0.0.1/head_lines/1/edit]
+
+
+Processing HeadLinesController#update (for 127.0.0.1 at 2010-02-28 07:56:52) [PUT]
+  Parameters: {"head_line"=>{"title"=>"Hurraa", "content"=>"Tää alko toimii. jep juu"}, "commit"=>"Save", "authenticity_token"=>"3663083594913d8da6de20f86cea05ed8cced4ef", "id"=>"1"}
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (1.7ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mHead_line Update (0.6ms)[0m   [0;1mUPDATE "head_lines" SET "updated_at" = '2010-02-28 05:56:52.983688', "content" = E'Tää alko toimii. jep juu' WHERE "id" = 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Redirected to #<Head_line:0xb6f5c790>
+Completed in 22ms (DB: 5) | 302 Found [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#show (for 127.0.0.1 at 2010-02-28 07:56:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (1.6ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering head_lines/show
+Completed in 32ms (View: 16, DB: 2) | 200 OK [http://127.0.0.1/head_lines/1]
+
+
+Processing HeadLinesController#index (for 127.0.0.1 at 2010-02-28 07:56:54) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (2.4ms)[0m   [0;1mSELECT * FROM "head_lines" [0m
+Rendering template within layouts/main
+Rendering head_lines/index
+Completed in 43ms (View: 33, DB: 3) | 200 OK [http://127.0.0.1/head_lines]
+
+
+Processing HeadLinesController#destroy (for 127.0.0.1 at 2010-02-28 07:57:03) [DELETE]
+  Parameters: {"authenticity_token"=>"3663083594913d8da6de20f86cea05ed8cced4ef", "id"=>"3"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (1.7ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 3) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mHead_line Destroy (0.5ms)[0m   [0mDELETE FROM "head_lines" WHERE "id" = 3[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/head_lines
+Completed in 19ms (DB: 4) | 302 Found [http://127.0.0.1/head_lines/3]
+
+
+Processing HeadLinesController#index (for 127.0.0.1 at 2010-02-28 07:57:03) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (2.3ms)[0m   [0;1mSELECT * FROM "head_lines" [0m
+Rendering template within layouts/main
+Rendering head_lines/index
+Completed in 38ms (View: 29, DB: 4) | 200 OK [http://127.0.0.1/head_lines]
+
+
+Processing HeadLinesController#new (for 127.0.0.1 at 2010-02-28 07:57:05) [GET]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+Rendering template within layouts/main
+Rendering head_lines/new
+Rendered head_lines/_form (5.1ms)
+Completed in 31ms (View: 16, DB: 1) | 200 OK [http://127.0.0.1/head_lines/new]
+
+
+Processing HeadLinesController#create (for 127.0.0.1 at 2010-02-28 07:57:13) [POST]
+  Parameters: {"head_line"=>{"title"=>"uusi", "content"=>"kyl"}, "commit"=>"Save", "authenticity_token"=>"3663083594913d8da6de20f86cea05ed8cced4ef"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (26.8ms)[0m   [0;1mINSERT INTO "head_lines" ("posted", "created_at", "title", "updated_at", "content", "person_id") VALUES(NULL, '2010-02-28 05:57:13.532918', E'uusi', '2010-02-28 05:57:13.532918', E'kyl', NULL) RETURNING "id"[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Redirected to #<Head_line:0xb6e8de40>
+Completed in 93ms (DB: 29) | 302 Found [http://127.0.0.1/head_lines]
+
+
+Processing HeadLinesController#show (for 127.0.0.1 at 2010-02-28 07:57:13) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mHead_line Load (1.8ms)[0m   [0mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "head_lines" WHERE ("head_lines"."id" = 4) [0m
+Rendering template within layouts/main
+Rendering head_lines/show
+Completed in 32ms (View: 16, DB: 3) | 200 OK [http://127.0.0.1/head_lines/4]
+
+
+Processing HeadLinesController#index (for 127.0.0.1 at 2010-02-28 07:57:25) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (2.7ms)[0m   [0;1mSELECT * FROM "head_lines" [0m
+Rendering template within layouts/main
+Rendering head_lines/index
+Completed in 44ms (View: 34, DB: 4) | 200 OK [http://127.0.0.1/head_lines]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-28 07:57:41) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mPerson Load (2.5ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 20ms (View: 10, DB: 3) | 200 OK [http://127.0.0.1/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-28 07:58:27) [GET]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mPerson Load (2.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 22ms (View: 10, DB: 4) | 200 OK [http://127.0.0.1/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-28 07:59:15) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mPerson Load (2.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 21ms (View: 10, DB: 3) | 200 OK [http://127.0.0.1/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-28 07:59:37) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mPerson Load (2.2ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 20ms (View: 10, DB: 3) | 200 OK [http://127.0.0.1/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-28 08:03:21) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mPerson Load (2.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 20ms (View: 10, DB: 3) | 200 OK [http://127.0.0.1/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-28 08:03:44) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mPerson Load (2.5ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 20ms (View: 10, DB: 3) | 200 OK [http://127.0.0.1/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-28 08:04:06) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mPerson Load (2.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 21ms (View: 10, DB: 4) | 200 OK [http://127.0.0.1/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-28 08:04:20) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mPerson Load (2.2ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 20ms (View: 10, DB: 3) | 200 OK [http://127.0.0.1/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-28 08:04:25) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mPerson Load (2.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 20ms (View: 10, DB: 3) | 200 OK [http://127.0.0.1/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-28 08:05:42) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mPerson Load (2.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 20ms (View: 10, DB: 3) | 200 OK [http://127.0.0.1/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-28 08:11:09) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mPerson Load (2.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 20ms (View: 10, DB: 3) | 200 OK [http://127.0.0.1/people]

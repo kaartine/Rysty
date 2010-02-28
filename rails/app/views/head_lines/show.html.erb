@@ -1,0 +1,13 @@
+<p>
+	<%=h @head_line.id %><br />
+    <b><%=h @head_line.title %></b>
+
+    <%=h @head_line.content %>
+    <%=h @head_line.person %><br />
+</p>
+
+<%= link_to 'Edit Head_line', edit_head_line_path(@head_line) %> |
+<%= link_to 'Back to Head Lines', head_lines_path %>
+
+ 
+

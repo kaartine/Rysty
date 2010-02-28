@@ -4,22 +4,23 @@ class HeadLinesController < ApplicationController
     
   layout "main"
   
-  # GET /posts
-  # GET /posts.xml
+  # GET /head_lines
+  # GET /head_lines.xml
   def index
     @head_lines = Head_line.find(:all)
   end
 
-  # GET /posts/1
-  # GET /posts/1.xml
+  # GET /head_lines/1
+  # GET /head_lines/1.xml
   def show
     begin
       @head_line = Head_line.find(params[:id])
     rescue 
-      respond_to do |format|
-        format.html { redirect_to(head_line_url) }
-        format.xml  { head :ok }
-      end
+      format_and_redirect
+#      respond_to do |format|
+#        format.html { redirect_to(head_line_url) }
+#        format.xml  { head :ok }
+#      end
     end
 
     if @head_line != nil
@@ -30,8 +31,8 @@ class HeadLinesController < ApplicationController
     end
   end
 
-  # GET /posts/new
-  # GET /posts/new.xml
+  # GET /head_lines/new
+  # GET /head_lines/new.xml
   def new
     @head_line = Head_line.new
     respond_to do |format|
@@ -62,37 +63,45 @@ class HeadLinesController < ApplicationController
     end
   end
 
-  # PUT /people/1
-  # PUT /people/1.xml
+  # PUT /head_lines/1
+  # PUT /head_lines/1.xml
   def update
-    @post = Head_line.find(params[:id])
+    @head_line = Head_line.find(params[:id])
 
     respond_to do |format|
-      if @post.update_attributes(params[:post])
+      if @head_line.update_attributes(params[:head_line])
         flash[:notice] = 'post was successfully updated.'
-        format.html { redirect_to(@post) }
+        format.html { redirect_to(@head_line) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @head_line.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /people/1
-  # DELETE /people/1.xml
+  # DELETE /head_lines/1
+  # DELETE /head_lines/1.xml
   def destroy
-    @post = post.find(params[:id])
-    @post.destroy
+    @head_line = Head_line.find(params[:id])
+    @head_line.destroy
 
+    format_and_redirect
+#    respond_to do |format|
+#      format.html { redirect_to(head_lines_url) }
+#      format.xml  { head :ok }
+#    end
+  end
+  
+private 
+  def find_head_line
+    @post = Head_line.find(params[:id])
+  end
+  
+  def format_and_redirect
     respond_to do |format|
-      format.html { redirect_to(posts_url) }
+      format.html { redirect_to(head_lines_url) }
       format.xml  { head :ok }
     end
   end
-  
-  private 
-    def find_head_line
-      @post = Head_line.find(params[:id])
-    end 
 end
