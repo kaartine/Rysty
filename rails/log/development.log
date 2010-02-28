@@ -31391,3 +31391,204 @@ Processing TeamsController#index (for 127.0.0.1 at 2010-02-28 08:53:52) [GET]
   [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
 Rendering teams/index
 Completed in 4ms (View: 2, DB: 1) | 200 OK [http://127.0.0.1/teams]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-28 13:14:41) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+Rendering template within layouts/main
+Rendering home/index
+Completed in 12ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-28 13:14:43) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mPerson Load (2.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 21ms (View: 11, DB: 4) | 200 OK [http://127.0.0.1/people]
+
+
+Processing HeadLinesController#index (for 127.0.0.1 at 2010-02-28 13:14:44) [GET]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mHead_line Load (2.7ms)[0m   [0;1mSELECT * FROM "head_lines" [0m
+Rendering template within layouts/main
+Rendering head_lines/index
+Completed in 48ms (View: 38, DB: 5) | 200 OK [http://127.0.0.1/head_lines]
+
+
+Processing TeamsController#index (for 127.0.0.1 at 2010-02-28 13:14:47) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+Rendering teams/index
+Completed in 4ms (View: 2, DB: 1) | 200 OK [http://127.0.0.1/teams]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100213191737)
+Migrating to CreatePlayers (20100214134101)
+Migrating to CreateTeams (20100216202448)
+Migrating to RemoveRightHandedFromPlayer (20100222161735)
+Migrating to AddLeftHandedFromPerson (20100222161814)
+Migrating to CreateNews (20100222163341)
+Migrating to ChangeNewsToHeadlines (20100224202000)
+Migrating to AddStuffToTeams (20100228061827)
+Migrating to CreateTeamsInSeason (20100228111759)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100213191737)
+Migrating to CreatePlayers (20100214134101)
+Migrating to CreateTeams (20100216202448)
+Migrating to RemoveRightHandedFromPlayer (20100222161735)
+Migrating to AddLeftHandedFromPerson (20100222161814)
+Migrating to CreateNews (20100222163341)
+Migrating to ChangeNewsToHeadlines (20100224202000)
+Migrating to AddStuffToTeams (20100228061827)
+Migrating to CreateTeamsInSeason (20100228111759)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (10.6ms)[0m   [0mCREATE TABLE "teams_in_season" ("id" serial primary key, "picture" character varying(255), "logo" character varying(255), "team_id" integer, "season_id" integer, "contact_information_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228111759')[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCOMMIT[0m
+Migrating to CreateTeamsPlayers (20100228114011)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (4.6ms)[0m   [0mCREATE TABLE "teams_players" ("id" serial primary key, "number" integer, "position" character varying(255), "captain" boolean, "assistant_captain" boolean, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228114011')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCOMMIT[0m
+Migrating to CreateSeries (20100228114821)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (6.8ms)[0m   [0mCREATE TABLE "series" ("id" serial primary key, "name" character varying(255), "description" text, "organizer" character varying(255), "type" character varying(255), "teams_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228114821')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Migrating to CreateHalls (20100228115330)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (6.5ms)[0m   [0mCREATE TABLE "halls" ("id" serial primary key, "name" character varying(255), "description" text, "number_of_fields" integer, "contact_information_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228115330')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Migrating to CreateEvents (20100228120222)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (6.9ms)[0m   [0mCREATE TABLE "events" ("id" serial primary key, "place" character varying(255), "time" time, "date" date, "description" text, "participants_id" integer, "oraganizer_id" integer, "event_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228120222')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+Migrating to CreateGames (20100228121154)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mCREATE TABLE "games" ("id" serial primary key, "first_referee_id" integer, "second_referee_id" integer, "trustee1" character varying(255), "trustee2" character varying(255), "trustee3" character varying(255), "aob" text, "num_of_spectators" integer, "hall_id" integer, "home_team_id" integer, "guest_team_id" integer, "serie_id" integer, "event_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228121154')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Migrating to CreateGoals (20100228122241)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCREATE TABLE "goals" ("id" serial primary key, "time" time, "penalty_shot" boolean, "delayed_penalty" boolean, "missed_penalty" boolean, "en" boolean, "pp" boolean, "sh" boolean, "equal" boolean, "scorer_id" integer, "assister_id" integer, "team_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRuntimeError: ERROR	C42601	Msyntax error at or near "references"	P55	Fscan.l	L907	Rbase_yyerror: ALTER TABLE "people" ADD COLUMN "contact_information" references[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100213191737)
+Migrating to CreatePlayers (20100214134101)
+Migrating to CreateTeams (20100216202448)
+Migrating to RemoveRightHandedFromPlayer (20100222161735)
+Migrating to AddLeftHandedFromPerson (20100222161814)
+Migrating to CreateNews (20100222163341)
+Migrating to ChangeNewsToHeadlines (20100224202000)
+Migrating to AddStuffToTeams (20100228061827)
+Migrating to CreateTeamsInSeason (20100228111759)
+Migrating to CreateTeamsPlayers (20100228114011)
+Migrating to CreateSeries (20100228114821)
+Migrating to CreateHalls (20100228115330)
+Migrating to CreateEvents (20100228120222)
+Migrating to CreateGames (20100228121154)
+Migrating to CreateGoals (20100228122241)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (7.3ms)[0m   [0mCREATE TABLE "goals" ("id" serial primary key, "time" time, "penalty_shot" boolean, "delayed_penalty" boolean, "missed_penalty" boolean, "en" boolean, "pp" boolean, "sh" boolean, "equal" boolean, "scorer_id" integer, "assister_id" integer, "team_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRuntimeError: ERROR	C42601	Msyntax error at or near "references"	P55	Fscan.l	L907	Rbase_yyerror: ALTER TABLE "people" ADD COLUMN "contact_information" references[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100213191737)
+Migrating to CreatePlayers (20100214134101)
+Migrating to CreateTeams (20100216202448)
+Migrating to RemoveRightHandedFromPlayer (20100222161735)
+Migrating to AddLeftHandedFromPerson (20100222161814)
+Migrating to CreateNews (20100222163341)
+Migrating to ChangeNewsToHeadlines (20100224202000)
+Migrating to AddStuffToTeams (20100228061827)
+Migrating to CreateTeamsInSeason (20100228111759)
+Migrating to CreateTeamsPlayers (20100228114011)
+Migrating to CreateSeries (20100228114821)
+Migrating to CreateHalls (20100228115330)
+Migrating to CreateEvents (20100228120222)
+Migrating to CreateGames (20100228121154)
+Migrating to CreateGoals (20100228122241)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (20.9ms)[0m   [0mCREATE TABLE "goals" ("id" serial primary key, "time" time, "penalty_shot" boolean, "delayed_penalty" boolean, "missed_penalty" boolean, "en" boolean, "pp" boolean, "sh" boolean, "equal" boolean, "scorer_id" integer, "assister_id" integer, "team_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228122241')[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCOMMIT[0m
+Migrating to CreatePenalties (20100228124407)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCREATE TABLE "penalties" ("id" serial primary key, "time" time, "reason" integer, "minutes" integer, "end_time" time, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228124407')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Migrating to CreatePlayerStatistics (20100228124731)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCREATE TABLE "player_statistics" ("id" serial primary key, "plusminus" integer, "number" integer, "captain" boolean, "assistant_captain" boolean, "goalie" boolean, "game_time" time, "saved_shots" integer, "goals_against" integer, "player_id" integer, "game_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228124731')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Migrating to CreateContactInformations (20100228125643)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (6.9ms)[0m   [0mCREATE TABLE "contact_informations" ("id" serial primary key, "phone_number" character varying(255), "address" character varying(255), "postal_code" character varying(255), "city" character varying(255), "country" character varying(255), "description" text, "email" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRuntimeError: ERROR	C42601	Msyntax error at or near "references"	P55	Fscan.l	L907	Rbase_yyerror: ALTER TABLE "people" ADD COLUMN "contact_information" references[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100213191737)
+Migrating to CreatePlayers (20100214134101)
+Migrating to CreateTeams (20100216202448)
+Migrating to RemoveRightHandedFromPlayer (20100222161735)
+Migrating to AddLeftHandedFromPerson (20100222161814)
+Migrating to CreateNews (20100222163341)
+Migrating to ChangeNewsToHeadlines (20100224202000)
+Migrating to AddStuffToTeams (20100228061827)
+Migrating to CreateTeamsInSeason (20100228111759)
+Migrating to CreateTeamsPlayers (20100228114011)
+Migrating to CreateSeries (20100228114821)
+Migrating to CreateHalls (20100228115330)
+Migrating to CreateEvents (20100228120222)
+Migrating to CreateGames (20100228121154)
+Migrating to CreateGoals (20100228122241)
+Migrating to CreatePenalties (20100228124407)
+Migrating to CreatePlayerStatistics (20100228124731)
+Migrating to CreateContactInformations (20100228125643)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (8.4ms)[0m   [0mCREATE TABLE "contact_informations" ("id" serial primary key, "phone_number" character varying(255), "address" character varying(255), "postal_code" character varying(255), "city" character varying(255), "country" character varying(255), "description" text, "email" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228125643')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Migrating to CreateUsers (20100228151422)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (6.9ms)[0m   [0mCREATE TABLE "users" ("id" serial primary key, "user_name" character varying(255), "password" character varying(255), "person_id" integer, "admin" boolean, "add_edit_delete" boolean, "intranet" boolean, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228151422')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-02-28 18:11:58) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+Rendering template within layouts/main
+Rendering home/index
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/]
