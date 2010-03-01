@@ -1,4 +1,7 @@
 class TeamsController < ApplicationController
+  
+  layout "main"
+  
   def new
   end
 

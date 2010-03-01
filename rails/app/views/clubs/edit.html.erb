@@ -1,2 +1,5 @@
-<h1>Club#edit</h1>
-<p>Find me in app/views/club/edit.html.erb</p>
+<h1>Editing <%=t :club%></h1>
+
+<%= render :partial => "form" %> 
+<%= link_to 'Show', @club %> | 
+<%= link_to 'Back', clubs_path %> 

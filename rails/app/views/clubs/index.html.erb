@@ -1,2 +1,29 @@
 <h1>Club#index</h1>
 <p>Find me in app/views/club/index.html.erb</p>
+
+<% for club in @clubs %>
+<hr />
+<table>
+    <tr>
+          <b><%=h club.name %></b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><%=h club.description %></p>
+        </td>
+        <tr>
+            <td><%=h club.founded %></td>
+        </tr>
+        <tr>
+            <td>
+                <%= link_to 'Edit', edit_club_path(club) %><br />
+                <%= link_to 'Destroy', club, :confirm => 'Are you sure?', :method => :delete %>
+            </td>
+        </tr>
+    </tr>   
+</table>
+<hr />
+<% end %>
+
+<%= link_to 'Add club', new_club_path %><br />
