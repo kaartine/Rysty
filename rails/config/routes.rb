@@ -3,6 +3,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :head_lines, :has_one => :person
   map.resources :clubs, :has_many => :teams
   map.resources :teams, :has_one => :club
+  
+  map.resources :user, :has_one => :person
 #  map.connect '/login', :controller => 'user', :action => 'login'
   
   #map.connect 'user/login', :controller => 'user', :action => 'login'

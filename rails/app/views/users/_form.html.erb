@@ -1,0 +1,75 @@
+
+ 
+<% form_for [@person, @user], :url => { :action => "create" } do |f| %>
+
+    <%= error_messages_for :user %>
+    
+    <p>
+    <%= f.label :user_name %><br />
+    <%= f.text_field :user_name %>
+    </p>
+    
+    <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+    </p>
+
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :birthday %><br />
+    <%= f.date_select :birthday %>
+  </p>
+  <p>
+    <%= f.label :height %><br />
+    <%= f.text_field :height %>
+  </p>
+  <p>
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :nick_name %><br />
+    <%= f.text_field :nick_name %>
+  </p>
+  
+  <p>
+    <%= f.label :left_handed %><br />
+    <%= f.check_box :left_handed %>
+  </p>
+
+
+<p>  
+<%= f.submit "Save" %>  
+</p> 
+
+<% end %> 
+
+<!--
+<% form_for :user, @user, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %> 
+
+  <p>
+    <%= f.label :user_name %><br />
+    <%= f.text_field :user_name %>
+  </p>
+  
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </p>
+
+<p>  
+<%= f.submit "Save" %>  
+</p> 
+
+<% end %> -->

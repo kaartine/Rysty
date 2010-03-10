@@ -1,7 +1,5 @@
 class ClubsController < ApplicationController
   
-  layout "main"
-  
   def new
     @club = Club.new
     respond_to do |format|

@@ -2,8 +2,6 @@ class PeopleController < ApplicationController
   before_filter :find_person,
     :only => [:show, :edit, :destroy, :update]
     
-  layout "main"
-    
 
   # GET /people
   # GET /people.xml

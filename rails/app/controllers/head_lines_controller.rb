@@ -1,9 +1,7 @@
 class HeadLinesController < ApplicationController
   before_filter :find_head_line,
     :only => [:show, :edit, :destroy, :update]
-    
-  layout "main"
-  
+      
   # GET /head_lines
   # GET /head_lines.xml
   def index

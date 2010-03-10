@@ -2,8 +2,6 @@ class PlayersController < ApplicationController
 
   before_filter :find_person_and_player,
     :only => [:show, :edit]
-    
-  layout "main"
 
   def index 
     @person = Person.find(params[:person_id])  

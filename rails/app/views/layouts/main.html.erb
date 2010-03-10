@@ -51,11 +51,23 @@
             </li>
         </td>
         <td class="middle" valign="top" colspan="2">
+            <%= flash[:notice] %>
         	<%= yield  %>
 		</td>
     </tr>
     <tr>
-        <td bgcolor="#333358" class="bottomleftbox">d</td>
+        <td bgcolor="#333358" class="bottomleftbox">
+            <% if session[:id] == nil %>
+                <%= link_to t(:user_login), 'user/login' %>
+            <% else %>
+                <%=link_to t(:user_logout), '/user/logout' %><br />
+                <%=link_to t(:user_my_account), '/user/my_account' %>
+                
+                <% if session[:admin] == true %>
+                    <%=link_to t(:user_add), '/user/add' %><br />
+                <% end %>
+            <% end %>
+        </td>
         <td bgcolor="#333358" class="bottombanner" align="right">f</td>
         <td bgcolor="#333358" class="bottommenu" align="right">c</td>
     </tr>
