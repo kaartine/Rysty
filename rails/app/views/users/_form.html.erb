@@ -1,75 +1,67 @@
 
  
-<% form_for [@person, @user], :url => { :action => "create" } do |f| %>
-
-    <%= error_messages_for :user %>
+<% form_for([@user]) do |f| %>
+    <%= error_messages_for :object => [@person, @user] %>
     
     <p>
-    <%= f.label :user_name %><br />
-    <%= f.text_field :user_name %>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
     </p>
     
     <p>
     <%= f.label :password %><br />
     <%= f.password_field :password %>
     </p>
+    
+    <% if session[:admin] == true %>
+        <%= f.label :admin %>
+        <%= f.check_box :admin %><br />
+        <%= f.label :add_edit_delete %>
+        <%= f.check_box :add_edit_delete %><br />
+        <%= f.label :intranet %><br />
+        <%= f.check_box :intranet %><br />
+    <% end %>
+        
+    <% fields_for @person do |a| %>
+        
+        <p>
+        <%= a.label :first_name %><br />
+        <%= a.text_field :first_name %>
+        </p>
+        <p>
+        <%= a.label :last_name %><br />
+        <%= a.text_field :last_name %>
+        </p>
+        <p>
+        <%= a.label :birthday %><br />
+        <%= a.date_select :birthday %>
+        </p>
+        <p>
+        <%= a.label :height %><br />
+        <%= a.text_field :height %>
+        </p>
+        <p>
+        <%= a.label :weight %><br />
+        <%= a.text_field :weight %>
+        </p>
+        <p>
+        <%= a.label :description %><br />
+        <%= a.text_area :description %>
+        </p>
+        <p>
+        <%= a.label :nick_name %><br />
+        <%= a.text_field :nick_name %>
+        </p>
+        
+        <p>
+        <%= a.label :left_handed %><br />
+        <%= a.check_box :left_handed %>
+        </p>
 
-  <p>
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.label :birthday %><br />
-    <%= f.date_select :birthday %>
-  </p>
-  <p>
-    <%= f.label :height %><br />
-    <%= f.text_field :height %>
-  </p>
-  <p>
-    <%= f.label :weight %><br />
-    <%= f.text_field :weight %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :nick_name %><br />
-    <%= f.text_field :nick_name %>
-  </p>
-  
-  <p>
-    <%= f.label :left_handed %><br />
-    <%= f.check_box :left_handed %>
-  </p>
-
+    <% end %>
 
 <p>  
 <%= f.submit "Save" %>  
 </p> 
 
 <% end %> 
-
-<!--
-<% form_for :user, @user, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %> 
-
-  <p>
-    <%= f.label :user_name %><br />
-    <%= f.text_field :user_name %>
-  </p>
-  
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-
-<p>  
-<%= f.submit "Save" %>  
-</p> 
-
-<% end %> -->

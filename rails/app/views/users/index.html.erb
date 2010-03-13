@@ -1,0 +1,27 @@
+<h1><%=t :list_users%></h1>
+
+<table>
+  <tr>
+    <th><%=t :username %></th>
+    <th><%=t :admin %></th>
+    <th><%=t :add_edit_delete %></th>
+    <th><%=t :intranet %></th>
+
+<% for user in @users %>
+    <tr>
+    <td><%=h user.username %></td>
+    <td><%=h user.admin %></td>
+    <td><%=h user.add_edit_delete %></td>
+    <td><%=h user.intranet %></td>
+
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New user', new_user_path %>

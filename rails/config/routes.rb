@@ -4,10 +4,12 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :clubs, :has_many => :teams
   map.resources :teams, :has_one => :club
   
-  map.resources :user, :has_one => :person
+  map.resources :users, :has_one => :person
 #  map.connect '/login', :controller => 'user', :action => 'login'
   
-  #map.connect 'user/login', :controller => 'user', :action => 'login'
+  map.connect 'my_account', :controller => 'users', :action => 'my_account'
+  map.connect 'login', :controller => 'users', :action => 'login'
+  map.connect 'logout', :controller => 'users', :action => 'logout'
   
   # The priority is based upon order of creation: first created -> highest priority.
 

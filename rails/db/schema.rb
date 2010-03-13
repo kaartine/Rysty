@@ -184,7 +184,7 @@ ActiveRecord::Schema.define(:version => 20100228151422) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "user_name"
+    t.string   "username"
     t.string   "password"
     t.integer  "person_id"
     t.boolean  "admin"

@@ -58,13 +58,14 @@
     <tr>
         <td bgcolor="#333358" class="bottomleftbox">
             <% if session[:id] == nil %>
-                <%= link_to t(:user_login), 'user/login' %>
+                <%= link_to t(:user_login), '/login' %>
             <% else %>
-                <%=link_to t(:user_logout), '/user/logout' %><br />
-                <%=link_to t(:user_my_account), '/user/my_account' %>
+                <%=link_to t(:user_logout), '/logout' %><br />
+                <%=link_to t(:user_my_account), '/my_account' %>
                 
                 <% if session[:admin] == true %>
-                    <%=link_to t(:user_add), '/user/add' %><br />
+                    <%=link_to t(:user_add), new_user_path %><br />
+                    <%=link_to t(:users_list), users_path %><br />
                 <% end %>
             <% end %>
         </td>

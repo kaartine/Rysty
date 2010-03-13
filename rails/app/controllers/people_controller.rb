@@ -38,11 +38,6 @@ class PeopleController < ApplicationController
   # GET /people/new.xml
   def new
     @person = Person.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @person }
-    end
   end
 
   # GET /people/1/edit
