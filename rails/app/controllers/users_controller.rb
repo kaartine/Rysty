@@ -93,16 +93,14 @@ class UsersController < ApplicationController
     @person = Person.find(@user.person_id)
 
     respond_to do |format|
-      User.transaction do
-        @person.update_attributes!(params[:person])
-        @user.update_attributes!(params[:user])
-
+      if @person.update_attributes(params[:person]) & @user.update_attributes(params[:user])  
         flash[:notice] = 'User was successfully updated.'
         format.html { redirect_to(@user) }
         format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
-      format.html { render :action => "edit" }
-      format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
     end
   end
   

@@ -1,7 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-# one:
-#   column: value
+admin:
+   username: admin
+   password: admin
+   admin: true
 #
-# two:
-#   column: value
+editor:
+   username: editor
+   password: editor
+   add_edit_delete: editor

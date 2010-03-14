@@ -38,3 +38,43 @@ Unable to load series, underlying cause no such file to load -- series
 /usr/lib/ruby/1.8/rake/rake_test_loader.rb:5
 /usr/lib/ruby/1.8/rake/rake_test_loader.rb:5:in `each'
 /usr/lib/ruby/1.8/rake/rake_test_loader.rb:5
+Unable to load news, underlying cause no such file to load -- news 
+
+ /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activesupport/lib/active_support/dependencies.rb:155:in `require'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activesupport/lib/active_support/dependencies.rb:262:in `require_or_load'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activesupport/lib/active_support/dependencies.rb:221:in `depend_on'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activesupport/lib/active_support/dependencies.rb:133:in `require_dependency'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activerecord/lib/active_record/fixtures.rb:856:in `try_to_load_dependency'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activerecord/lib/active_record/fixtures.rb:871:in `require_fixture_classes'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `each'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activerecord/lib/active_record/fixtures.rb:851:in `fixtures'
+/home/kaartine/workspace/Rysty/rails/test/test_helper.rb:35
+./test/functional/people_controller_test.rb:1:in `require'
+./test/functional/people_controller_test.rb:1
+/usr/lib/ruby/1.8/rake/rake_test_loader.rb:5:in `load'
+/usr/lib/ruby/1.8/rake/rake_test_loader.rb:5
+/usr/lib/ruby/1.8/rake/rake_test_loader.rb:5:in `each'
+/usr/lib/ruby/1.8/rake/rake_test_loader.rb:5
+Unable to load series, underlying cause no such file to load -- series 
+
+ /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activesupport/lib/active_support/dependencies.rb:155:in `require'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activesupport/lib/active_support/dependencies.rb:262:in `require_or_load'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activesupport/lib/active_support/dependencies.rb:221:in `depend_on'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activesupport/lib/active_support/dependencies.rb:133:in `require_dependency'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activerecord/lib/active_record/fixtures.rb:856:in `try_to_load_dependency'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activerecord/lib/active_record/fixtures.rb:871:in `require_fixture_classes'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `each'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activerecord/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/kaartine/workspace/Rysty/rails/vendor/rails/activerecord/lib/active_record/fixtures.rb:851:in `fixtures'
+/home/kaartine/workspace/Rysty/rails/test/test_helper.rb:35
+./test/functional/people_controller_test.rb:1:in `require'
+./test/functional/people_controller_test.rb:1
+/usr/lib/ruby/1.8/rake/rake_test_loader.rb:5:in `load'
+/usr/lib/ruby/1.8/rake/rake_test_loader.rb:5
+/usr/lib/ruby/1.8/rake/rake_test_loader.rb:5:in `each'
+/usr/lib/ruby/1.8/rake/rake_test_loader.rb:5

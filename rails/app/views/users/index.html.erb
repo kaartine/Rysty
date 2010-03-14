@@ -3,6 +3,8 @@
 <table>
   <tr>
     <th><%=t :username %></th>
+    <th><%=t :password %></th>
+    <th><%=t :person_id %></th>
     <th><%=t :admin %></th>
     <th><%=t :add_edit_delete %></th>
     <th><%=t :intranet %></th>
@@ -10,6 +12,8 @@
 <% for user in @users %>
     <tr>
     <td><%=h user.username %></td>
+    <td><%=h user.password %></td>
+    <td><%=h user.person_id %></td>
     <td><%=h user.admin %></td>
     <td><%=h user.add_edit_delete %></td>
     <td><%=h user.intranet %></td>
