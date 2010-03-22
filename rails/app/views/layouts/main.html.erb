@@ -57,6 +57,9 @@
     </tr>
     <tr>
         <td bgcolor="#333358" class="bottomleftbox">
+                                <%=link_to t(:user_add), new_user_path %><br />
+                    <%=link_to t(:users_list), users_path %><br />
+
             <% if session[:id] == nil %>
                 <%= link_to t(:user_login), '/login' %>
             <% else %>

@@ -2,7 +2,8 @@ class CreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
       t.string :username
-      t.string :password
+      t.string :password, :limit => 40
+      t.string :salt, :limit => 40 
       t.references :person
       # rights
       t.boolean :admin

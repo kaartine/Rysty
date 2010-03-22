@@ -1,13 +1,52 @@
-class User < ActiveRecord::Base 
+require "sha1"
+
+class User < ActiveRecord::Base
   validates_uniqueness_of :username
-  validates_confirmation_of :password, :on => :create
-  validates_length_of :password, :within => 5..40
+  validates_confirmation_of :password,
+      :if => lambda { |user| user.new_record? or !user.changes['password'].nil? }
+  validates_length_of :password, :within => 5..40,
+      :if => lambda { |user| user.new_record? or not user.password.blank? }
   has_one :person
+  
+  def encrypt_password
+    if (self.salt == nil or self.salt.blank? )
+      self.salt = salt_generator(5)
+      self.password = hashed(self.salt.to_s + self.password)
+    else
+      self.password = hashed(self.salt.to_s + self.password)
+    end
+  end
+    
+  def hashed(str)
+    #return str
+    SHA1.new(str).to_s
+  end 
     
   # If a user matching the credentials is found, returns the User object.
   # If no matching user is found, returns nil.
   def self.authenticate(user_info)
-    find_by_username_and_password(user_info[:username], user_info[:password])
+    user = find_by_username(user_info[:username])
+    if user && user.password == user.hashed(user.salt.to_s + user_info[:password])
+      return user
+    end
   end
+  
+private
+  before_save :update_password
+
+  # Updates the hashed_password if a plain password was provided.
+  def update_password
+    if !self.changes['password'].nil?
+      encrypt_password
+    end
+  end
+  
+  def salt_generator(len)
+    numbers = ("0".."9").to_a
+    newrand = ""
+    1.upto(len) { |i| newrand << numbers[rand(numbers.size - 1)] }
+    return newrand
+  end
+
 end
 

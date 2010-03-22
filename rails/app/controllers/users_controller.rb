@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       session[:id] = user.id # Remember the user's id during this session
       set_rights(user)
       redirect_to session[:return_to] || '/'
-    else
+    else      
       flash[:error] = 'Invalid login.'
       redirect_to :action => 'login', :user_name => params[:user][:username]
     end
@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   def my_account
     @user = User.find(session[:id])
+    @person = Person.find(@user.person_id)
   end
 
   def set_rights(user)
@@ -57,13 +58,14 @@ class UsersController < ApplicationController
     
     respond_to do |format|
       if @person.valid? & @user.valid?
+        
         User.transaction do
           @person.save!
           @user.person_id = @person.id
           @user.save!
           
           flash[:notice] = 'User was successfully created.'
-          format.html { redirect_to(@user) }
+          format.html { redirect_to(session[:return_to] || '/') }
           format.xml  { render :xml => @user, :status => :created, :location => @user }
         end        
       else
@@ -86,15 +88,21 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @person = Person.find(@user.person_id)
+    
+    @user.password = ''
   end
   
   def update
     @user = User.find(params[:id])
     @person = Person.find(@user.person_id)
-
+            
+    if params[:user][:password].blank?
+      params[:user].delete("password")
+    end
+    
     respond_to do |format|
       if @person.update_attributes(params[:person]) & @user.update_attributes(params[:user])  
-        flash[:notice] = 'User was successfully updated.'
+        flash[:notice] = 'User was successfully updated.' + params[:user].to_s + ' ' + @user.password
         format.html { redirect_to(@user) }
         format.xml  { head :ok }
       else
@@ -107,6 +115,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @person = Person.find(@user.person_id)
+    
+    @user.password = ''
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }

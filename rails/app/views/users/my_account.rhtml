@@ -4,8 +4,8 @@
 <p>
 ID: <%= session[:id] %>
 <p>Your username is <%= @user.username %></p>
-<p>Your First name is <%= Person.find(session[:id]).first_name %></p>
-<p>Your Last name is <%= Person.find(session[:id]).last_name %></p>
+<p>Your First name is <%= @person.first_name %></p>
+<p>Your Last name is <%= @person.last_name %></p>
 </p>
 <br />
 <%=t :rights %><br />

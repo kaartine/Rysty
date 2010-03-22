@@ -13,6 +13,12 @@
     <%= f.password_field :password %>
     </p>
     
+    <p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+    </p>
+
+    
     <% if session[:admin] == true %>
         <%= f.label :admin %>
         <%= f.check_box :admin %><br />
@@ -46,7 +52,7 @@
         </p>
         <p>
         <%= a.label :description %><br />
-        <%= a.text_area :description %>
+        <%= a.text_area :description, :rows => 5 %>
         </p>
         <p>
         <%= a.label :nick_name %><br />
