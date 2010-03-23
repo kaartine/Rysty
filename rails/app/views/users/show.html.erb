@@ -1,3 +1,63 @@
-<h1>Show person</h1>
+<h1><%=t :user_information %></h1>
+<p>Your username is <%= @user.username %></p>
 
-<%= render :partial => "form" %>
+<%=t :rights %><br />
+<p>
+<% if @user.admin == true %>
+    <%=t :you_are_admin %><br />
+<% end %>
+
+<% if @user.intranet == true %>               
+    <%=t :you_can_access_intranet %><br />
+<% end %>
+
+<% if @user.add_edit_delete == true %>
+    <%=t :you_can_add_edit_delete %><br />
+<% end %>
+</p>
+
+<h1><%=t :person_information %></h1>
+
+<p>
+  <b>First name:</b>
+  <%=h @person.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @person.last_name %>
+</p>
+
+<p>
+  <b>Birthday:</b>
+  <%=h @person.birthday %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%=h @person.height %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%=h @person.weight %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @person.description %>
+</p>
+
+<p>
+  <b>Nick name:</b>
+  <%=h @person.nick_name %>
+</p>
+
+<p>
+  <b>Left handed:</b>
+  <%=h @person.left_handed %>
+</p>
+<br />
+
+<%= link_to 'Edit User', edit_user_path(@user) %> |
+<%= link_to 'Back to Users', user_path %>

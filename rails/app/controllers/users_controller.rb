@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :login_required, :only => [:my_account, :add]
+  before_filter :login_required, :except => [:login, :show, :process_login]
   
   def login
     @user = User.new
@@ -7,13 +7,18 @@ class UsersController < ApplicationController
   end
 
   def process_login
+    flash[:error] = 'Invalid loginsss.'
     if user = User.authenticate(params[:user])
       session[:id] = user.id # Remember the user's id during this session
       set_rights(user)
-      redirect_to session[:return_to] || '/'
+      if session[:return_to] != nil
+        redirect_to session[:return_to]
+      else
+        redirect_to '/'
+      end
     else      
       flash[:error] = 'Invalid login.'
-      redirect_to :action => 'login', :user_name => params[:user][:username]
+      redirect_to :action => 'login', :username => params[:user][:username]
     end
   end
 
@@ -113,13 +118,21 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
-    @person = Person.find(@user.person_id)
-    
-    @user.password = ''
-    respond_to do |format|
+    begin
+      @user = User.find(params[:id])
+      @person = Person.find(@user.person_id) 
+      
+      @user.password = ''
+      
+      respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }
     end
+      
+    rescue
+      flash[:notice] = 'User ID ' + params[:id].to_s + ' was not found.'
+      redirect_to :controller => '/login'
+    end
+    
   end
 end 

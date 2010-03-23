@@ -5,7 +5,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :teams, :has_one => :club
   
   map.resources :users, :has_one => :person
-#  map.connect '/login', :controller => 'user', :action => 'login'
   
   map.connect 'my_account', :controller => 'users', :action => 'my_account'
   map.connect 'login', :controller => 'users', :action => 'login'

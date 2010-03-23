@@ -57,19 +57,21 @@
     </tr>
     <tr>
         <td bgcolor="#333358" class="bottomleftbox">
-                                <%=link_to t(:user_add), new_user_path %><br />
-                    <%=link_to t(:users_list), users_path %><br />
-
+            Temperary:<br />
+            <%=link_to t(:user_add), new_user_path %><br />
+            <%=link_to t(:users_list), users_path %><br />
+            <hr />
             <% if session[:id] == nil %>
                 <%= link_to t(:user_login), '/login' %>
             <% else %>
-                <%=link_to t(:user_logout), '/logout' %><br />
                 <%=link_to t(:user_my_account), '/my_account' %>
                 
                 <% if session[:admin] == true %>
                     <%=link_to t(:user_add), new_user_path %><br />
                     <%=link_to t(:users_list), users_path %><br />
                 <% end %>
+                <br />
+                <%=link_to t(:user_logout), '/logout' %><br />
             <% end %>
         </td>
         <td bgcolor="#333358" class="bottombanner" align="right">f</td>
