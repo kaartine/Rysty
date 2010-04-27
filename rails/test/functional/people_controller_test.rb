@@ -13,8 +13,14 @@ class PeopleControllerTest < ActionController::TestCase
   end
 
   test "should create person" do
+  
+    #first name and last name missing
+    assert_no_difference('Person.count') do
+      post :create, :person => {  }
+    end
+  
     assert_difference('Person.count') do
-      post :create, :person => { }
+      post :create, :person => { :first_name => 'Jukka', :last_name => 'Kaartinen' }
     end
 
     assert_redirected_to person_path(assigns(:person))

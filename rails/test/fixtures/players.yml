@@ -3,13 +3,12 @@
 one:
   number: 1
   stick: MyString
-  right_handed: false
+  position: MyString
+  person: 
+  
+two:
+  number: 2
+  stick: MyString
   position: MyString
   person: 
 
-two:
-  number: 1
-  stick: MyString
-  right_handed: false
-  position: MyString
-  person: 

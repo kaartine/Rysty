@@ -1,3 +1,3 @@
-class Head_line < ActiveRecord::Base
+class HeadLine < ActiveRecord::Base
   belongs_to :person
 end

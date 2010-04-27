@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :login_required, :except => [:login, :show, :process_login]
-  
+
   def login
     @user = User.new
     @user.username = params[:username]
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       else
         redirect_to '/'
       end
-    else      
+    else
       flash[:error] = 'Invalid login.'
       redirect_to :action => 'login', :username => params[:user][:username]
     end
@@ -50,36 +50,36 @@ class UsersController < ApplicationController
     @user = User.new
     @person = Person.new
 #    @person = Person.new
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @user }
     end
   end
-  
+
   def create
     @person = Person.new(params[:person])
     @user = User.new(params[:user])
-    
+
     respond_to do |format|
       if @person.valid? & @user.valid?
-        
+
         User.transaction do
           @person.save!
           @user.person_id = @person.id
           @user.save!
-          
+
           flash[:notice] = 'User was successfully created.'
           format.html { redirect_to(session[:return_to] || '/') }
           format.xml  { render :xml => @user, :status => :created, :location => @user }
-        end        
+        end
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end
   end
-  
+
   def destroy
     @user = User.find(params[:id])
     @user.destroy
@@ -89,24 +89,24 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
   def edit
     @user = User.find(params[:id])
     @person = Person.find(@user.person_id)
-    
+
     @user.password = ''
   end
-  
+
   def update
     @user = User.find(params[:id])
     @person = Person.find(@user.person_id)
-            
+
     if params[:user][:password].blank?
       params[:user].delete("password")
     end
-    
+
     respond_to do |format|
-      if @person.update_attributes(params[:person]) & @user.update_attributes(params[:user])  
+      if @person.update_attributes(params[:person]) & @user.update_attributes(params[:user])
         flash[:notice] = 'User was successfully updated.' + params[:user].to_s + ' ' + @user.password
         format.html { redirect_to(@user) }
         format.xml  { head :ok }
@@ -116,23 +116,23 @@ class UsersController < ApplicationController
       end
     end
   end
-  
+
   def show
     begin
       @user = User.find(params[:id])
-      @person = Person.find(@user.person_id) 
-      
+      @person = Person.find(@user.person_id)
+
       @user.password = ''
-      
+
       respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }
     end
-      
+
     rescue
       flash[:notice] = 'User ID ' + params[:id].to_s + ' was not found.'
       redirect_to :controller => '/login'
     end
-    
+
   end
-end 
+end

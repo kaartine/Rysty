@@ -2,7 +2,9 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+  
+  def test_creation
+    user = User.new
+    assert !user.save, "Tryin to save empty user"
+  end    
 end

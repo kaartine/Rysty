@@ -8,4 +8,4 @@ admin:
 editor:
    username: editor
    password: editor
-   add_edit_delete: editor
+   add_edit_delete: true

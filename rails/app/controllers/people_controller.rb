@@ -1,7 +1,6 @@
 class PeopleController < ApplicationController
   before_filter :find_person,
-    :only => [:show, :edit, :destroy, :update]
-    
+    :only => [:show, :edit, :destroy, :update]  
 
   # GET /people
   # GET /people.xml
@@ -48,7 +47,7 @@ class PeopleController < ApplicationController
   # POST /people
   # POST /people.xml
   def create
-    #@person = Person.new(params[:person])
+    @person = Person.new(params[:person])
 
     respond_to do |format|
       if @person.save

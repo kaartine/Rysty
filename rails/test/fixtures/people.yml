@@ -1,7 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  first_ame: MyString
+  first_name: MyString
   last_name: MyString
   birthday: 2010-02-13
   height: 1
@@ -10,7 +10,7 @@ one:
   nick_name: MyString
 
 two:
-  first_ame: MyString
+  first_name: MyString
   last_name: MyString
   birthday: 2010-02-13
   height: 1
