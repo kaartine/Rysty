@@ -3,4 +3,8 @@ class Person < ActiveRecord::Base
    has_many :players
    has_many :posts
    belongs_to :user
+   
+   def full_name
+    [first_name.capitalize, last_name.capitalize].compact.join(' ')
+   end
 end

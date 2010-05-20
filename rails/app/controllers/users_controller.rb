@@ -35,6 +35,8 @@ class UsersController < ApplicationController
 
   def set_rights(user)
     session[:admin] = user.admin
+    session[:add_edit_delete] = user.add_edit_delete
+    session[:intranet] = user.intranet
   end
 
   def index
@@ -49,7 +51,6 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @person = Person.new
-#    @person = Person.new
 
     respond_to do |format|
       format.html # index.html.erb

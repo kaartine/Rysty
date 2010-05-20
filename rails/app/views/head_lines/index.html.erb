@@ -1,27 +1,13 @@
 <% for head_line in @head_lines %>
-<hr />
-<table>
-    <tr id="" >
-        <td><%=h head_line.id %><br />
-          <b><%=h head_line.title %></b>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <p><%=h head_line.content %></p>
-        </td>
-        <tr>
-            <td><%=h head_line.person %></td> 
-        </tr>
-        <tr>
-            <td>
-                <%= link_to 'Edit', edit_head_line_path(head_line) %><br />
-                <%= link_to 'Destroy', head_line, :confirm => 'Are you sure?', :method => :delete %>
-            </td>
-        </tr>
-    </tr>   
-</table>
-<hr />
+  <div class="headline" id="<%= head_line.id %> ">
+    <h1><%= head_line.title %></h1>
+    <h5><%= head_line.days_from_creation %><br />
+    <%=t :by %> <%= Person.find(head_line.person_id).full_name %></h5>
+    <p><%= head_line.content %></p>
+    <%= edit_and_destroy (head_line, 'head_line') %>
+  </div>
+  <hr />
 <% end %>
 
 <%= link_to 'Add news', new_head_line_path %><br />
+

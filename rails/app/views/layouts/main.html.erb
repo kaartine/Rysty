@@ -4,81 +4,106 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <title>People: <%= controller.action_name %></title>
-    <%= stylesheet_link_tag 'scaffold' %>
+    <title><%= controller.action_name %></title>
+    <%= stylesheet_link_tag 'reset', :media => "all" %>
+    <%= stylesheet_link_tag 'text', :media => "all" %>
+    <%= stylesheet_link_tag '960', :media => "all" %>
+    <%= stylesheet_link_tag 'grid', :media => "all" %>
+    <%= stylesheet_link_tag 'layout', :media => "all" %>
+    <%= stylesheet_link_tag 'nav', :media => "all" %>
+<!--    <%= stylesheet_link_tag 'scaffold' %> -->
 </head>
 
-<%=t :hello %>
-<%=t :moi %>
-<%=t :hell %>
+<body>
+<div class="container_12">
+  <div class="grid_12">
+  <br />
+  </div>
+  <!-- end .grid_12 -->
+  <div class="clear"></div>
+  <div class="grid_2">
+	  <p>
+      <a href="/"><img src="/images/koovee/topleft_logo.jpg" alt="" border="0" width="100" /></a>
+	  </p>
+  </div>
+  <!-- end .grid_1 -->
+  <div class="grid_8">
+	  <p>
+	  <%=t :hello %>
+    <%=t :moi %>
+    <%=t :hell %>
+	  </p>
+  </div>
+  <div class="grid_2">
+      <% if session[:id] == nil %>
+      <p class="box"><%= link_to t(:user_login), '/login' %></p>
+    <% else %>
+      <p class="box"><%=link_to t(:user_my_account), '/my_account' %>
+      <%=link_to t(:user_logout), '/logout' %>
+      </p>
+    <% end %>
+  </div>
+  <!-- end .grid_11 -->
+  <div class="clear"></div>
+  <div class="grid_12">
+    <ul class="nav main">
+      <li><%=link_to t(:scores), '#' %>
+      <li><%=link_to t(:schedule), '#' %>
+        <ul>
+	        <li><%=link_to t(:by_week), '#' %>
+	        <li><%=link_to t(:by_month), '#' %>
+	        <li><%=link_to t(:by_season), '#' %>
+        </ul>
+      <li><%=link_to t(:standings), '#' %>
+  	  <li><%=link_to t(:clubs), clubs_path %></li>
+      <li><%=link_to t(:players), people_path %></li>
+      <li><%=link_to t(:teams), teams_path %></li>
+      <li><%=link_to t(:gallery), '#' %>      
+        <ul>
+          <li><%=link_to t(:videos), '#' %>
+          <li><%=link_to t(:photos), '#' %>
+        </ul>
+      <li><%=link_to t(:news), head_lines_path %></li>
+      <li><%=link_to t(:stats), '#' %>
+      	<ul>
+      	  <li><%=link_to t(:league_leaders), '#' %>
+      	  <li><%=link_to t(:individuals), '#' %>
+      	  <li><%=link_to t(:teams), '#' %>
+        </ul>
+      </li>
+    <% if session[:admin] == true %>
+      <li class="secondary"><%=link_to t(:admin), '#' %>
+        <ul>
+          <li><%=link_to t(:user_add), new_user_path %></li>
+          <li><%=link_to t(:users_list), users_path %></li>
+        </ul>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+  <div class="clear"></div>
+  <div class="grid_1">
+  a
+  </div>
+  <div class="grid_10">
+    <p>
+      <%= flash[:notice] %>
+	    <%= yield  %>
+	  </p>
+  </div>
+  <div class="grid_1">
+  c
+  </div>
+  <div class="clear"></div>
+  <div class="grid_12">
+    <p class="box">
+    bottom
+    </p>
+  </div>
+  <div class="clear"></div>
 
-<table width = "100%" summary="" title="" cellpadding = "0" cellspacing="0" border="0">
-    <tr>
-	    <td width="180" align="center" class="topleftbox">
-	        <a href="/"><img src="/images/koovee/topleft_logo.jpg" alt="" border="0" width="100"></a>
-	    </td>
-	    <td bgcolor="#333377"  class="banner" colspan="2">
-	        <table width="100%" cellpadding = "0" cellspacing="0" border="0">
-	            <tr>
-		            <th class="banner2">
-		            	banner2
-		            </th>
-	            </tr>
-	            <tr>
-	                <td>
-	                <table width="100%" border="0" cellpadding="0" cellspacing="0" >
-	                    <tr>
-	                    	<td>&nbsp;</td><td></td>
-						</tr>
-	                    <tr>
-	                        <td><p align="left">left</p></td>
-	                        <td><p align="right">a</p></td>
-	                    </tr>
-	                </table>
-	                </td>
-	            </tr>
-	        </table>
-	    </td>
-    </tr>
-    <tr>
-        <td valign="top" class="middleleftbox">
-            <%=t :stats %>:<br />
-            <li>
-            	<ul><%=link_to t(:clubs), clubs_path %><br /></ul>
-	            <ul><%=link_to t(:players), people_path %></ul>
-	            <ul><%=link_to t(:teams), teams_path %></ul>
-	            <ul><%=link_to t(:news), head_lines_path %><br /></ul>
-            </li>
-        </td>
-        <td class="middle" valign="top" colspan="2">
-            <%= flash[:notice] %>
-        	<%= yield  %>
-		</td>
-    </tr>
-    <tr>
-        <td bgcolor="#333358" class="bottomleftbox">
-            Temperary:<br />
-            <%=link_to t(:user_add), new_user_path %><br />
-            <%=link_to t(:users_list), users_path %><br />
-            <hr />
-            <% if session[:id] == nil %>
-                <%= link_to t(:user_login), '/login' %>
-            <% else %>
-                <%=link_to t(:user_my_account), '/my_account' %>
-                
-                <% if session[:admin] == true %>
-                    <%=link_to t(:user_add), new_user_path %><br />
-                    <%=link_to t(:users_list), users_path %><br />
-                <% end %>
-                <br />
-                <%=link_to t(:user_logout), '/logout' %><br />
-            <% end %>
-        </td>
-        <td bgcolor="#333358" class="bottombanner" align="right">f</td>
-        <td bgcolor="#333358" class="bottommenu" align="right">c</td>
-    </tr>
-</table>
-  
+</div>
+
 </body>
 </html>
 
