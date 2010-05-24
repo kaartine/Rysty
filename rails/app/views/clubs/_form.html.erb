@@ -1,4 +1,4 @@
-<% form_for(@club) do |f| %>
+<% form_for(@clubs) do |f| %>
 
 <%= f.error_messages %>
 
@@ -13,7 +13,7 @@
 
 <p>
     <%= f.label :founded %><br />
-    <%= date_select("post", "founded", :start_year => 1800) %>
+    <%= date_select("club", "founded", :start_year => 1800) %>
 </p>
   
 <p>  

@@ -1,5 +1,5 @@
 class ClubsController < ApplicationController
-  
+
   def new
     @club = Club.new
     respond_to do |format|
@@ -9,17 +9,37 @@ class ClubsController < ApplicationController
   end
 
   def edit
-  end
-
-  def index
     @clubs = Club.find(:all)
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @club }
     end
   end
-  
+
+  def show
+    @club = Club.find(params[:id])
+  end
+
+  def update
+    @club = Club.find(params[:id])
+
+    if @club.update_attributes(params[:club])
+      redirect_to club_url(@club)
+    else
+      render :action => "edit"
+    end
+  end
+
+  def index
+    @clubs = Club.find(:all)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @club }
+    end
+  end
+
   # POST /club
   # POST /club.xml
   def create

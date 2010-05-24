@@ -1,0 +1,14 @@
+<p>
+    <h1><%= @club.name %><br /></h1>
+</p>
+<p>
+    <%= @club.description %><br />
+</p>
+
+<p>
+    date:<%= @club.founded %><br />
+</p>
+  
+<%= link_to 'Edit Club', edit_club_path(@club) %> |
+<%= link_to 'Back to Clubs', clubs_path %>
+
