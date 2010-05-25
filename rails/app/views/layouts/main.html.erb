@@ -27,10 +27,13 @@
 	  </p>
   </div>
   <!-- end .grid_1 -->
-  <div class="grid_8">
+  <div class="grid_6">
+      <p></p>
+  </div>
+  <div class="grid_2">
     <p>
-        <%= link_to t(:fi), '?locale=fi' %>
-        <%= link_to t(:en), '?locale=en' %>
+        <%= link_to(image_tag("finland.gif", :alt => t(:fi), :height => '16', :width => '26'), '?locale=fi') %>
+        <%= link_to(image_tag("united_kingdom.gif", :alt => t(:en), :height => '16', :width => '32'), '?locale=en') %>
     </p>
   </div>
   <div class="grid_2">
