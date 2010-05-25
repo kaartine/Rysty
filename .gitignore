@@ -3,3 +3,4 @@
 .cvsignore
 *~
 *.old
+*.log
