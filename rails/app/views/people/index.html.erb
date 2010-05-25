@@ -9,13 +9,17 @@
     <th>Weight</th>
     <th>Description</th>
     <th>Nick name</th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
   </tr>
 
 <% for person in @people %>
   <tr>
     <td><%=h person.first_name %></td>
     <td><%=h person.last_name %></td>
-	<td><%=h person.birthday %></td>
+	<td><%=h l(person.birthday) %></td>
     <td><%=h person.height %></td>
     <td><%=h person.weight %></td>
     <td><%=h person.description %></td>

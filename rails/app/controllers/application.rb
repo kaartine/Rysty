@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   before_filter :set_user
+  
+  before_filter :set_locale   
 
 protected
   def set_user
@@ -37,4 +39,15 @@ protected
     flash[:error] = 'Oops. You need to login before you can view that page.'
     redirect_to :controller => 'users', :action => 'login'
   end
+  
+  def set_locale 
+    # if params[:locale] is nil then I18n.default_locale will be used
+    if params[:locale]
+      I18n.locale = params[:locale]
+      session[:locale] = params[:locale]
+    else
+      I18n.locale = session[:locale]
+    end
+  end
+
 end

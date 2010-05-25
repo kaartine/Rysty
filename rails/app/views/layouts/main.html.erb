@@ -28,11 +28,10 @@
   </div>
   <!-- end .grid_1 -->
   <div class="grid_8">
-	  <p>
-	  <%=t :hello %>
-    <%=t :moi %>
-    <%=t :hell %>
-	  </p>
+    <p>
+        <%= link_to t(:fi), '?locale=fi' %>
+        <%= link_to t(:en), '?locale=en' %>
+    </p>
   </div>
   <div class="grid_2">
       <% if session[:id] == nil %>

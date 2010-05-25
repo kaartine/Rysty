@@ -18,7 +18,6 @@ class User < ActiveRecord::Base
   end
     
   def hashed(str)
-    #return str
     SHA1.new(str).to_s
   end 
     

@@ -1,6 +1,6 @@
 class HeadLinesController < ApplicationController
-  before_filter :find_head_line,
-    :only => [:show, :edit, :destroy, :update]
+  before_filter :find_head_line, :only => [:show, :edit, :destroy, :update]   
+  before_filter :login_required, :only => [:new, :edit, :destroy, :update]
       
   # GET /head_lines
   # GET /head_lines.xml
@@ -11,11 +11,7 @@ class HeadLinesController < ApplicationController
   # GET /head_lines/1
   # GET /head_lines/1.xml
   def show
-    begin
-      @head_line = HeadLine.find(params[:id])
-    rescue 
-      format_and_redirect
-    end
+    format_and_redirect
 
     if @head_line != nil
       respond_to do |format|
@@ -38,19 +34,7 @@ class HeadLinesController < ApplicationController
 
   # GET /people/1/edit
   def edit
-    @head_line = HeadLine.find(params[:id])
-    @head_line.person_id = session[:id]
-    
-    respond_to do |format|
-      if @head_line.save
-        flash[:notice] = 'Head line was successfully saved.'
-        format.html { redirect_to(@head_line) }
-        format.xml  { render :xml => @head_line, :status => :saved, :location => @head_line }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @head_line.errors, :status => :unprocessable_entity }
-      end
-    end
+    @head_line.person_id = session[:id]    
   end
 
   # POST /people
@@ -74,11 +58,10 @@ class HeadLinesController < ApplicationController
   # PUT /head_lines/1
   # PUT /head_lines/1.xml
   def update
-    @head_line = HeadLine.find(params[:id])
 
     respond_to do |format|
       if @head_line.update_attributes(params[:head_line])
-        flash[:notice] = 'post was successfully updated.'
+        flash[:notice] = 'Head line was successfully updated.'
         format.html { redirect_to(@head_line) }
         format.xml  { head :ok }
       else
@@ -91,7 +74,6 @@ class HeadLinesController < ApplicationController
   # DELETE /head_lines/1
   # DELETE /head_lines/1.xml
   def destroy
-    @head_line = HeadLine.find(params[:id])
     @head_line.destroy
 
     format_and_redirect
@@ -99,7 +81,7 @@ class HeadLinesController < ApplicationController
   
 private 
   def find_head_line
-    @post = HeadLine.find(params[:id])
+    @head_line = HeadLine.find(params[:id])
   end
   
   def format_and_redirect

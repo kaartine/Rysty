@@ -16,15 +16,6 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.xml
   def show
-    begin
-      #@person = Person.find(params[:id])
-    rescue 
-      respond_to do |format|
-        format.html { redirect_to(people_url) }
-        format.xml  { head :ok }
-      end
-    end
-
     if @person != nil
       respond_to do |format|
         format.html # show.html.erb
@@ -41,7 +32,6 @@ class PeopleController < ApplicationController
 
   # GET /people/1/edit
   def edit
-    #@person = Person.find(params[:id])
   end
 
   # POST /people
