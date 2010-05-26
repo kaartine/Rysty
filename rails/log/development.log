@@ -6761,3 +6761,15 @@ Processing PeopleController#index (for 127.0.0.1 at 2010-05-25 18:31:26) [GET]
 Rendering template within layouts/main
 Rendering people/index
 Completed in 121ms (View: 38, DB: 6) | 200 OK [http://127.0.0.1/people?locale=fi]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-26 21:06:26) [GET]
+  Parameters: {"locale"=>"fi"}
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (15.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mPerson Load (12.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 240ms (View: 83, DB: 29) | 200 OK [http://127.0.0.1/people?locale=fi]
