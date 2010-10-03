@@ -6773,3 +6773,612 @@ Processing PeopleController#index (for 127.0.0.1 at 2010-05-26 21:06:26) [GET]
 Rendering template within layouts/main
 Rendering people/index
 Completed in 240ms (View: 83, DB: 29) | 200 OK [http://127.0.0.1/people?locale=fi]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-29 08:20:03) [GET]
+  Parameters: {"locale"=>"fi"}
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (15.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mPerson Load (185.7ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 1175ms (View: 285, DB: 202) | 200 OK [http://127.0.0.1/people?locale=fi]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-05-29 12:05:08) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+Rendering template within layouts/main
+Rendering home/index
+Completed in 38ms (View: 33, DB: 1) | 200 OK [http://rails.jk.com/]
+
+
+Processing ClubsController#index (for 127.0.0.1 at 2010-05-29 12:05:10) [GET]
+  [4;35;1mSQL (1.9ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mClub Load (2.1ms)[0m   [0;1mSELECT * FROM "clubs" [0m
+Rendering template within layouts/main
+Rendering clubs/index
+Completed in 41ms (View: 31, DB: 7) | 200 OK [http://rails.jk.com/clubs]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-29 12:05:11) [GET]
+  [4;35;1mSQL (0.7ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mPerson Load (3.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 154ms (View: 142, DB: 5) | 200 OK [http://rails.jk.com/people]
+
+
+Processing TeamsController#index (for 127.0.0.1 at 2010-05-29 12:05:12) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+Rendering template within layouts/main
+Rendering teams/index
+Completed in 24ms (View: 21, DB: 1) | 200 OK [http://rails.jk.com/teams]
+
+
+Processing TeamsController#index (for 127.0.0.1 at 2010-06-09 20:02:20) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+Rendering template within layouts/main
+Rendering teams/index
+Completed in 66ms (View: 63, DB: 1) | 200 OK [http://rails.jk.com/teams]
+
+
+Processing TeamsController#index (for 127.0.0.1 at 2010-06-09 21:20:43) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+Rendering template within layouts/main
+Rendering teams/index
+Completed in 66ms (View: 63, DB: 1) | 200 OK [http://rails.jk.com/teams]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-09 21:20:46) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+Rendering template within layouts/main
+Rendering home/index
+Completed in 24ms (View: 20, DB: 1) | 200 OK [http://rails.jk.com/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-13 14:48:50) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+Rendering template within layouts/main
+Rendering home/index
+Completed in 65ms (View: 61, DB: 1) | 200 OK [http://rails.jk.com/]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-06-13 14:48:52) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mPerson Load (71.5ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 223ms (View: 141, DB: 72) | 200 OK [http://rails.jk.com/people]
+
+
+Processing ClubsController#index (for 127.0.0.1 at 2010-06-13 14:48:53) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mClub Load (7.7ms)[0m   [0;1mSELECT * FROM "clubs" [0m
+Rendering template within layouts/main
+Rendering clubs/index
+Completed in 136ms (View: 120, DB: 9) | 200 OK [http://rails.jk.com/clubs]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-06-13 14:49:01) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+Rendering template within layouts/main
+Rendering users/login
+Completed in 70ms (View: 27, DB: 1) | 200 OK [http://rails.jk.com/login]
+
+
+Processing UsersController#process_login (for 127.0.0.1 at 2010-06-13 14:49:11) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"3ec1d72d4d3ff659f3b612e9f145d7ab166df706", "user"=>{"username"=>"jukka", "password"=>"jukka"}}
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (3.6ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (24.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."username" = E'jukka') LIMIT 1[0m
+Redirected to /
+Completed in 45ms (DB: 29) | 302 Found [http://rails.jk.com/users/process_login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-13 14:49:11) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/main
+Rendering home/index
+Completed in 39ms (View: 20, DB: 3) | 200 OK [http://rails.jk.com/]
+
+
+Processing ClubsController#index (for 127.0.0.1 at 2010-06-13 14:49:14) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (2.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mClub Load (1.7ms)[0m   [0;1mSELECT * FROM "clubs" [0m
+Rendering template within layouts/main
+Rendering clubs/index
+Completed in 56ms (View: 31, DB: 5) | 200 OK [http://rails.jk.com/clubs]
+
+
+Processing ClubsController#edit (for 127.0.0.1 at 2010-06-13 14:49:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mClub Load (1.6ms)[0m   [0mSELECT * FROM "clubs" [0m
+Rendering template within layouts/main
+Rendering clubs/edit
+Rendered clubs/_form (80.7ms)
+Completed in 132ms (View: 106, DB: 5) | 200 OK [http://rails.jk.com/clubs/1/edit]
+
+
+Processing ClubsController#update (for 127.0.0.1 at 2010-06-13 14:49:25) [PUT]
+  Parameters: {"club"=>{"name"=>"klubi", "founded(1i)"=>"2010", "founded(2i)"=>"6", "founded(3i)"=>"13", "description"=>"klubin kuvaus"}, "commit"=>"Save", "authenticity_token"=>"3ec1d72d4d3ff659f3b612e9f145d7ab166df706", "id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (1.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mClub Load (21.3ms)[0m   [0;1mSELECT * FROM "clubs" WHERE ("clubs"."id" = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mClub Update (0.8ms)[0m   [0;1mUPDATE "clubs" SET "updated_at" = '2010-06-13 11:49:25.742939', "founded" = '2010-06-13', "description" = E'klubin kuvaus' WHERE "id" = 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://rails.jk.com/clubs/1
+Completed in 54ms (DB: 26) | 302 Found [http://rails.jk.com/clubs/1]
+
+
+Processing ClubsController#show (for 127.0.0.1 at 2010-06-13 14:49:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (1.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mClub Load (1.5ms)[0m   [0;1mSELECT * FROM "clubs" WHERE ("clubs"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering clubs/show
+Completed in 50ms (View: 24, DB: 6) | 200 OK [http://rails.jk.com/clubs/1]
+
+
+Processing ClubsController#edit (for 127.0.0.1 at 2010-06-13 14:49:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mClub Load (1.7ms)[0m   [0mSELECT * FROM "clubs" [0m
+Rendering template within layouts/main
+Rendering clubs/edit
+Rendered clubs/_form (102.3ms)
+Completed in 154ms (View: 128, DB: 5) | 200 OK [http://rails.jk.com/clubs/1/edit]
+
+
+Processing ClubsController#update (for 127.0.0.1 at 2010-06-13 14:49:35) [PUT]
+  Parameters: {"club"=>{"name"=>"klubi", "founded(1i)"=>"1995", "founded(2i)"=>"4", "founded(3i)"=>"13", "description"=>"klubin kuvaus"}, "commit"=>"Save", "authenticity_token"=>"3ec1d72d4d3ff659f3b612e9f145d7ab166df706", "id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (2.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mClub Load (1.6ms)[0m   [0;1mSELECT * FROM "clubs" WHERE ("clubs"."id" = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mClub Update (0.6ms)[0m   [0;1mUPDATE "clubs" SET "updated_at" = '2010-06-13 11:49:35.266797', "founded" = '1995-04-13' WHERE "id" = 1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://rails.jk.com/clubs/1
+Completed in 34ms (DB: 6) | 302 Found [http://rails.jk.com/clubs/1]
+
+
+Processing ClubsController#show (for 127.0.0.1 at 2010-06-13 14:49:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (2.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mClub Load (2.4ms)[0m   [0;1mSELECT * FROM "clubs" WHERE ("clubs"."id" = 1) [0m
+Rendering template within layouts/main
+Rendering clubs/show
+Completed in 53ms (View: 26, DB: 6) | 200 OK [http://rails.jk.com/clubs/1]
+
+
+Processing ClubsController#index (for 127.0.0.1 at 2010-06-13 14:49:38) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mUser Load (2.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mClub Load (1.4ms)[0m   [0mSELECT * FROM "clubs" [0m
+Rendering template within layouts/main
+Rendering clubs/index
+Completed in 56ms (View: 32, DB: 4) | 200 OK [http://rails.jk.com/clubs]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-06-13 14:49:52) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (2.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (2.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/main
+Rendering users/index
+Completed in 143ms (View: 45, DB: 5) | 200 OK [http://rails.jk.com/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-06-13 20:27:16) [GET]
+  Parameters: {"locale"=>"en"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (2.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/main
+Rendering users/index
+Completed in 102ms (View: 55, DB: 5) | 200 OK [http://rails.jk.com/users?locale=en]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-06-13 20:27:18) [GET]
+  Parameters: {"locale"=>"fi"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mUser Load (2.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (2.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/main
+Rendering users/index
+Completed in 64ms (View: 42, DB: 5) | 200 OK [http://rails.jk.com/users?locale=fi]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-06-13 20:27:21) [GET]
+  Parameters: {"locale"=>"en"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (2.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (2.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/main
+Rendering users/index
+Completed in 64ms (View: 41, DB: 5) | 200 OK [http://rails.jk.com/users?locale=en]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-06-13 20:27:22) [GET]
+  Parameters: {"locale"=>"fi"}
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/main
+Rendering users/index
+Completed in 68ms (View: 41, DB: 5) | 200 OK [http://rails.jk.com/users?locale=fi]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-13 20:27:26) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (2.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mPerson Load (16.6ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Rendering template within layouts/main
+Rendering users/show
+Completed in 76ms (View: 29, DB: 20) | 200 OK [http://rails.jk.com/users/3]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-13 20:27:30) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (2.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mPerson Load (2.1ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Rendering template within layouts/main
+Rendering users/show
+Completed in 76ms (View: 31, DB: 6) | 200 OK [http://rails.jk.com/users/3]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-13 20:27:36) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (2.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mPerson Load (2.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Rendering template within layouts/main
+Rendering users/show
+Completed in 75ms (View: 35, DB: 5) | 200 OK [http://rails.jk.com/users/3]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-13 20:27:42) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (2.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mPerson Load (2.1ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Rendering template within layouts/main
+Rendering users/show
+Completed in 64ms (View: 28, DB: 5) | 200 OK [http://rails.jk.com/users/3]
+
+
+Processing ClubsController#index (for 127.0.0.1 at 2010-06-13 20:45:47) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (2.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mClub Load (1.6ms)[0m   [0;1mSELECT * FROM "clubs" [0m
+Rendering template within layouts/main
+Rendering clubs/index
+Completed in 77ms (View: 46, DB: 5) | 200 OK [http://rails.jk.com/clubs]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-06-13 20:45:50) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mPerson Load (2.8ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/main
+Rendering people/index
+Completed in 77ms (View: 49, DB: 6) | 200 OK [http://rails.jk.com/people]
+
+
+Processing PeopleController#edit (for 127.0.0.1 at 2010-06-13 20:45:55) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (2.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mPerson Load (2.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 3) [0m
+Rendering template within layouts/main
+Rendering people/edit
+Rendered people/_form (20.6ms)
+Completed in 89ms (View: 51, DB: 5) | 200 OK [http://rails.jk.com/people/3/edit]
+
+
+Processing HeadLinesController#index (for 127.0.0.1 at 2010-06-13 20:45:59) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mHeadLine Load (16.5ms)[0m   [0mSELECT * FROM "head_lines" [0m
+Rendering template within layouts/main
+Rendering head_lines/index
+  [4;36;1mPerson Load (2.1ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 3) [0m
+Completed in 118ms (View: 78, DB: 20) | 200 OK [http://rails.jk.com/head_lines]
+
+
+Processing HeadLinesController#index (for 127.0.0.1 at 2010-06-13 20:46:05) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mHeadLine Load (1.7ms)[0m   [0mSELECT * FROM "head_lines" [0m
+Rendering template within layouts/main
+Rendering head_lines/index
+  [4;36;1mPerson Load (2.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 3) [0m
+Completed in 168ms (View: 142, DB: 5) | 200 OK [http://rails.jk.com/head_lines]
+
+
+Processing HeadLinesController#index (for 127.0.0.1 at 2010-06-23 20:54:30) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mUser Load (23.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mHeadLine Load (15.4ms)[0m   [0;1mSELECT * FROM "head_lines" [0m
+Rendering template within layouts/main
+Rendering head_lines/index
+  [4;35;1mPerson Load (37.9ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 3) [0m
+Completed in 626ms (View: 325, DB: 39) | 200 OK [http://rails.jk.com/head_lines]
+
+
+Processing HomeController#index (for  at 2010-09-18 17:05:16) [GET]
+
+
+Processing HomeController#index (for  at 2010-09-18 17:05:16) [GET]
+
+
+PGError (FATAL:  password authentication failed for user "rysty"
+FATAL:  password authentication failed for user "rysty"
+):
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:931:in `initialize'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:931:in `connect'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:931:in `connect'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:210:in `initialize'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:121:in `retrieve_connection'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/connection_specification.rb:113:in `connection'
+    /var/lib/gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/rails-2.2.3/lib/fcgi_handler.rb:101:in `process_request'
+    /var/lib/gems/1.8/gems/rails-2.2.3/lib/fcgi_handler.rb:151:in `with_signal_handler'
+    /var/lib/gems/1.8/gems/rails-2.2.3/lib/fcgi_handler.rb:99:in `process_request'
+    /var/lib/gems/1.8/gems/rails-2.2.3/lib/fcgi_handler.rb:76:in `process_each_request'
+    /usr/lib/ruby/1.8/fcgi.rb:606:in `each_cgi'
+    /var/lib/gems/1.8/gems/rails-2.2.3/lib/fcgi_handler.rb:75:in `process_each_request'
+    /var/lib/gems/1.8/gems/rails-2.2.3/lib/fcgi_handler.rb:74:in `catch'
+    /var/lib/gems/1.8/gems/rails-2.2.3/lib/fcgi_handler.rb:74:in `process_each_request'
+    /var/lib/gems/1.8/gems/rails-2.2.3/lib/fcgi_handler.rb:49:in `process!'
+    /var/lib/gems/1.8/gems/rails-2.2.3/lib/fcgi_handler.rb:23:in `process!'
+    ./dispatch.fcgi:24
+
+Rendered /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (25.3ms)
+Rendered /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (1.0ms)
+Rendering /var/lib/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (42.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (46.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100213191737)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (149.6ms)[0m   [0;1mCREATE TABLE "people" ("id" serial primary key, "first_name" character varying(255), "last_name" character varying(255), "birthday" date, "height" integer, "weight" integer, "description" text, "nick_name" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100213191737')[0m
+  [4;36;1mSQL (19.6ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreatePlayers (20100214134101)
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (48.5ms)[0m   [0;1mCREATE TABLE "players" ("id" serial primary key, "number" integer, "stick" character varying(255), "right_handed" boolean, "position" character varying(255), "person_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100214134101')[0m
+  [4;36;1mSQL (23.2ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateTeams (20100216202448)
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (65.2ms)[0m   [0;1mCREATE TABLE "teams" ("id" serial primary key, "name" character varying(255), "founded" date, "club" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100216202448')[0m
+  [4;36;1mSQL (16.7ms)[0m   [0;1mCOMMIT[0m
+Migrating to RemoveRightHandedFromPlayer (20100222161735)
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "players" DROP "right_handed"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100222161735')[0m
+  [4;36;1mSQL (16.4ms)[0m   [0;1mCOMMIT[0m
+Migrating to AddLeftHandedFromPerson (20100222161814)
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "people" ADD COLUMN "left_handed" boolean[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100222161814')[0m
+  [4;36;1mSQL (16.6ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateNews (20100222163341)
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (115.8ms)[0m   [0;1mCREATE TABLE "news" ("id" serial primary key, "posted" date, "title" character varying(255), "content" text, "person_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100222163341')[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mCOMMIT[0m
+Migrating to ChangeNewsToHeadlines (20100224202000)
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "news" RENAME TO "head_lines"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100224202000')[0m
+  [4;36;1mSQL (11.5ms)[0m   [0;1mCOMMIT[0m
+Migrating to AddStuffToTeams (20100228061827)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "teams" RENAME TO "clubs"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "clubs" RENAME COLUMN "club" TO "description"[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mCREATE TABLE "teams" ("id" serial primary key, "short_name" character varying(255), "long_name" character varying(255), "string" character varying(255), "email" character varying(255), "home_town" character varying(255), "stadium_id" integer, "mascot" character varying(255), "description" character varying(255), "club_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228061827')[0m
+  [4;36;1mSQL (22.9ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateTeamsInSeason (20100228111759)
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (124.1ms)[0m   [0;1mCREATE TABLE "teams_in_season" ("id" serial primary key, "picture" character varying(255), "logo" character varying(255), "team_id" integer, "season_id" integer, "contact_information_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228111759')[0m
+  [4;36;1mSQL (18.2ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateTeamsPlayers (20100228114011)
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mCREATE TABLE "teams_players" ("id" serial primary key, "number" integer, "position" character varying(255), "captain" boolean, "assistant_captain" boolean, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228114011')[0m
+  [4;36;1mSQL (23.1ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateSeries (20100228114821)
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (48.6ms)[0m   [0;1mCREATE TABLE "series" ("id" serial primary key, "name" character varying(255), "description" text, "organizer" character varying(255), "type" character varying(255), "teams_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228114821')[0m
+  [4;36;1mSQL (23.2ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateHalls (20100228115330)
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (122.4ms)[0m   [0;1mCREATE TABLE "halls" ("id" serial primary key, "name" character varying(255), "description" text, "number_of_fields" integer, "contact_information_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228115330')[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateEvents (20100228120222)
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (44.7ms)[0m   [0;1mCREATE TABLE "events" ("id" serial primary key, "place" character varying(255), "time" time, "date" date, "description" text, "participants_id" integer, "oraganizer_id" integer, "event_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228120222')[0m
+  [4;36;1mSQL (20.6ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateGames (20100228121154)
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (58.7ms)[0m   [0;1mCREATE TABLE "games" ("id" serial primary key, "first_referee_id" integer, "second_referee_id" integer, "trustee1" character varying(255), "trustee2" character varying(255), "trustee3" character varying(255), "aob" text, "num_of_spectators" integer, "hall_id" integer, "home_team_id" integer, "guest_team_id" integer, "serie_id" integer, "event_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228121154')[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateGoals (20100228122241)
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (29.9ms)[0m   [0;1mCREATE TABLE "goals" ("id" serial primary key, "time" time, "penalty_shot" boolean, "delayed_penalty" boolean, "missed_penalty" boolean, "en" boolean, "pp" boolean, "sh" boolean, "equal" boolean, "scorer_id" integer, "assister_id" integer, "team_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228122241')[0m
+  [4;36;1mSQL (22.4ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreatePenalties (20100228124407)
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (30.3ms)[0m   [0;1mCREATE TABLE "penalties" ("id" serial primary key, "time" time, "reason" integer, "minutes" integer, "end_time" time, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228124407')[0m
+  [4;36;1mSQL (22.6ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreatePlayerStatistics (20100228124731)
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (46.4ms)[0m   [0;1mCREATE TABLE "player_statistics" ("id" serial primary key, "plusminus" integer, "number" integer, "captain" boolean, "assistant_captain" boolean, "goalie" boolean, "game_time" time, "saved_shots" integer, "goals_against" integer, "player_id" integer, "game_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228124731')[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateContactInformations (20100228125643)
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (56.7ms)[0m   [0;1mCREATE TABLE "contact_informations" ("id" serial primary key, "phone_number" character varying(255), "address" character varying(255), "postal_code" character varying(255), "city" character varying(255), "country" character varying(255), "description" text, "email" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228125643')[0m
+  [4;36;1mSQL (31.1ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateUsers (20100228151422)
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (32.1ms)[0m   [0;1mCREATE TABLE "users" ("id" serial primary key, "username" character varying(255), "password" character varying(40), "salt" character varying(40), "person_id" integer, "admin" boolean, "add_edit_delete" boolean, "intranet" boolean, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228151422')[0m
+  [4;36;1mSQL (24.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100213191737)
+Migrating to CreatePlayers (20100214134101)
+Migrating to CreateTeams (20100216202448)
+Migrating to RemoveRightHandedFromPlayer (20100222161735)
+Migrating to AddLeftHandedFromPerson (20100222161814)
+Migrating to CreateNews (20100222163341)
+Migrating to ChangeNewsToHeadlines (20100224202000)
+Migrating to AddStuffToTeams (20100228061827)
+Migrating to CreateTeamsInSeason (20100228111759)
+Migrating to CreateTeamsPlayers (20100228114011)
+Migrating to CreateSeries (20100228114821)
+Migrating to CreateHalls (20100228115330)
+Migrating to CreateEvents (20100228120222)
+Migrating to CreateGames (20100228121154)
+Migrating to CreateGoals (20100228122241)
+Migrating to CreatePenalties (20100228124407)
+Migrating to CreatePlayerStatistics (20100228124731)
+Migrating to CreateContactInformations (20100228125643)
+Migrating to CreateUsers (20100228151422)
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing HomeController#index (for  at 2010-09-26 21:34:45) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+Rendering template within layouts/main
+Rendering home/index
+Completed in 114ms (View: 94, DB: 0) | 200 OK [http://:]

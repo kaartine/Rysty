@@ -1,5 +1,4 @@
-class UsersController < ApplicationController
-  before_filter :login_required, :except => [:login, :show, :process_login]
+class Admin::UsersController < Admin::AdminController
 
   def login
     @user = User.new

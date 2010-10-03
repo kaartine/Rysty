@@ -47,4 +47,6 @@
 <b>Position:</b><%=h c.position %><br />
 </p> 
 <% end %>
+<%= link_to 'Edit Person', edit_person_path(@person) %> |
 <%= link_to 'Back to People', people_path %> |
+<%= link_to 'Manage Players', person_players_path(@person) %>

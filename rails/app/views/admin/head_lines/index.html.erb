@@ -1,0 +1,13 @@
+<% for head_line in @head_lines %>
+  <div class="headline" id="<%= head_line.id %> ">
+    <h1><%= head_line.title %></h1>
+    <h5><%= head_line.days_from_creation %><br />
+    <%=t :by %> <%= Person.find(head_line.person_id).full_name %></h5>
+    <p><%= head_line.content %></p>
+    <%= edit_and_destroy(head_line, 'head_line') %>
+  </div>
+  <hr />
+<% end %>
+
+<%= create_new('head_line') %><br />
+
