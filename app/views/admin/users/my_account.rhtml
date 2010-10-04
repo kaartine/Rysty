@@ -1,0 +1,24 @@
+<!-- app/views/user/my_account.rhtml -->
+<h1>Account Info</h1>
+<br />
+<p>
+ID: <%= session[:id] %>
+<p>Your username is <%= @user.username %></p>
+<p>Your First name is <%= @person.first_name %></p>
+<p>Your Last name is <%= @person.last_name %></p>
+</p>
+<br />
+<%=t :rights %><br />
+<p>
+<% if @user.admin == true %>
+    <%=t :you_are_admin %><br />
+<% end %>
+
+<% if @user.intranet == true %>               
+    <%=t :you_can_access_intranet %><br />
+<% end %>
+
+<% if @user.add_edit_delete == true %>
+    <%=t :you_can_add_edit_delete %><br />
+<% end %>
+</p>
