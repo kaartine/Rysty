@@ -6,8 +6,9 @@
 <% form_for( @user, :url => { :controller => 'users', :action => 'process_login' } ) do |f| %>
     <%= f.label :username %>: <%= f.text_field :username %>
     <%= f.label :password %>: <%= f.password_field :password %>
-    
+    <br />
+    <br />
     <p>
-    <%= f.submit "Login" %>
+    <%= f.submit t "t_login" %>
     </p>
 <% end %>

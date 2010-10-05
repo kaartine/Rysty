@@ -3,7 +3,11 @@
 fi:
   stats: "Tilastot"
   
- # Finnish translations for Ruby on Rails
+  t_login: "Kirjaudu"
+  t_no_permission: "Et ole vielä kirjautunut sisään."
+  
+  
+# Finnish translations for Ruby on Rails
 # by Marko Seppä (marko.seppa@gmail.com)
 #
 # corrected by Petri Kivikangas (pkivik@gmail.com)

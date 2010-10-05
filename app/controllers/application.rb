@@ -36,7 +36,7 @@ protected
   
   def access_denied
     session[:return_to] = request.request_uri
-    flash[:error] = 'Oops. You need to login before you can view that page.'
+    flash[:error] = t('t_no_permission')
     redirect_to :controller => '/users', :action => 'login'
   end
   
