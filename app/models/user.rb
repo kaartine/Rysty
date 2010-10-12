@@ -6,11 +6,10 @@ class User < ActiveRecord::Base
       :if => lambda { |user| user.new_record? or !user.changes['password'].nil? }
   validates_length_of :password, :within => 5..40,
       :if => lambda { |user| user.new_record? or not user.password.blank? }
-  has_one :person
   
   def encrypt_password
     if (self.salt == nil or self.salt.blank? )
-      self.salt = salt_generator(5)
+      self.salt = salt_generator(40)
       self.password = hashed(self.salt.to_s + self.password)
     else
       self.password = hashed(self.salt.to_s + self.password)

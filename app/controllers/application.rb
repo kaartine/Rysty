@@ -3,8 +3,8 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-  
-  layout "main"
+ 
+  layout :choose_layout
   
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :set_user
   
-  before_filter :set_locale   
+  before_filter :set_locale
 
 protected
   def set_user
@@ -49,5 +49,40 @@ protected
       I18n.locale = session[:locale]
     end
   end
+  
+  def choose_layout 
+    logger.debug "halloo"   
+    logger.debug action_name
+    if [ 'admin' ].include? action_name
+      'admin'
+    else
+      'main'
+    end
+  end
+  
+  def set_rights(user)
+    begin
+      Admin.find(user.id)
+      session[:admin] = true
+      return
+    rescue Exception
+      session[:admin] = false
+    end
+    
+    begin
+      ClubAdmin.find(user.id)
+      session[:clubadmin] = true
+    rescue Exception
+      session[:clubadmin] = false
+    end
+
+    begin
+      LeagueAdmin.find(user.id)
+      session[:leagueadmin] = true
+    rescue Exception
+      session[:leagueadmin] = false
+    end   
+  end
+
 
 end

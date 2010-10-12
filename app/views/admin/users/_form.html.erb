@@ -1,7 +1,7 @@
 
  
-<% form_for([@user]) do |f| %>
-    <%= error_messages_for :object => [@person, @user] %>
+<% form_for([:admin, @user], :url => { :action => "create"} ) do |f| %>
+    <%= error_messages_for :object => @user %>
     
     <p>
     <%= f.label :username %><br />
@@ -18,15 +18,21 @@
     <%= f.password_field :password_confirmation %>
     </p>
     
-    <% if session[:admin] == true %>
-        <%= f.label :admin %>
-        <%= f.check_box :admin %><br />
-        <%= f.label :add_edit_delete %>
-        <%= f.check_box :add_edit_delete %><br />
-        <%= f.label :intranet %><br />
-        <%= f.check_box :intranet %><br />
-    <% end %>
-        
+    <p>
+    <%= check_box_tag :admin %>
+    <%= label_tag :admin %><br />
+
+    <%= check_box_tag :league_admin %>
+    <%= label_tag :league_admin %><br />
+
+    <%= check_box_tag :club_admin %>
+    <%= label_tag :club_admin %><br />
+
+    <%= check_box_tag :team_admin %>
+    <%= label_tag :team_admin %><br />
+    </p>
+
+<!--         
     <% fields_for @person do |a| %>
         
         <p>
@@ -64,9 +70,9 @@
         </p>
 
     <% end %>
-
+ -->
 <p>  
-<%= f.submit "Save" %>  
+<%= f.submit t(:t_save) %>  
 </p> 
 
 <% end %> 

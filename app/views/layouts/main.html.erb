@@ -23,7 +23,7 @@
   <div class="clear"></div>
   <div class="grid_2">
 	  <p>
-      <a href="/"><img src="/images/koovee/topleft_logo.jpg" alt="" border="0" width="100" /></a>
+        <%= link_to(image_tag("rysty/topleft_logo.gif", :alt => "Rysty"), '') %>
 	  </p>
   </div>
   <!-- end .grid_1 -->
@@ -32,16 +32,17 @@
   </div>
   <div class="grid_2">
     <p>
-        <%= link_to(image_tag("finland.gif", :alt => t(:fi), :height => '16', :width => '26'), '?locale=fi') %>
-        <%= link_to(image_tag("united_kingdom.gif", :alt => t(:en), :height => '16', :width => '32'), '?locale=en') %>
+      <%= link_to(image_tag("finland.gif", :alt => t(:fi), :height => '16', :width => '26'), '?locale=fi') %>
+      <%= link_to(image_tag("united_kingdom.gif", :alt => t(:en), :height => '16', :width => '32'), '?locale=en') %>
     </p>
   </div>
   <div class="grid_2">
       <% if session[:id] == nil %>
-      <p class="box"><%= link_to t(:user_login), '/login' %></p>
+      <p class="box"><%= link_to t(:t_login), '/login' %></p>
     <% else %>
-      <p class="box"><%=link_to t(:user_my_account), '/my_account' %>
-      <%=link_to t(:user_logout), '/logout' %>
+      <p class="box">
+        <%=link_to t(:t_my_account), '/my_account' %><br />
+        <%=link_to t(:t_logout), '/logout' %>
       </p>
     <% end %>
   </div>
@@ -49,6 +50,7 @@
   <div class="clear"></div>
   <div class="grid_12">
     <ul class="nav main">
+    <!-- 
       <li><%=link_to t(:scores), '#' %>
       <li><%=link_to t(:schedule), '#' %>
         <ul>
@@ -73,28 +75,29 @@
       	  <li><%=link_to t(:teams), '#' %>
         </ul>
       </li>
+       -->
     <% if session[:admin] == true %>
       <li class="secondary"><%=link_to t(:admin), '#' %>
         <ul>
           <li><%=link_to t(:user_add), new_user_path %></li>
-          <li><%=link_to t(:users_list), users_path %></li>
+          <li><%=link_to t(:users_list), admin_users_path %></li>
         </ul>
       </li>
     <% end %>
     </ul>
   </div>
   <div class="clear"></div>
-  <div class="grid_1">
-  a
+  <div class="grid_2">
+  <%= yield :followed_contests %>
   </div>
-  <div class="grid_10">
+  <div class="grid_8">
     <p>
       <%= flash[:notice] %>
 	    <%= yield  %>
 	  </p>
   </div>
-  <div class="grid_1">
-  c
+  <div class="grid_2">
+  <%= yield :league_admin_menu %>
   </div>
   <div class="clear"></div>
   <div class="grid_12">

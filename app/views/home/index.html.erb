@@ -1,2 +1,10 @@
 <%= flash[:message] %><br />
 Welcome
+
+<% content_for :followed_contests do %>
+  <%= list_contests %>
+<% end %>
+
+<% content_for :league_admin_menu do %>
+  <%= league_admin_menu %>
+<% end %>

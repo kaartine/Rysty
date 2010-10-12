@@ -4,10 +4,7 @@
   <tr>
     <th><%=t :username %></th>
     <th><%=t :password %></th>
-    <th><%=t :person_id %></th>
-    <th><%=t :admin %></th>
-    <th><%=t :add_edit_delete %></th>
-    <th><%=t :intranet %></th>
+    <th><%=t :id %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,14 +12,14 @@
     <tr>
     <td><%=h user.username %></td>
     <td><%=h user.password %></td>
-    <td><%=h user.person_id %></td>
-    <td><%=h user.admin %></td>
-    <td><%=h user.add_edit_delete %></td>
-    <td><%=h user.intranet %></td>
+    <td><%=h user.id %></td>
 
+ <!-- 
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+ -->
+    <%= edit_and_destroy_for_table(user, 'admin_user') %>
 
     </tr>
 <% end %>
@@ -30,4 +27,4 @@
 
 <br />
 
-<%= link_to 'New user', new_user_path %>
+<%= link_to t(:t_new_user), new_admin_user_path %>

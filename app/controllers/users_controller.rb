@@ -32,15 +32,8 @@ class UsersController < ApplicationController
     @person = Person.find(@user.person_id)
   end
 
-  def set_rights(user)
-    session[:admin] = user.admin
-    session[:add_edit_delete] = user.add_edit_delete
-    session[:intranet] = user.intranet
-  end
-
   def index
-    @users = User.find(:all)
-
+    @users = User.find(:all)    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }

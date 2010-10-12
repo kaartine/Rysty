@@ -5,7 +5,11 @@ fi:
   
   t_login: "Kirjaudu"
   t_no_permission: "Et ole vielä kirjautunut sisään."
-  
+  t_user: "Käyttäjä"
+  t_login: "Kirjaudu sisään"
+  t_logout: "Kirjaudu ulos"
+  t_my_account: "Omat tiedot"
+  t_was_successfully_created: "luotiin onnistuneesti"
   
 # Finnish translations for Ruby on Rails
 # by Marko Seppä (marko.seppa@gmail.com)
