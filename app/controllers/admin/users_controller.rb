@@ -14,6 +14,7 @@ class Admin::UsersController < Admin::AdminController
 
   def new
     @user = User.new
+    @rights = {:admin => false, :league_admin => false}
 
     respond_to do |format|
       format.html # index.html.erb

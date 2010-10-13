@@ -70,5 +70,13 @@ module ApplicationHelper
       t(:t_no_leagues)
     end
   end
+  
+  def checked_hidden(element, based_on)
+#    if( based_on )
+#      html = "checked = " + based_on.to_s + ", disabled = " + based_on.to_s
+#    else
+      html = element.to_s + ", disabled = " + based_on.to_s
+ #   end
+  end
 
 end
