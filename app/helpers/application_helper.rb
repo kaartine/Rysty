@@ -17,7 +17,7 @@ module ApplicationHelper
     s << "<td>"
     s << link_to(t(:t_edit), eval(edit_command))
     s << "</td><td>"
-    s << link_to (t(:t_destroy), eval(show_command), :confirm => t(:t_are_you_sure), :method => :delete)
+    s << link_to(t(:t_destroy), eval(show_command), :confirm => t(:t_are_you_sure), :method => :delete)
     s << "</td>"
   end
 

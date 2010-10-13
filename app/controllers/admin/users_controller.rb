@@ -1,5 +1,8 @@
 class Admin::UsersController < Admin::AdminController
 
+#  ssl_required :create, :new, :edit, :update
+#  ssl_allowed :index
+
   def index
     @users = User.find(:all)
 
@@ -20,6 +23,9 @@ class Admin::UsersController < Admin::AdminController
 
   def create
     @user = User.new(params[:user])
+    
+    @rights = params[:rights]
+#    @admin = params[:admin]
 
     respond_to do |format|
       if @user.valid?
@@ -27,11 +33,14 @@ class Admin::UsersController < Admin::AdminController
         User.transaction do
           @user.save!
           
-          if params[:admin]
-            @new_admin = Admin.new
-            @new_admin.user_id = @user.id
+          admins.each do |ad|            
+            if params[:admin]
+              @new_admin = ad
+              @new_admin.user_id = @user.id
+              @new_admin.save!
+            end
           end
-
+          
           flash[:notice] = t(:t_user) + " " + t(:t_was_successfully_created)
           format.html { redirect_to(session[:return_to] || '/') }
           format.xml  { render :xml => @user, :status => :created, :location => @user }
@@ -91,7 +100,7 @@ class Admin::UsersController < Admin::AdminController
 
     rescue
       flash[:notice] = 'User ID ' + params[:id].to_s + ' was not found.'
-      redirect_to :controller => '/login'
+      redirect_to :controller => '/admin/users'
     end
 
   end

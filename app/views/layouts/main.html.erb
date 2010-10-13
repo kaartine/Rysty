@@ -11,10 +11,12 @@
 <!--    <%= stylesheet_link_tag 'grid', :media => "all" %>-->
     <%= stylesheet_link_tag 'layout', :media => "all" %>
     <%= stylesheet_link_tag 'nav', :media => "all" %>
+    <%= javascript_include_tag 'jquery' %>
+    '
 <!--    <%= stylesheet_link_tag 'scaffold' %> -->
 </head>
 
-<body>
+<body onload="on_load()">
 <div class="container_12">
   <div class="grid_12">
   <br />

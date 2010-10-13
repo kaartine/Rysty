@@ -9,7 +9,9 @@ fi:
   t_login: "Kirjaudu sisään"
   t_logout: "Kirjaudu ulos"
   t_my_account: "Omat tiedot"
+  t_valid_until: "Voimassa"
   t_was_successfully_created: "luotiin onnistuneesti"
+  t_save: "Tallenna"
   
 # Finnish translations for Ruby on Rails
 # by Marko Seppä (marko.seppa@gmail.com)

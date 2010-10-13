@@ -1,10 +1,22 @@
-
+<script type="text/javascript">
+function on_load() {
+;
+}
+function hides() {
+    if($(this) != 'valid_until'){ 
+        $(this).checked = $("#rights_admin").checked; 
+        }
+//    $(this).disabled = $(based_on).checked;
+//    $(this).html("moi");    
+}
+</script>
  
+
 <% form_for([:admin, @user], :url => { :action => "create"} ) do |f| %>
     <%= error_messages_for :object => @user %>
     
     <p>
-    <%= f.label :username %><br />
+    <%= f.label :username%><br />
     <%= f.text_field :username %>
     </p>
     
@@ -19,17 +31,32 @@
     </p>
     
     <p>
-    <%= check_box_tag :admin %>
-    <%= label_tag :admin %><br />
+    
+    <%= check_box_tag 'rights[admin]', 'true', @rights[:admin], 
+    :onclick => "
+    var $elems = [rights_league_admin, rights_club_admin, rights_team_admin, rights_valid_until_date_1i, rights_valid_until_date_2i, rights_valid_until_date_3i];
+    $.each($elems, function(index, value) { 
+    if(value != 'valid_until'){
+        value.checked = rights_admin.checked;
+        }
+    value.disabled = rights_admin.checked;
+    });" %>
+    <%= label_tag :admin %><br /><br />
 
-    <%= check_box_tag :league_admin %>
-    <%= label_tag :league_admin %><br />
+    <%= check_box_tag 'rights[league_admin]', 'true', @rights[:league_admin] %>
+    <%= label_tag :league_admin %>
 
-    <%= check_box_tag :club_admin %>
-    <%= label_tag :club_admin %><br />
+    <%= check_box_tag 'rights[club_admin]', 'true', @rights[:club_admin] %>
+    <%= label_tag :club_admin %>
 
-    <%= check_box_tag :team_admin %>
-    <%= label_tag :team_admin %><br />
+    <%= check_box_tag 'rights[team_admin]', 'true', @rights[:team_admin] %>
+    <%= label_tag :team_admin %><br /><br />
+    
+    <p>
+    <%= label_tag t(:t_valid_until) %>
+    <%= date_select("rights[valid_until]", "date") %>
+    </p>
+    
     </p>
 
 <!--         
@@ -73,6 +100,7 @@
  -->
 <p>  
 <%= f.submit t(:t_save) %>  
-</p> 
+</p>
 
-<% end %> 
+<% end %>
+
