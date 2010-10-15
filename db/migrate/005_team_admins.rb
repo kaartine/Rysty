@@ -3,7 +3,8 @@ class TeamAdmins < ActiveRecord::Migration
     create_table :team_admins do |t|
       t.belongs_to :user
       t.datetime :valid_until
-
+      t.references :club
+      
       t.timestamps
     end
   

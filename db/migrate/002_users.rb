@@ -16,12 +16,12 @@ class Users < ActiveRecord::Migration
     end
   
     User.create :username => "admin",
-      :password => "e0489cd5c151d95f52ce708a6158bb8c3d05b6fc",
+      :password => 'e0489cd5c151d95f52ce708a6158bb8c3d05b6fc',
       :salt => "1234",
       :contact_info_id => 1
       
     User.create :username => "clubadmin",
-      :password => "e0489cd5c151d95f52ce708a6158bb8c3d05b6fc",
+      :password => 'e0489cd5c151d95f52ce708a6158bb8c3d05b6fc',
       :salt => "1234",
       :contact_info_id => 2
   end

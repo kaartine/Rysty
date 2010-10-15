@@ -27,8 +27,9 @@ function hides(elem, based_on) {
     </p>
     
     <p>
-    
-    <%= check_box_tag 'rights[admin]', 'true', @rights[:admin], :onclick => "
+        
+        
+    <%=check_box_tag 'rights[admin]', 'true', @rights[:admin], :onclick => "
     var $elems = [rights_league_admin, rights_club_admin, rights_team_admin, rights_valid_until_date_1i, rights_valid_until_date_2i, rights_valid_until_date_3i];
     $.each($elems, function(i, v) {hides(v, rights_admin);});" %>
     <%= puts @rights[:league_admin]  

@@ -78,5 +78,9 @@ module ApplicationHelper
       html = element.to_s + ", disabled = " + based_on.to_s
  #   end
   end
+  
+  def show_back_links(model, return_path)
+    link_to(t(:t_show), model) + " | " + link_to(t(:t_back), return_path)
+  end
 
 end

@@ -53,7 +53,7 @@ protected
   end
   
   def choose_layout 
-    logger.debug "halloo"   
+    logger.debug "application.rb debug trace"   
     logger.debug action_name
     if [ 'admin' ].include? action_name
       'admin'
