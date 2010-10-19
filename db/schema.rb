@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(:version => 27) do
     t.datetime "updated_at"
   end
 
-  create_table "event_teams", :force => true do |t|
+  create_table "leagues", :force => true do |t|
     t.integer  "contact_info_id"
     t.string   "name"
     t.string   "short_name",      :limit => 6
@@ -122,7 +122,7 @@ ActiveRecord::Schema.define(:version => 27) do
     t.datetime "updated_at"
   end
 
-  create_table "event_temas", :force => true do |t|
+  create_table "event_teams", :force => true do |t|
     t.integer  "team_id"
     t.integer  "event_id"
     t.datetime "created_at"

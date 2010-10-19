@@ -3,7 +3,7 @@ class Teams < ActiveRecord::Migration
     create_table :teams do |t|
       t.references :contact_info, :club
       t.boolean :public_profile
-      t.string :short_name, :limit => 6
+      t.string :short_name, :limit => 8
       t.string :name
       t.integer :season, :limit => 4 #1900
 

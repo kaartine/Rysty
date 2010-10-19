@@ -3,12 +3,11 @@ class LeagueAdmins < ActiveRecord::Migration
     create_table :league_admins do |t|
       t.belongs_to :user
       t.datetime :valid_until
-      t.references :club
+      t.references :league
 
       t.timestamps
     end
   
-    LeagueAdmin.create :user_id => 2
   end
 
   def self.down

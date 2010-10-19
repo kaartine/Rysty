@@ -12,7 +12,6 @@
     <%= stylesheet_link_tag 'layout', :media => "all" %>
     <%= stylesheet_link_tag 'nav', :media => "all" %>
     <%= javascript_include_tag 'jquery' %>
-    '
 <!--    <%= stylesheet_link_tag 'scaffold' %> -->
 </head>
 
@@ -25,7 +24,7 @@
   <div class="clear"></div>
   <div class="grid_2">
 	  <p>
-        <%= link_to(image_tag("rysty/topleft_logo.gif", :alt => "Rysty"), '') %>
+        <%= link_to(image_tag("rysty/topleft_logo.gif", :alt => "Rysty"), '/') %>
 	  </p>
   </div>
   <!-- end .grid_1 -->
@@ -79,10 +78,10 @@
       </li>
        -->
     <% if session[:admin] == true %>
-      <li class="secondary"><%=link_to t(:admin), '#' %>
+      <li class="secondary"><%=link_to t(:t_admin), '#' %>
         <ul>
-          <li><%=link_to t(:user_add), new_user_path %></li>
-          <li><%=link_to t(:users_list), admin_users_path %></li>
+          <li><%=link_to t(:t_new_user), new_admin_user_path %></li>
+          <li><%=link_to t(:t_users_list), admin_users_path %></li>
         </ul>
       </li>
     <% end %>
@@ -99,7 +98,7 @@
 	  </p>
   </div>
   <div class="grid_2">
-  <%= yield :league_admin_menu %>
+  <%= yield :lt_eague_admin_menu %>
   </div>
   <div class="clear"></div>
   <div class="grid_12">

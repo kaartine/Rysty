@@ -26,7 +26,6 @@ class Admin::UsersController < Admin::AdminController
       @user = User.new(params[:user])
       
       @rights = params[:rights]
-  #    @admin = params[:admin]
   
       respond_to do |format|
         if @user.valid?
@@ -64,7 +63,12 @@ class Admin::UsersController < Admin::AdminController
     end
   
     def edit
+      #begin
       get_userinfo
+      #rescue
+      #  flash[:notice] = t(:t_userid) + ':' + params[:id].to_s + t(:t_was_not_found) + '.'
+      #  redirect_to :controller => '/admin/users'
+      #end
        
       respond_to do |format|
         format.html # show.html.erb
@@ -93,7 +97,13 @@ class Admin::UsersController < Admin::AdminController
     end
   
     def show
+      begin
       get_userinfo
+      rescue
+        flash[:notice] = t(:t_userid) + ':' + params[:id].to_s + t(:t_was_not_found) + '.'
+        redirect_to :controller => '/admin/users'
+      end
+
       
       respond_to do |format|
         format.html # show.html.erb
@@ -105,28 +115,26 @@ class Admin::UsersController < Admin::AdminController
   private
   
   def get_userinfo
-    begin
-      @user = User.find(params[:id])
-      @user.password = ''
-        
-      logger.debug Admin.to_s
-      @rights = Admin.exists?("user_id = 1")
-        
-#      [4;35;1mAdmin Exists (0.0ms)[0m   [0mRuntimeError: ERROR C22P02  Minvalid input syntax for integer: "user_id = 1"  P57 F.\src\backend\utils\adt\numutils.c L64 Rpg_atoi: SELECT "admins".id FROM "admins" WHERE ("admins"."id" = E'user_id = 1') LIMIT 1[0m
-      
-      logger.debug @rights[:admin].to_s
-        # :club_admin => ClubAdmin.find_user_id([params[:id]])}
-    
-    rescue
-      if @user.nil?
-        flash[:notice] = t(:t_userid) + ':' + params[:id].to_s + t(:t_was_not_found) + '.'
-        redirect_to :controller => '/admin/users'
+    @league_id = 0
+    @team_id = 0
+    @club_id = 0
+    @user = User.find(params[:id])
+    @user.password = ''
+         
+    other_admins = {:league_admin => LeagueAdmin, :club_admin => ClubAdmin, :team_admin => TeamAdmin}
+    @rights = {:admin => Admin.exists?(:user_id => params[:id]),
+      :league_admin => {}, 
+      :club_admin => {}, 
+      :team_admin => {}}
+
+    other_admins.each { |key, value|
+      puts key
+      puts value
+      if( value.exists?(:user_id => params[:id]) )
+        @rights[key] = value.find_by_user_id(params[:id])
       else
-        if( @rights.nil? )
-          @rights = {}
-            puts "asdssds"
-        end
+        @rights[key] = {}
       end
-    end
+    }
   end
 end

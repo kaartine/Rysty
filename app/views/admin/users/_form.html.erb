@@ -28,22 +28,26 @@ function hides(elem, based_on) {
     
     <p>
         
-        
-    <%=check_box_tag 'rights[admin]', 'true', @rights[:admin], :onclick => "
-    var $elems = [rights_league_admin, rights_club_admin, rights_team_admin, rights_valid_until_date_1i, rights_valid_until_date_2i, rights_valid_until_date_3i];
-    $.each($elems, function(i, v) {hides(v, rights_admin);});" %>
-    <%= puts @rights[:league_admin]  
-    label_tag :admin %><br /><br />
-
-    <%= check_box_tag 'rights[league_admin]', 'true', (@rights[:admin] ? true : @rights[:league_admin]), :disabled => (@rights[:admin] ? true : false) %>
-    <%= label_tag :league_admin %>
-
-    <%= check_box_tag 'rights[club_admin]', 'true', @rights[:club_admin] %>
-    <%= label_tag :club_admin %>
-
-    <%= check_box_tag 'rights[team_admin]', 'true', @rights[:team_admin] %>
-    <%= label_tag :team_admin %><br /><br />
     
+    <%=check_box_tag 'rights[admin]', 'true', @rights[:admin], :onclick => "
+    var $elems = [leagues, clubs, teams, rights_valid_until_date_1i, rights_valid_until_date_2i, rights_valid_until_date_3i];
+    $.each($elems, function(i, v) {hides(v, rights_admin);});" %>
+    <%= label_tag :admin %><br /><br />
+
+    <%= label_tag :league_admin %>:
+    <%= select_tag("leagues", options_from_collection_for_select(League.all(:order => "id ASC"), :id, :name, @rights[:league_admin][:league_id])) %>
+    lisää liiga<br />
+
+    <%= label_tag :club_admin %>
+    <%= select_tag("clubs", options_from_collection_for_select(Club.all(:order => "id ASC"), :id, :name, @rights[:club_admin][:club_id])) %>
+    lisää clubi<br />
+      
+    <%= label_tag :team_admin %>
+    <%= select_tag("teams", options_from_collection_for_select(Team.all(:order => "id ASC"), :id, :name, @rights[:club_admin][:club_id])) %>
+    lisää joukkue<br />
+    
+    <br /><br />
+  
     <p>
     <%= label_tag t(:t_valid_until) %>
     <%= date_select("rights[valid_until]", "date") %>

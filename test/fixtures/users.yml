@@ -1,11 +1,30 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 admin:
+   id: 1
    username: admin
-   password: admin
-   admin: true
+   password: "e0489cd5c151d95f52ce708a6158bb8c3d05b6fc"
+   salt: 1234
+   contact_info_id: 1
 #
-editor:
-   username: editor
-   password: editor
-   add_edit_delete: true
+leaguead:
+   id: 2
+   username: leagueadmin
+   password: "e0489cd5c151d95f52ce708a6158bb8c3d05b6fc"
+   salt: 1234
+   contact_info_id: 2
+   
+clubad:
+   id: 3
+   username: clubadmin
+   password: "e0489cd5c151d95f52ce708a6158bb8c3d05b6fc"
+   salt: 1234
+   contact_info_id: 3
+   
+   
+teamad:
+   id: 4
+   username: teamadmin
+   password: "e0489cd5c151d95f52ce708a6158bb8c3d05b6fc"
+   salt: 1234
+   contact_info_id: 4

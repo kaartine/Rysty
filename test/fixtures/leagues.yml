@@ -2,15 +2,12 @@
 
 one:
    id: 1
-   name: 
-   short_name: 
    
 two:
    id: 2
-   name: KooVee
-   short_name: KooVee
-
+   name: miesten SM-sarja
+   short_name: SM-1
 three:
    id: 3
-   name: Classic
-   short_name: Classic
+   name: Miesten II divari
+   short_name: MIIdiv
