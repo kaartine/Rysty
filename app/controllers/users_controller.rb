@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   end
 
   def process_login
-    flash[:error] = 'Invalid loginsss.'
     if user = User.authenticate(params[:user])
       session[:id] = user.id # Remember the user's id during this session
       set_rights(user)
@@ -33,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.find(:all)    
+    @users = User.all
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }

@@ -4,6 +4,7 @@ admin:
    id: 1
    username: admin
    password: "e0489cd5c151d95f52ce708a6158bb8c3d05b6fc"
+   date_of_birth: 1980-06-18
    salt: 1234
    contact_info_id: 1
 #
@@ -11,6 +12,7 @@ leaguead:
    id: 2
    username: leagueadmin
    password: "e0489cd5c151d95f52ce708a6158bb8c3d05b6fc"
+   date_of_birth: 1986-08-01
    salt: 1234
    contact_info_id: 2
    
@@ -18,6 +20,7 @@ clubad:
    id: 3
    username: clubadmin
    password: "e0489cd5c151d95f52ce708a6158bb8c3d05b6fc"
+   date_of_birth: 1977-07-10
    salt: 1234
    contact_info_id: 3
    
@@ -26,5 +29,6 @@ teamad:
    id: 4
    username: teamadmin
    password: "e0489cd5c151d95f52ce708a6158bb8c3d05b6fc"
+   date_of_birth: 1950-01-11
    salt: 1234
    contact_info_id: 4

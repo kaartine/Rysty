@@ -22,12 +22,13 @@ ActiveRecord::Schema.define(:version => 27) do
     t.datetime "valid_until"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "club_id"
   end
 
   create_table "clubs", :force => true do |t|
     t.integer  "contact_info_id"
     t.string   "name"
-    t.string   "short_name",      :limit => 6
+    t.string   "short_name",      :limit => 8
     t.integer  "starp_year"
     t.string   "logo_url"
     t.datetime "created_at"
@@ -114,14 +115,6 @@ ActiveRecord::Schema.define(:version => 27) do
     t.datetime "updated_at"
   end
 
-  create_table "leagues", :force => true do |t|
-    t.integer  "contact_info_id"
-    t.string   "name"
-    t.string   "short_name",      :limit => 6
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "event_teams", :force => true do |t|
     t.integer  "team_id"
     t.integer  "event_id"
@@ -192,6 +185,15 @@ ActiveRecord::Schema.define(:version => 27) do
     t.datetime "valid_until"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "league_id"
+  end
+
+  create_table "leagues", :force => true do |t|
+    t.integer  "contact_info_id"
+    t.string   "name"
+    t.string   "short_name",      :limit => 8
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "participants", :force => true do |t|
@@ -209,6 +211,7 @@ ActiveRecord::Schema.define(:version => 27) do
     t.datetime "valid_until"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "team_id"
   end
 
   create_table "team_member_photos", :force => true do |t|
@@ -233,7 +236,7 @@ ActiveRecord::Schema.define(:version => 27) do
     t.integer  "contact_info_id"
     t.integer  "club_id"
     t.boolean  "public_profile"
-    t.string   "short_name",      :limit => 6
+    t.string   "short_name",      :limit => 8
     t.string   "name"
     t.integer  "season"
     t.datetime "created_at"
