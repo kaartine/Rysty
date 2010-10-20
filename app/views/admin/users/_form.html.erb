@@ -1,14 +1,13 @@
 <script type="text/javascript">
-function hides(elem, based_on) {	
+function hides(elem, based_on) {  
     if(elem != 'valid_until'){
       elem.checked = based_on.checked;
       }
     elem.disabled = based_on.checked;
   }
-
 </script>
 
-<% form_for([:admin, @user], :url => { :action => "create"} ) do |f| %>
+<% form_for([:admin, @user]) do |f| %>
     <%= error_messages_for :object => @user %>
     
     <p>
@@ -35,22 +34,25 @@ function hides(elem, based_on) {
     <%= label_tag :admin %><br /><br />
 
     <%= label_tag :league_admin %>:
-    <%= select_tag("leagues", options_from_collection_for_select(League.all(:order => "id ASC"), :id, :name, @rights[:league_admin][:league_id])) %>
+    <%= select_tag("leagues", options_from_collection_for_select(League.all(:order => "id ASC"), :id, :name, @rights[:league_admin][:league_id]),
+      options = {:disabled => @rights[:admin]}) %>
     lisää liiga<br />
 
     <%= label_tag :club_admin %>
-    <%= select_tag("clubs", options_from_collection_for_select(Club.all(:order => "id ASC"), :id, :name, @rights[:club_admin][:club_id])) %>
+    <%= select_tag("clubs", options_from_collection_for_select(Club.all(:order => "id ASC"), :id, :name, @rights[:club_admin][:club_id]),
+      options = {:disabled => @rights[:admin]}) %>
     lisää clubi<br />
       
     <%= label_tag :team_admin %>
-    <%= select_tag("teams", options_from_collection_for_select(Team.all(:order => "id ASC"), :id, :name, @rights[:club_admin][:club_id])) %>
+    <%= select_tag("teams", options_from_collection_for_select(Team.all(:order => "id ASC"), :id, :name, @rights[:team_admin][:team_id]), 
+      options = {:disabled => @rights[:admin]}) %>
     lisää joukkue<br />
     
     <br /><br />
   
     <p>
     <%= label_tag t(:t_valid_until) %>
-    <%= date_select("rights[valid_until]", "date") %>
+    <%= date_select("rights[valid_until]", "date", options = {:disabled => @rights[:admin]}) %>
     </p>
     
     </p>
@@ -99,4 +101,5 @@ function hides(elem, based_on) {
 </p>
 
 <% end %>
+
 

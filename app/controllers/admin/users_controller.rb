@@ -33,7 +33,7 @@ class Admin::UsersController < Admin::AdminController
           User.transaction do
             @user.save!
             
-            admins.each do |ad|            
+            @rights.each do |ad|            
               if params[:admin]
                 @new_admin = ad
                 @new_admin.user_id = @user.id
@@ -42,7 +42,7 @@ class Admin::UsersController < Admin::AdminController
             end
             
             flash[:notice] = t(:t_user) + " " + t(:t_was_successfully_created)
-            format.html { redirect_to(session[:return_to] || '/') }
+            format.html { redirect_to(admin_users_url) }
             format.xml  { render :xml => @user, :status => :created, :location => @user }
           end
         else
@@ -63,12 +63,7 @@ class Admin::UsersController < Admin::AdminController
     end
   
     def edit
-      #begin
       get_userinfo
-      #rescue
-      #  flash[:notice] = t(:t_userid) + ':' + params[:id].to_s + t(:t_was_not_found) + '.'
-      #  redirect_to :controller => '/admin/users'
-      #end
        
       respond_to do |format|
         format.html # show.html.erb
@@ -78,6 +73,7 @@ class Admin::UsersController < Admin::AdminController
     end
   
     def update
+      puts "upd"
       get_userinfo
   
       if params[:user][:password].blank?
@@ -85,9 +81,10 @@ class Admin::UsersController < Admin::AdminController
       end
   
       respond_to do |format|
-        if @person.update_attributes(params[:person]) & @user.update_attributes(params[:user])
-          flash[:notice] = 'User was successfully updated.' + params[:user].to_s + ' ' + @user.password
-          format.html { redirect_to(@user) }
+        puts "update"
+        if @user.update_attributes(params[:user])
+          flash[:notice] = t(:t_user) + " " + t(:t_was_successfully_updated) + params[:user].to_s + ' ' + @user.password
+          format.html { redirect_to([:admin, @user]) }
           format.xml  { head :ok }
         else
           format.html { render :action => "edit" }
@@ -101,7 +98,7 @@ class Admin::UsersController < Admin::AdminController
       get_userinfo
       rescue
         flash[:notice] = t(:t_userid) + ':' + params[:id].to_s + t(:t_was_not_found) + '.'
-        redirect_to :controller => '/admin/users'
+        redirect_to([:admin, @user]) 
       end
 
       
@@ -128,8 +125,6 @@ class Admin::UsersController < Admin::AdminController
       :team_admin => {}}
 
     other_admins.each { |key, value|
-      puts key
-      puts value
       if( value.exists?(:user_id => params[:id]) )
         @rights[key] = value.find_by_user_id(params[:id])
       else
