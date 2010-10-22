@@ -119,7 +119,7 @@ class Admin::UsersController < Admin::AdminController
     @user.password = ''
          
     other_admins = {:league_admin => LeagueAdmin, :club_admin => ClubAdmin, :team_admin => TeamAdmin}
-    @rights = {:admin => Admin.exists?(:user_id => params[:id]),
+    @rights = {
       :league_admin => {}, 
       :club_admin => {}, 
       :team_admin => {}}

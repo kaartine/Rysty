@@ -63,27 +63,11 @@ protected
   end
   
   def set_rights(user)
-    begin
-      Admin.find(user.id)
-      session[:admin] = true
-      return
-    rescue Exception
-      session[:admin] = false
-    end
+      session[:admin] = User.find(user.id).admin
     
-    begin
-      ClubAdmin.find(user.id)
-      session[:clubadmin] = true
-    rescue Exception
-      session[:clubadmin] = false
-    end
-
-    begin
-      LeagueAdmin.find(user.id)
-      session[:leagueadmin] = true
-    rescue Exception
-      session[:leagueadmin] = false
-    end   
+      session[:clubadmin] = ClubAdmin.exists?(user.id)
+      session[:leagueadmin] = LeagueAdmin.exists?(user.id)
+      session[:teamadmin] = TeamAdmin.exists?(user.id)
   end
 
 

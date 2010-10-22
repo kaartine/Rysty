@@ -83,9 +83,9 @@ ActiveRecord::Schema.define(:version => 27) do
     t.text     "description"
     t.boolean  "public_profile",              :default => true
     t.integer  "season"
-    t.integer  "climing"
+    t.integer  "climing_line"
     t.integer  "play_off_line"
-    t.integer  "demotion"
+    t.integer  "demotion_line"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

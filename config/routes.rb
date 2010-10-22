@@ -1,9 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :people, :has_many => :players
-  map.resources :head_lines, :has_one => :person
-  map.resources :clubs, :has_many => :teams
-  map.resources :teams, :has_one => :club
+  map.resources :followed_contests, :has_one => :user
   
+  map.resources :contests
   map.resources :users, :has_one => :person
   
   map.connect 'my_account', :controller => 'users', :action => 'my_account'
@@ -39,6 +37,7 @@ ActionController::Routing::Routes.draw do |map|
      map.namespace :admin do |admin|
        # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
        admin.resources :clubs
+       admin.resources :contests
        admin.resources :users
      end
 

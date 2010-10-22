@@ -68,7 +68,7 @@ module ApplicationHelper
       end
       s << "</ul>s"
     rescue Exception       
-      t :t_no_teams_to_follow
+      t :t_no_contests_to_follow
     end
   end
 
