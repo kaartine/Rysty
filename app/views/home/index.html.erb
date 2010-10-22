@@ -3,6 +3,9 @@ Welcome
 
 <% content_for :followed_contests do %>
   <%= list_contests %>
+  <br />
+  <br />
+  <%= link_to( t(:t_add_contest_to_list), new_followed_contest_path )%>
 <% end %>
 
 <% content_for :league_admin_menu do %>

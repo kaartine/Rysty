@@ -75,7 +75,7 @@ protected
   end
   
   def set_rights(user)
-      session[:admin] = Admin.exists?(user.id)
+      session[:admin] = User.find(user.id).admin
       session[:clubadmin] = ClubAdmin.exists?(user.id)
       session[:leagueadmin] = LeagueAdmin.exists?(user.id)
       puts session

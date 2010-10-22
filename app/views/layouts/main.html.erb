@@ -60,13 +60,15 @@
 	        <li><%=link_to t(:by_season), '#' %>
         </ul>
       <li><%=link_to t(:standings), '#' %>
-  	  <li><%=link_to t(:clubs), admin_clubs_path %></li>
-      
+  	  <li><%=link_to t(:clubs), '#' %></li>
+      <li><%=link_to t(:players), '#' %></li>
+      <li><%=link_to t(:teams), '#' %></li>
       <li><%=link_to t(:gallery), '#' %>      
         <ul>
           <li><%=link_to t(:videos), '#' %>
           <li><%=link_to t(:photos), '#' %>
         </ul>
+      <li><%=link_to t(:news), '#' %></li>
       <li><%=link_to t(:stats), '#' %>
       	<ul>
       	  <li><%=link_to t(:league_leaders), '#' %>
@@ -78,6 +80,7 @@
     <% if session[:admin] == true %>
       <li class="secondary"><%=link_to t(:t_admin), '#' %>
         <ul>
+          <li><%=link_to t(:t_new_contest), new_admin_contest_path %></li>
           <li><%=link_to t(:t_new_user), new_admin_user_path %></li>
           <li><%=link_to t(:t_users_list), admin_users_path %></li>
         </ul>

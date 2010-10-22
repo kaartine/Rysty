@@ -3,8 +3,7 @@ class Admin::AdminController < ApplicationController
   before_filter :admin_login_required
   
   def admin_login_required
-    #login_required(is_admin)
-    login_required
+    login_required(is_admin)
   end
  
 end

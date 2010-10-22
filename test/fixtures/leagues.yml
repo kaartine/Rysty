@@ -2,12 +2,10 @@
 
 one:
    id: 1
+   name: salibandy liitto
+   short_name: sabal
    
 two:
    id: 2
-   name: miesten SM-sarja
-   short_name: SM-1
-three:
-   id: 3
-   name: Miesten II divari
-   short_name: MIIdiv
+   name: ruostin säbä
+   short_name: ruotsis
