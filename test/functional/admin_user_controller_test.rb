@@ -3,19 +3,18 @@ require 'test_helper'
 class Admin::UsersControllerTest < ActionController::TestCase
   fixtures :users
   
-  test "should go to login page" do
+  test "go to login page" do
     get :index
-    assert_response (:redirect)
-    assert_nil assigns(:users)
+    assert_response (:redirect, "need to login first")
+    assert_nil assigns(:users, "list of users was returned even though we were not logged in")
   end   
 
-  test "should return users" do
+  test "return users" do
     get :index
-    assert_response (:redirect)
     login_as(:admin)
     get :index
-    assert_response (:success)
-    assert_not_nil assigns(:users)
+    assert_response (:success, "login was not success")
+    assert_not_nil assigns(:users, "no users were returned")
   end
   
 #  module AuthenticatedTestHelper

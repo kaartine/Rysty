@@ -11,7 +11,8 @@ class Users < ActiveRecord::Migration
       t.string :password, :limit => 50
       t.string :salt, :limit => 50
       t.references :contact_info
-
+      t.boolean :admin => false
+      
       t.timestamps
     end
   

@@ -4,6 +4,7 @@ class Admin::UsersController < Admin::AdminController
 #  ssl_allowed :index
 
     def index
+      puts "asdsad"
       @users = User.find(:all)
   
       respond_to do |format|
@@ -14,7 +15,8 @@ class Admin::UsersController < Admin::AdminController
   
     def new
       @user = User.new
-      @rights = {:admin => false, :league_admin => false}
+      
+      set_rights_data
   
       respond_to do |format|
         format.html # index.html.erb
@@ -33,12 +35,15 @@ class Admin::UsersController < Admin::AdminController
           User.transaction do
             @user.save!
             
-            @rights.each do |ad|            
-              if params[:admin]
-                @new_admin = ad
-                @new_admin.user_id = @user.id
-                @new_admin.save!
-              end
+            @rights.each do |key, value|
+              puts "rights"
+              puts key.to_s
+#             if value
+#                @new_admin = @other_admins[:value].new
+#                @new_admin.user_id = @user.id
+#                @new_admin.add_reference(params[:key])
+#                @new_admin.save!
+#              end
             end
             
             flash[:notice] = t(:t_user) + " " + t(:t_was_successfully_created)
@@ -117,19 +122,24 @@ class Admin::UsersController < Admin::AdminController
     @club_id = 0
     @user = User.find(params[:id])
     @user.password = ''
-         
-    other_admins = {:league_admin => LeagueAdmin, :club_admin => ClubAdmin, :team_admin => TeamAdmin}
-    @rights = {:admin => Admin.exists?(:user_id => params[:id]),
-      :league_admin => {}, 
-      :club_admin => {}, 
-      :team_admin => {}}
+    
+    set_rights_data
+  end
+  
+  def set_rights_data
+    @rights = {
+      :league_admin => {},
+        :club_admin => {},
+        :team_admin => {}}
 
-    other_admins.each { |key, value|
-      if( value.exists?(:user_id => params[:id]) )
+    @@other_admins.each do |key, value|
+      if value.exists?( :user_id => params[:id] )
         @rights[key] = value.find_by_user_id(params[:id])
       else
-        @rights[key] = {}
+        @rights[key] = ""
       end
-    }
+    end
   end
+  
+  @@other_admins = {:league_admin => LeagueAdmin, :club_admin => ClubAdmin, :team_admin => TeamAdmin}
 end

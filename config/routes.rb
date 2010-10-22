@@ -1,10 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :people, :has_many => :players
-  map.resources :head_lines, :has_one => :person
-  map.resources :clubs, :has_many => :teams
-  map.resources :teams, :has_one => :club
+#  map.resources :people, :has_many => :players
+#  map.resources :head_lines, :has_one => :person
+#  map.resources :clubs, :has_many => :teams
+#  map.resources :teams, :has_one => :club
   
-  map.resources :users, :has_one => :person
+  #map.resources :users, :has_one => :contact_info
   
   map.connect 'my_account', :controller => 'users', :action => 'my_account'
   map.connect 'login', :controller => 'users', :action => 'login'

@@ -7,6 +7,7 @@ admin:
    date_of_birth: 1980-06-18
    salt: 1234
    contact_info_id: 1
+   admin: true
 #
 leaguead:
    id: 2
