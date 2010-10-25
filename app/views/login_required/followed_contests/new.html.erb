@@ -1,0 +1,14 @@
+<br /><br />
+<%= flash[:error] %>
+<% if Contest.count %>
+  <% semantic_form_for [:login_required, @followed_contest] do |f| %>
+    <% f.inputs do %>
+      <%= f.input :contest %>
+    <% end %>
+    <%= f.buttons %>
+  <% end %>
+<% else %>
+<%= t(:t_no_contests_to_add) %>
+<br /><br />
+<%= link_to t(:t_back), '/' %>
+<% end %>

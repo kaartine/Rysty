@@ -1,0 +1,28 @@
+<% semantic_form_for [:admin, @contest] do |f| %>
+  <% f.inputs do %>
+    <%= f.input :league %>
+    <%= f.input :name %>
+    <%= f.input :short_name %>
+    <%= f.input :description %>
+    <%= f.input :public_profile %>
+    <%= f.input :season %>
+    <%= f.input :climing_line %>
+    <%= f.input :play_off_line %>
+    <%= f.input :demotion_line %>
+  <% end %>
+  <%= f.buttons %>
+<% end %>
+
+t.references :league
+t.string :name
+t.string :short_name, :limit => 6
+t.text :description
+t.boolean :public_profile, :default => true
+t.integer :season, :limit => 4
+t.integer :climing_line # for drawing place how many will be advancing
+t.integer :play_off_line # how many are going to play offs
+t.integer :demotion_line  # for drawing place how many will be dropping
+
+
+<br /><br />
+<%= link_to t(:t_back), '/' %>

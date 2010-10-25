@@ -3,7 +3,7 @@ class Contests < ActiveRecord::Migration
     create_table :contests do |t|
       t.references :league
       t.string :name
-      t.string :short_name, :limit => 6
+      t.string :short_name, :limit => 8
       t.text :description
       t.boolean :public_profile, :default => true
       t.integer :season, :limit => 4

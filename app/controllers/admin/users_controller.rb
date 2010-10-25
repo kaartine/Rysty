@@ -4,7 +4,6 @@ class Admin::UsersController < Admin::AdminController
 #  ssl_allowed :index
 
     def index
-      puts "asdsad"
       @users = User.find(:all)
   
       respond_to do |format|
@@ -34,18 +33,7 @@ class Admin::UsersController < Admin::AdminController
   
           User.transaction do
             @user.save!
-            
-            @rights.each do |key, value|
-              puts "rights"
-              puts key.to_s
-#             if value
-#                @new_admin = @other_admins[:value].new
-#                @new_admin.user_id = @user.id
-#                @new_admin.add_reference(params[:key])
-#                @new_admin.save!
-#              end
-            end
-            
+                        
             flash[:notice] = t(:t_user) + " " + t(:t_was_successfully_created)
             format.html { redirect_to(admin_users_url) }
             format.xml  { render :xml => @user, :status => :created, :location => @user }
@@ -78,7 +66,6 @@ class Admin::UsersController < Admin::AdminController
     end
   
     def update
-      puts "upd"
       get_userinfo
   
       if params[:user][:password].blank?
@@ -86,7 +73,6 @@ class Admin::UsersController < Admin::AdminController
       end
   
       respond_to do |format|
-        puts "update"
         if @user.update_attributes(params[:user])
           flash[:notice] = t(:t_user) + " " + t(:t_was_successfully_updated) + params[:user].to_s + ' ' + @user.password
           format.html { redirect_to([:admin, @user]) }

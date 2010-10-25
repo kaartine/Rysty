@@ -33,3 +33,18 @@ teamad:
    date_of_birth: 1950-01-11
    salt: 1234
    contact_info_id: 4
+   
+user1:
+   id: 5
+   username: user1
+   password: "e0489cd5c151d95f52ce708a6158bb8c3d05b6fc"
+   date_of_birth: 1950-01-11
+   salt: 1234
+
+user2:
+   id: 6
+   username: user2
+   password: "e0489cd5c151d95f52ce708a6158bb8c3d05b6fc"
+   date_of_birth: 1950-01-11
+   salt: 1234
+   

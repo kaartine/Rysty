@@ -58,20 +58,25 @@ module ApplicationHelper
   end
 
   def list_contests
-    begin
-      contests = FollowedContest.find(session[:id])
-      s = "<ul>dds"
-      contests.each do |contest|
+    if FollowedContest.exists?(:user_id => session[:id])
+      
+      contests = FollowedContest.find(:all, :conditions => ["user_id = ?", session[:id]])
+        
+      s = "<ul>"
+      for contest in contests
         s << "<li>" 
-        s << contest
+        s << link_to( Contest.find(contest.contest_id).short_name, '/contests/' + contest.contest_id.to_s)
         s << "</li>"
       end
-      s << "</ul>s"
-    rescue Exception       
+      s << "</ul>"
+    else       
       t :t_no_contests_to_follow
     end
   end
 
+  def is_logged_in
+    !session[:id].nil?
+  end
   def is_admin
     session[:admin]
   end

@@ -2,7 +2,8 @@
 
 one:
   id: 1
-  
+  name: Salibandy Seura Viikingit
+  short_name: SSV
 two:
   id: 2
   name: KooVee miehet II
@@ -12,3 +13,8 @@ three:
   id: 3
   name: Classic II
   short_name: Classic
+  
+four:
+  id: 4
+  name: HIFK
+  short_name: IFK
