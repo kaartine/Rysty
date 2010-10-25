@@ -1,0 +1,35 @@
+one:
+    home_team_id: 1
+    guest_team_id: 2
+    winner_id: 1
+    draw: false
+    contest_id: 1
+
+two:
+    home_team_id: 2 
+    guest_team_id: 1
+    winner_id: 1
+    draw: false
+    contest_id: 1
+    
+three:
+    home_team_id: 1 
+    guest_team_id: 2
+    winner_id: NULL
+    draw: true
+    contest_id: 1
+    
+four:
+    home_team_id: 1 
+    guest_team_id: 3
+    winner_id: 3
+    draw: false
+    contest_id: 1
+    
+five:
+    home_team_id: 3 
+    guest_team_id: 2
+    winner_id: NULL
+    draw: true
+    contest_id: 1
+    
