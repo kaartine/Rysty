@@ -4,6 +4,7 @@ class Games < ActiveRecord::Migration
       t.references :home_team, :class_name => "Team"
       t.references :guest_team, :class_name => "Team"
       t.references :winner, :class_name => "Team"
+      t.boolean :draw
       t.references :contest
 
       t.timestamps
