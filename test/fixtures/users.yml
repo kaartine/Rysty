@@ -1,11 +1,12 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 admin:
+   first_name: Jukka
    username: admin
-   password: admin
-   admin: true
+   password: e0489cd5c151d95f52ce708a6158bb8c3d05b6fc
+   salt: 1234
 #
-editor:
+clubadmin:
    username: editor
-   password: editor
-   add_edit_delete: true
+   password: e0489cd5c151d95f52ce708a6158bb8c3d05b6fc
+   salt: 1234
