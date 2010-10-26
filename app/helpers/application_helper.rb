@@ -64,10 +64,19 @@ module ApplicationHelper
   def list_contests
     if FollowedContest.exists?(:user_id => session[:id])
       
-      f_contests = FollowedContest.find(:all, :conditions => ["user_id = ?", session[:id]], :include => :contest, :order => "contests.short_name ASC")
+      f_contests = FollowedContest.find(:all, :conditions => ["user_id = ?", session[:id]], :include => :contest, :order => "contests.season DESC, contests.short_name ASC")
       
-      s = "<ul>"
+      s = ""
+      last_season = 0
       for p in f_contests
+        if p.contest.season != last_season
+          if last_season != 0 
+            s << "</ul>"
+          end
+          s << "<ul>"
+          s << p.contest.season.to_s
+        end
+        last_season = p.contest.season
         s << "<li>" 
         s << link_to( p.contest.short_name, '/contests/' + p.contest_id.to_s)
         s << ' ' + destroy_link(p, 'login_required_followed_contest', true)

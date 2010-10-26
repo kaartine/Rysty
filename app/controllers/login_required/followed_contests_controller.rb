@@ -3,6 +3,9 @@ class LoginRequired::FollowedContestsController < LoginRequired::LoginRequiredCo
   def new
     @followed_contest = FollowedContest.new 
     
+    if @season.nil?
+      @season = APP_CONFIG['current_season']
+    end
   end
   
   def show

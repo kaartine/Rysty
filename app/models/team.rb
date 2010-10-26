@@ -9,7 +9,7 @@ class Team < ActiveRecord::Base
     @wins = Game.all(:conditions => ['contest_id = ? AND winner_id = ?', contest, id]).count
     @draws = Game.all(:conditions => ['contest_id = ? AND (home_team_id = ? OR guest_team_id = ?) AND draw = TRUE', contest, id, id]).count
     @points = wins * APP_CONFIG['points_from_win'] + draws * APP_CONFIG['points_from_draw']
-    @losts = @games - @wins - @draws 
+    @losts = @games - @wins - @draws
     @goals_for = 0
     @goals_against = 0
     

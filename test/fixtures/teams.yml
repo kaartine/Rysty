@@ -4,17 +4,22 @@ one:
   id: 1
   name: Salibandy Seura Viikingit
   short_name: SSV
+  season: 2010
+  
 two:
   id: 2
   name: KooVee miehet II
   short_name: KV II
+  season: 2010
 
 three:
   id: 3
   name: Classic II
   short_name: Classic
+  season: 2010
   
 four:
   id: 4
   name: HIFK
   short_name: IFK
+  season: 2010
