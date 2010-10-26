@@ -1,15 +1,6 @@
 <%= flash[:message] %><br />
 Welcome
 
-<% content_for :followed_contests do %>
-  <% if is_logged_in %>
-    <%= list_contests %>
-    <br />
-    <br />
-    <%= link_to( t(:t_add_contest_to_list), new_login_required_followed_contest_path )%>
-  <% end %>
-<% end %>
-
 <% content_for :league_admin_menu do %>
   <%= league_admin_menu %>
 <% end %>

@@ -11,25 +11,19 @@
 
 ActiveRecord::Schema.define(:version => 27) do
 
-  create_table "admins", :force => true do |t|
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "club_admins", :force => true do |t|
     t.integer  "user_id"
     t.datetime "valid_until"
+    t.integer  "club_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "club_id"
   end
 
   create_table "clubs", :force => true do |t|
     t.integer  "contact_info_id"
     t.string   "name"
     t.string   "short_name",      :limit => 8
-    t.integer  "starp_year"
+    t.integer  "founded_in_year"
     t.string   "logo_url"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -79,7 +73,7 @@ ActiveRecord::Schema.define(:version => 27) do
   create_table "contests", :force => true do |t|
     t.integer  "league_id"
     t.string   "name"
-    t.string   "short_name",     :limit => 6
+    t.string   "short_name",     :limit => 8
     t.text     "description"
     t.boolean  "public_profile",              :default => true
     t.integer  "season"
@@ -146,6 +140,8 @@ ActiveRecord::Schema.define(:version => 27) do
     t.datetime "updated_at"
   end
 
+  add_index "followed_contests", ["contest_id", "user_id"], :name => "index_followed_contests_on_user_id_and_contest_id", :unique => true
+
   create_table "game_photos", :force => true do |t|
     t.integer  "game_id"
     t.integer  "user_id"
@@ -175,7 +171,13 @@ ActiveRecord::Schema.define(:version => 27) do
   create_table "games", :force => true do |t|
     t.integer  "home_team_id"
     t.integer  "guest_team_id"
+    t.integer  "winner_id"
+    t.boolean  "draw"
     t.integer  "contest_id"
+    t.integer  "event_id"
+    t.integer  "home_goals"
+    t.integer  "guest_goals"
+    t.integer  "spectators"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -183,9 +185,9 @@ ActiveRecord::Schema.define(:version => 27) do
   create_table "league_admins", :force => true do |t|
     t.integer  "user_id"
     t.datetime "valid_until"
+    t.integer  "league_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "league_id"
   end
 
   create_table "leagues", :force => true do |t|
@@ -209,9 +211,9 @@ ActiveRecord::Schema.define(:version => 27) do
   create_table "team_admins", :force => true do |t|
     t.integer  "user_id"
     t.datetime "valid_until"
+    t.integer  "team_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "team_id"
   end
 
   create_table "team_member_photos", :force => true do |t|
@@ -251,9 +253,10 @@ ActiveRecord::Schema.define(:version => 27) do
     t.integer  "weight"
     t.string   "username"
     t.boolean  "public_profile",                :default => false
-    t.string   "password",        :limit => 40
-    t.string   "salt",            :limit => 40
+    t.string   "password",        :limit => 50
+    t.string   "salt",            :limit => 50
     t.integer  "contact_info_id"
+    t.boolean  "admin",                         :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -3,15 +3,23 @@
 fi:
   stats: "Tilastot"
   
+  t_add: "Lisää"
+  t_add_contest_to_list: "Seuraa uutta sarjaa"
   t_admin: "Ylläpito"
+  t_are_you_sure: "Haluat varmasti poistaa tämän?"
   t_back: "Takaisin"
+  t_contest: "Sarja"
   t_edit: "Muokkaa"
+  t_followed_contest: "Seurattu sarja"
+  t_followed_contests: "Seuratut sarjat"
   t_id: "ID"
   t_destroy: "Tuhoa"
   t_login: "Kirjaudu sisään"
   t_logout: "Kirjaudu ulos"
   t_my_account: "Omat tiedot"
   t_new_user: "Luo uusi käyttäjä"
+  t_no_contests_to_follow: "Ei seurattuja sarjoja"
+  t_no_contests_to_add: "Ei uusia sarjoja lisättäväksi"
   t_no_permission: "Et ole vielä kirjautunut sisään."
   t_password: "Salasana"
   t_save: "Tallenna"
@@ -23,7 +31,9 @@ fi:
   t_users_list: "Käyttäjät"
   t_valid_until: "Voimassa"
   t_was_not_found: "ei löytynyt"
+  t_was_successfully_added: "lisätty onnistuneesti!"
   t_was_successfully_created: "luotiin onnistuneesti"
+  
   
 # Finnish translations for Ruby on Rails
 # by Marko Seppä (marko.seppa@gmail.com)

@@ -2,9 +2,20 @@ class LoginRequired::FollowedContestsController < LoginRequired::LoginRequiredCo
   
   def new
     @followed_contest = FollowedContest.new 
+    
   end
   
   def show
+  end
+  
+  def destroy
+    @followed_contest = FollowedContest.find(params[:id])
+    @followed_contest.destroy
+
+    respond_to do |format|
+      format.html { redirect_to('/') }
+      format.xml  { head :ok }
+    end
   end
   
   def create
@@ -18,8 +29,8 @@ class LoginRequired::FollowedContestsController < LoginRequired::LoginRequiredCo
         Contest.transaction do
           @followed_contest.save!
       
-          flash[:notice] = t(:t_followed_contest) + " " + t(:t_was_successfully_created)
-          format.html { redirect_to(admin_contests_url) }
+          flash[:notice] = t(:t_followed_contest) + " " + t(:t_was_successfully_added)
+          format.html { redirect_to(login_required_followed_contests_url) }
           format.xml  { render :xml => @followed_contest, :status => :created, :location => @followed_contest }
         end
       else

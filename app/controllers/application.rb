@@ -31,7 +31,7 @@ protected
   end
 
   def login_required(access = nil)
-    if(access)
+    if(access.nil?)
       return true if @user
     else
       return true if access
