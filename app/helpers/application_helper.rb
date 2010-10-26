@@ -82,6 +82,7 @@ module ApplicationHelper
   def is_logged_in
     !session[:id].nil?
   end
+  
   def is_admin
     session[:admin]
   end
