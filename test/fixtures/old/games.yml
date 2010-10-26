@@ -4,6 +4,8 @@ one:
     winner_id: 1
     draw: false
     contest_id: 1
+    home_goals: 6
+    guest_goals: 0
 
 two:
     home_team_id: 2 
@@ -11,6 +13,8 @@ two:
     winner_id: 1
     draw: false
     contest_id: 1
+    home_goals: 7
+    guest_goals: 12
     
 three:
     home_team_id: 1 
@@ -18,6 +22,8 @@ three:
     winner_id: NULL
     draw: true
     contest_id: 1
+    home_goals: 3
+    guest_goals: 3
     
 four:
     home_team_id: 1 
@@ -25,11 +31,25 @@ four:
     winner_id: 3
     draw: false
     contest_id: 1
+    home_goals: 5
+    guest_goals: 10
     
 five:
     home_team_id: 3 
     guest_team_id: 2
     winner_id: NULL
     draw: true
+    contest_id: 1
+    home_goals: 5
+    guest_goals: 5
+
+six:
+    home_team_id: 3 
+    guest_team_id: 4
+    contest_id: 1
+
+seven:
+    home_team_id: 4 
+    guest_team_id: 2
     contest_id: 1
     

@@ -33,9 +33,13 @@ module ApplicationHelper
     link_to(t(:t_show), eval(show_command))
   end
   
-  def destroy_link(model, name)
+  def destroy_link(model, name, use_image = false)
     destroy_command = name + "_path(model)"
-    link_to(t(:t_destroy), eval(destroy_command), :confirm => t(:t_are_you_sure), :method => :delete)
+    label = t(:t_destroy)
+    if use_image
+      label = image_tag("remove_tiny.jpg", :alt => t(:t_destroy))
+    end
+    link_to(label, eval(destroy_command), :confirm => t(:t_are_you_sure), :method => :delete)
   end
   
   def show_edit_and_destroy_for_table(model, name)
@@ -60,23 +64,34 @@ module ApplicationHelper
   def list_contests
     if FollowedContest.exists?(:user_id => session[:id])
       
-      contests = FollowedContest.find(:all, :conditions => ["user_id = ?", session[:id]])
-        
-      s = "<ul>"
-      for contest in contests
+      f_contests = FollowedContest.find(:all, :conditions => ["user_id = ?", session[:id]], :include => :contest, :order => "contests.season DESC, contests.short_name ASC")
+      
+      s = ""
+      last_season = 0
+      for p in f_contests
+        if p.contest.season != last_season
+          if last_season != 0 
+            s << "</ul>"
+          end
+          s << "<ul>"
+          s << p.contest.season.to_s
+        end
+        last_season = p.contest.season
         s << "<li>" 
-        s << link_to( Contest.find(contest.contest_id).short_name, '/contests/' + contest.contest_id.to_s)
+        s << link_to( p.contest.short_name, '/contests/' + p.contest_id.to_s)
+        s << ' ' + destroy_link(p, 'login_required_followed_contest', true)
         s << "</li>"
       end
       s << "</ul>"
     else       
-      t :t_no_contests_to_follow
+      t(:t_no_contests_to_follow) + '<br />'      
     end
   end
 
   def is_logged_in
     !session[:id].nil?
   end
+  
   def is_admin
     session[:admin]
   end

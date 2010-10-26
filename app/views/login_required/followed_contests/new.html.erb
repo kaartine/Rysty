@@ -1,13 +1,18 @@
 <br /><br />
 <%= flash[:error] %>
-<% if Contest.count %>
-  <% semantic_form_for [:login_required, @followed_contest] do |f| %>
-    <% f.inputs do %>
-      <%= f.input :contest %>
-    <% end %>
-    <%= f.buttons %>
+  
+<% if Contest.count  > 0 and contests_to_choose_from(@season).count > 0%>
+
+  <% form_for [:login_required, @followed_contest] do |f| %>
+    <br /><br />
+    <%= t(:t_contest_to_follow) %>:
+    <%= f.select(:contest_id, contests_grouped_in_years) %>
+  <br />
+    <%= f.submit t(:t_add) %>  
   <% end %>
+
 <% else %>
+
 <%= t(:t_no_contests_to_add) %>
 <br /><br />
 <%= link_to t(:t_back), '/' %>
