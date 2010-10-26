@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
-  protect_from_forgery # :secret => '37e09a798012ce8994483215db76b856'
+  protect_from_forgery  #:secret => '37e09a798012ce8994483215db76b856'
   
   # See ActionController::Base for details 
   # Uncomment this to filter the contents of submitted sensitive data parameters
@@ -30,8 +30,14 @@ protected
     end
   end
 
-  def login_required
-    return true if @user
+  def login_required(access = nil)
+    if(access)
+      return true if @user
+    else
+      return true if access
+      access_denied_to_this_site
+      return false
+    end
     access_denied
     return false
   end
@@ -40,6 +46,12 @@ protected
     session[:return_to] = request.request_uri
     flash[:error] = t('t_no_permission')
     redirect_to :controller => '/users', :action => 'login'
+  end
+  
+  def access_denied_to_this_site
+    puts "site"
+    session[:return_to] = request.request_uri
+    redirect_to :controller => '/'
   end
   
   def set_locale 
@@ -54,7 +66,6 @@ protected
   
   def choose_layout 
     logger.debug "application.rb debug trace"   
-    logger.debug action_name
     if [ 'admin' ].include? action_name
       'admin'
     else
@@ -63,28 +74,26 @@ protected
   end
   
   def set_rights(user)
-    begin
-      Admin.find(user.id)
-      session[:admin] = true
-      return
-    rescue Exception
-      session[:admin] = false
-    end
-    
-    begin
-      ClubAdmin.find(user.id)
-      session[:clubadmin] = true
-    rescue Exception
-      session[:clubadmin] = false
-    end
-
-    begin
-      LeagueAdmin.find(user.id)
-      session[:leagueadmin] = true
-    rescue Exception
-      session[:leagueadmin] = false
-    end   
+      session[:admin] = User.find(user.id).admin
+      session[:clubadmin] = ClubAdmin.exists?(user.id)
+      session[:leagueadmin] = LeagueAdmin.exists?(user.id)
+      puts session
   end
 
+  def is_admin
+    session[:admin]
+  end
+
+  def is_clubadmin
+    session[:clubadmin] || is_admin
+  end
+
+  def is_leagueadmin
+    session[:leagueadmin] || is_admin
+  end
+  
+  def is_teamadmin
+    session[:teamadmin] || is_admin
+  end
 
 end

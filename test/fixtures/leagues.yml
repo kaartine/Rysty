@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+   id: 1
+   name: salibandy liitto
+   short_name: sabal
+   
+two:
+   id: 2
+   name: ruostin säbä
+   short_name: ruotsis

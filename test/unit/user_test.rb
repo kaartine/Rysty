@@ -6,5 +6,7 @@ class UserTest < ActiveSupport::TestCase
   def test_creation
     user = User.new
     assert !user.save, "Tryin to save empty user"
-  end    
+  end
+  
+ 
 end

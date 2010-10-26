@@ -7,7 +7,6 @@ class ClubAdmins < ActiveRecord::Migration
       t.timestamps
     end
   
-    ClubAdmin.create :user_id => 2
   end
 
   def self.down

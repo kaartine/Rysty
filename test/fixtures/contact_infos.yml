@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+   id: 1
+   phone_number_1: "0400983450"
+   email: "jkaartinen@gmail.com"
+   facebook: "http://www.facebook.com/profile.php?id=505475935"
+#
+two:
+   id: 2
+   phone_number_2: => "+358(0)40-0983450"
+   email: "jukka.kaartinen@sasken.com"
+three:
+   id: 3
+   phone_number_2: => "+358(0)40-0983450"
+   email: "jukka.kaartinen@sasken.com"
+four:
+   id: 4
+   phone_number_3: => "123456"
+   email: "msa.joku@jossain.com"
+five:
+   id: 5
+   phone_number_1: => "+40000450"
+   email: "opis@salo.com"
+   

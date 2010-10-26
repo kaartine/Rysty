@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+
+one:
+   contest_id: 1
+   user_id: 5
+   
+two:
+   contest_id: 2
+   user_id: 5
+   
+three:
+   contest_id: 3
+   user_id: 6
+   

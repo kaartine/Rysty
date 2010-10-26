@@ -10,14 +10,40 @@ module ApplicationHelper
     s += "</p>"
   end
   
-  def edit_and_destroy_for_table(model, name)
+  def back_link(return_path)
+    link_to(t(:t_back), return_path)
+  end
+  
+  def show_back_links(model, name, return_path)
+    show_link(model, name) + " | " + back_link(return_path)
+  end
+  
+  def edit_back_links(model, name, return_path)
+    edit_link(model, name) + " | " + back_link(return_path)
+  end
+
+
+  def edit_link(model, name)
     edit_command = "edit_" + name + "_path(model)"
-    show_command = name + "_path(model)"
-    s = "<td>" + link_to(t(:t_show), eval(show_command)) + "</td>"
+    link_to(t(:t_edit), eval(edit_command))
+  end
+
+  def show_link(model, name)
+    show_command = name + "_path(model)"      
+    link_to(t(:t_show), eval(show_command))
+  end
+  
+  def destroy_link(model, name)
+    destroy_command = name + "_path(model)"
+    link_to(t(:t_destroy), eval(destroy_command), :confirm => t(:t_are_you_sure), :method => :delete)
+  end
+  
+  def show_edit_and_destroy_for_table(model, name)
+    s = "<td>" + show_link(model, name) + "</td>"
     s << "<td>"
-    s << link_to(t(:t_edit), eval(edit_command))
+    s << edit_link(model, name)
     s << "</td><td>"
-    s << link_to(t(:t_destroy), eval(show_command), :confirm => t(:t_are_you_sure), :method => :delete)
+    s << destroy_link(model, name)
     s << "</td>"
   end
 
@@ -32,20 +58,25 @@ module ApplicationHelper
   end
 
   def list_contests
-    begin
-      contests = FollowedContest.find(session[:id])
-      s = "<ul>dds"
-      contests.each do |contest|
+    if FollowedContest.exists?(:user_id => session[:id])
+      
+      contests = FollowedContest.find(:all, :conditions => ["user_id = ?", session[:id]])
+        
+      s = "<ul>"
+      for contest in contests
         s << "<li>" 
-        s << contest
+        s << link_to( Contest.find(contest.contest_id).short_name, '/contests/' + contest.contest_id.to_s)
         s << "</li>"
       end
-      s << "</ul>s"
-    rescue Exception       
-      t :t_no_teams_to_follow
+      s << "</ul>"
+    else       
+      t :t_no_contests_to_follow
     end
   end
 
+  def is_logged_in
+    !session[:id].nil?
+  end
   def is_admin
     session[:admin]
   end
@@ -71,16 +102,4 @@ module ApplicationHelper
     end
   end
   
-  def checked_hidden(element, based_on)
-#    if( based_on )
-#      html = "checked = " + based_on.to_s + ", disabled = " + based_on.to_s
-#    else
-      html = element.to_s + ", disabled = " + based_on.to_s
- #   end
-  end
-  
-  def show_back_links(model, return_path)
-    link_to(t(:t_show), model) + " | " + link_to(t(:t_back), return_path)
-  end
-
 end

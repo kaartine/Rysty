@@ -1,9 +1,9 @@
 class Leagues < ActiveRecord::Migration
   def self.up
-    create_table :event_teams do |t|
+    create_table :leagues do |t|
       t.references :contact_info
       t.string :name
-      t.string :short_name, :limit => 6
+      t.string :short_name, :limit => 8
 
       t.timestamps
     end
@@ -11,6 +11,6 @@ class Leagues < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :event_teams
+    drop_table :leagues
   end
 end

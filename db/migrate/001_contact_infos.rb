@@ -15,12 +15,6 @@ class ContactInfos < ActiveRecord::Migration
 
       t.timestamps
     end 
-    
-    ContactInfo.create :phone_number_1 => "0400983450",
-      :email => "jkaartinen@gmail.com"
-      
-    ContactInfo.create :phone_number_2 => "+358(0)40-0983450",
-      :email => "jukka.kaartinen@sasken.com"
 
   end
 

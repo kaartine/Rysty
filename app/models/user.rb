@@ -1,6 +1,10 @@
 require "sha1"
 
 class User < ActiveRecord::Base
+  has_many :club_admins
+  has_many :clubs, :through => :club_admins
+  has_many :followed_contests
+    
   validates_uniqueness_of :username
   validates_confirmation_of :password,
       :if => lambda { |user| user.new_record? or !user.changes['password'].nil? }

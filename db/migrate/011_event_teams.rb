@@ -1,6 +1,6 @@
 class EventTeams < ActiveRecord::Migration
   def self.up
-    create_table :event_temas do |t|
+    create_table :event_teams do |t|
       t.belongs_to :team, :event
 
       t.timestamps

@@ -1,0 +1,45 @@
+      
+one:
+    id: 1
+    league_id: 1
+    name: sm-sarja
+    short_name: sm-sar
+    description: "jooo jooo"
+    public_profile: true
+    season: 2010
+    play_off_line: 10
+    demotion_line: 12
+    
+two:
+    id: 2
+    league_id: 1
+    name: mestis
+    short_name: mestis
+    description: "jooo jooo"
+    public_profile: true
+    season: 2010
+    climing_line: 1
+
+three:
+    id: 3
+    league_id: 2
+    name: ru-sarja
+    short_name: ru-sar
+    description: "jooo jooo"
+    public_profile: true
+    season: 2009
+    play_off_line: 8
+    demotion_line: 12
+
+four:
+    id: 4
+    league_id: 1
+    name: miesten III divari
+    short_name: 3-div
+    description: miesten kolmos divari
+    public_profile: true
+    season: 2009
+    climing_line: 2
+    play_off_line: 8
+    demotion_line: 12
+   

@@ -1,0 +1,17 @@
+      
+one:
+    contest_id: 1
+    team_id: 1
+
+two:
+    contest_id: 1
+    team_id: 2
+
+three:
+    contest_id: 1
+    team_id: 3
+
+four:
+    contest_id: 1
+    team_id: 4
+   
