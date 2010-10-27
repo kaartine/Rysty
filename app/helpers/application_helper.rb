@@ -52,13 +52,9 @@ module ApplicationHelper
   end
 
   def create_new(name)
-    if(session[:add_edit_delete] or session[:admin])
-      s = ""
-      add_command = "new_" + name + "_path"
-      s += link_to t(:add), eval(add_command)
-    else
-      t :t_no_rights
-    end
+    s = ""
+    add_command = "new_" + name + "_path"
+    s += link_to t(:add), eval(add_command)
   end
 
   def list_contests

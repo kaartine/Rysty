@@ -5,6 +5,14 @@ class Game < ActiveRecord::Base
   
   validate :result_of_game
   
+  has_one :home_team, :class_name => "Team" 
+  has_one :guest_team, :class_name => "Team"
+  
+  belongs_to :contest
+  belongs_to :event
+  
+  attr_accessor :home_team_id, :guest_team_id, :contest_id, :event_id
+  
   def result_of_game
     if @winner_id
       if @winner_id == @home_team_id

@@ -5,6 +5,7 @@ fi:
   
   t_add: "Lisää"
   t_add_contest_to_list: "Seuraa uutta sarjaa"
+  t_add_new_game: "Lisää uusi peli"
   t_admin: "Ylläpito"
   t_are_you_sure: "Haluat varmasti poistaa tämän?"
   t_back: "Takaisin"
@@ -22,6 +23,7 @@ fi:
   t_my_account: "Omat tiedot"
   t_my_clubs: "Joukkueeni"
   t_my_contests: "Sarjani"
+  t_name: "Nimi"
   t_new_user: "Luo uusi käyttäjä"
   t_no_contests_to_follow: "Ei seurattuja sarjoja"
   t_no_contests_to_add: "Ei uusia sarjoja lisättäväksi"
@@ -31,6 +33,7 @@ fi:
   t_save: "Tallenna"
   t_season: "Kausi"
   t_select_league: "Valitse liiga"
+  t_short_name: "Lyhenne"
   t_show: "Näytä"
   t_standings: "Sarja taulukot"
   t_user: "Käyttäjä"

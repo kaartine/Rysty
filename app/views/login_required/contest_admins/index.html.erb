@@ -1,1 +1,17 @@
 <h3><%= t(:t_my_contests) %></h3>
+
+<table class="nav">
+  <tr>
+    <th><%=t :t_id %></th>
+    <th><%=t :t_short_name %></th>
+    <th><%=t :t_name %></th>
+    <th></th>
+<% for contest in @contests %>
+    <tr>
+    <td> <%= link_to(contest.id, login_required_contest_admins_path) %> </td>
+    <td> <%= link_to(contest.short_name, login_required_contest_admins_path) %> </td>
+    <td> <%= link_to(contest.name, login_required_contest_admins_path)%> </td>
+    <td> <%= link_to(t(:t_add_new_game), new_login_required_contest_admin_path(contest)) %> </td>
+    </tr>
+<% end %>
+</table>

@@ -23,3 +23,16 @@ four:
   name: HIFK
   short_name: IFK
   season: 2010
+  
+five:
+  id: 5
+  name: HIFK 2009
+  short_name: IF09
+  season: 2009
+  
+six:
+  id: 6
+  name: Ilves
+  short_name: Ilves
+  season: 2009
+  
