@@ -1,0 +1,44 @@
+<br />
+<h2>
+<%= @contest.name %> (<%= @contest.short_name %>) - <%= @contest.season %>
+</h2>
+<br />
+
+<table id="contest">
+<tr>
+<th>id</th>
+<th>nimi</th>
+<th>G</th>
+<th>V</th>
+<th>T</th>
+<th>H</th>
+<th>TM - PM</th>
+<th>P</th>
+</tr>
+
+<% for team in @contest.teams %>
+<tr>
+<td><%= team.id %></td>
+<td><%= team.name %></td>
+<td><%= team.games %></td>
+<td><%= team.wins %></td>
+<td><%= team.draws %></td>
+<td><%= team.losts %></td>
+<td><%= team.goals_for %> - <%= team.goals_against %></td>
+<td><%= team.points %></td>
+</tr>
+<% end %>
+
+</table>
+
+<%= @contest.description %>
+<br />
+
+<br />
+<br />
+<br />
+t.references :league<br />
+t.boolean :public_profile, :default => true<br />
+t.integer :climing_line # for drawing place how many will be advancing<br />
+t.integer :play_off_line # how many are going to play offs<br />
+t.integer :demotion_line  # for drawing place how many will be dropping<br />

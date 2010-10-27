@@ -1,7 +1,6 @@
 module FollowedContestsHelper
 
-  def contests_except_those_that_are_followed
-    
+  def contests_except_those_that_are_followed    
     @excluded = FollowedContest.all(:conditions => ['user_id = ?', session[:id]])
     list = @excluded.collect do |exclude|
       exclude.contest_id.to_s

@@ -58,8 +58,9 @@
 	        <li><%=link_to t(:by_week), '#' %>
 	        <li><%=link_to t(:by_month), '#' %>
 	        <li><%=link_to t(:by_season), '#' %>
-        </ul>
-      <li><%=link_to t(:standings), '#' %>
+        </ul>--!>
+      <li><%=link_to t(:t_standings), contests_path %>
+        <!--
   	  <li><%=link_to t(:clubs), '#' %></li>
       <li><%=link_to t(:players), '#' %></li>
       <li><%=link_to t(:teams), '#' %></li>
@@ -99,7 +100,7 @@
       <br /><br />
     <% end %>
   </div>
-  <div class="grid_8">
+  <div class="grid_8">  
     <p>
       <%= flash[:notice] %>
 	    <%= yield  %>
