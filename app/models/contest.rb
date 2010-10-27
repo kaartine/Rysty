@@ -3,6 +3,7 @@ class Contest < ActiveRecord::Base
   has_many :teams, :through => :contest_teams
   has_many :contest_teams
   belongs_to :followed_contests
+  has_many :contest_admins
   
   attr_accessor :followed_contests_id
   

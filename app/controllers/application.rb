@@ -75,25 +75,10 @@ protected
   
   def set_rights(user)
       session[:admin] = User.find(user.id).admin
-      session[:clubadmin] = ClubAdmin.exists?(user.id)
-      session[:leagueadmin] = LeagueAdmin.exists?(user.id)
-      puts session
-  end
-
-  def is_admin
-    session[:admin]
-  end
-
-  def is_clubadmin
-    session[:clubadmin] || is_admin
-  end
-
-  def is_leagueadmin
-    session[:leagueadmin] || is_admin
-  end
-  
-  def is_teamadmin
-    session[:teamadmin] || is_admin
+      session[:club_admin] = ClubAdmin.exists?(['user_id = ?',user.id])
+      session[:league_admin] = LeagueAdmin.exists?(['user_id = ?',user.id])
+      session[:team_admin] = TeamAdmin.exists?(['user_id = ?',user.id])
+      session[:contest_admin] = ContestAdmin.exists?(['user_id = ?',user.id])
   end
 
 end

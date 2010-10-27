@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 27) do
+ActiveRecord::Schema.define(:version => 28) do
 
   create_table "club_admins", :force => true do |t|
     t.integer  "user_id"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(:version => 27) do
     t.string   "facebook"
     t.string   "homepage"
     t.string   "twitter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contest_admins", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "valid_until"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

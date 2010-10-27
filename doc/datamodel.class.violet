@@ -33,7 +33,8 @@ kotisivu</string>
    <object id="ClassNode0" class="com.horstmann.violet.ClassNode"> 
     <void property="attributes"> 
      <void property="text"> 
-      <string>nimi
+      <string>admin
+nimi
 käyttäjätunnus
 salasana
 suola
@@ -50,8 +51,8 @@ YHTEYSTIEDOT</string>
    </object> 
    <object class="java.awt.geom.Point2D$Double"> 
     <void method="setLocation"> 
-     <double>887.0</double> 
-     <double>238.0</double> 
+     <double>882.0</double> 
+     <double>216.0</double> 
     </void> 
    </object> 
   </void> 
@@ -472,21 +473,6 @@ JOUKKUEEN_JÄSEN</string>
   </void> 
   <void method="addNode"> 
    <object id="ClassNode16" class="com.horstmann.violet.ClassNode"> 
-    <void property="name"> 
-     <void property="text"> 
-      <string>admin</string> 
-     </void> 
-    </void> 
-   </object> 
-   <object class="java.awt.geom.Point2D$Double"> 
-    <void method="setLocation"> 
-     <double>701.0</double> 
-     <double>183.0</double> 
-    </void> 
-   </object> 
-  </void> 
-  <void method="addNode"> 
-   <object id="ClassNode17" class="com.horstmann.violet.ClassNode"> 
     <void property="attributes"> 
      <void property="text"> 
       <string>viimeinen_käyttöpäivä
@@ -507,7 +493,7 @@ JOUKKUEEN_JÄSEN</string>
    </object> 
   </void> 
   <void method="addNode"> 
-   <object id="ClassNode18" class="com.horstmann.violet.ClassNode"> 
+   <object id="ClassNode17" class="com.horstmann.violet.ClassNode"> 
     <void property="attributes"> 
      <void property="text"> 
       <string>viimeinen_käyttöpäivä</string> 
@@ -527,7 +513,7 @@ JOUKKUEEN_JÄSEN</string>
    </object> 
   </void> 
   <void method="addNode"> 
-   <object id="ClassNode19" class="com.horstmann.violet.ClassNode"> 
+   <object id="ClassNode18" class="com.horstmann.violet.ClassNode"> 
     <void property="attributes"> 
      <void property="text"> 
       <string>viimeinen_käyttöpäivä</string> 
@@ -547,7 +533,7 @@ JOUKKUEEN_JÄSEN</string>
    </object> 
   </void> 
   <void method="addNode"> 
-   <object id="ClassNode20" class="com.horstmann.violet.ClassNode"> 
+   <object id="ClassNode19" class="com.horstmann.violet.ClassNode"> 
     <void property="attributes"> 
      <void property="text"> 
       <string>teksti
@@ -572,7 +558,7 @@ kuva_peli</string>
    </object> 
   </void> 
   <void method="addNode"> 
-   <object id="ClassNode21" class="com.horstmann.violet.ClassNode"> 
+   <object id="ClassNode20" class="com.horstmann.violet.ClassNode"> 
     <void property="name"> 
      <void property="text"> 
       <string>sarjan_turnauksen_joukkue</string> 
@@ -660,7 +646,7 @@ Näitä on tarkoitus varioida toisiin lajeihin.</string>
    </object> 
   </void> 
   <void method="addNode"> 
-   <object id="ClassNode22" class="com.horstmann.violet.ClassNode"> 
+   <object id="ClassNode21" class="com.horstmann.violet.ClassNode"> 
     <void property="attributes"> 
      <void property="text"> 
       <string>nimi
@@ -679,6 +665,28 @@ YHTEYSTIEDOT</string>
     <void method="setLocation"> 
      <double>149.0</double> 
      <double>695.0</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode22" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>viimeinen_käyttöpäivä
+SARJA_TURNAUS
+</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>sarja_turnauksen_ylläpitäjä</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>661.0</double> 
+     <double>191.0</double> 
     </void> 
    </object> 
   </void> 
@@ -787,33 +795,6 @@ YHTEYSTIEDOT</string>
      <string>1</string> 
     </void> 
    </object> 
-   <object idref="ClassNode18"/> 
-   <object idref="ClassNode0"/> 
-  </void> 
-  <void method="connect"> 
-   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
-    <void property="bentStyle"> 
-     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
-    </void> 
-    <void property="endArrowHead"> 
-     <object class="com.horstmann.violet.ArrowHead" field="V"/> 
-    </void> 
-    <void property="endLabel"> 
-     <string>1</string> 
-    </void> 
-   </object> 
-   <object idref="ClassNode19"/> 
-   <object idref="ClassNode0"/> 
-  </void> 
-  <void method="connect"> 
-   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
-    <void property="bentStyle"> 
-     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
-    </void> 
-    <void property="endArrowHead"> 
-     <object class="com.horstmann.violet.ArrowHead" field="V"/> 
-    </void> 
-   </object> 
    <object idref="ClassNode17"/> 
    <object idref="ClassNode0"/> 
   </void> 
@@ -829,6 +810,18 @@ YHTEYSTIEDOT</string>
      <string>1</string> 
     </void> 
    </object> 
+   <object idref="ClassNode18"/> 
+   <object idref="ClassNode0"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="V"/> 
+    </void> 
+   </object> 
    <object idref="ClassNode16"/> 
    <object idref="ClassNode0"/> 
   </void> 
@@ -841,7 +834,7 @@ YHTEYSTIEDOT</string>
      <object class="com.horstmann.violet.ArrowHead" field="V"/> 
     </void> 
    </object> 
-   <object idref="ClassNode20"/> 
+   <object idref="ClassNode19"/> 
    <object idref="ClassNode2"/> 
   </void> 
   <void method="connect"> 
@@ -857,7 +850,7 @@ YHTEYSTIEDOT</string>
     </void> 
    </object> 
    <object idref="ClassNode8"/> 
-   <object idref="ClassNode20"/> 
+   <object idref="ClassNode19"/> 
   </void> 
   <void method="connect"> 
    <object class="com.horstmann.violet.ClassRelationshipEdge"> 
@@ -898,7 +891,7 @@ YHTEYSTIEDOT</string>
      <string>1</string> 
     </void> 
    </object> 
-   <object idref="ClassNode21"/> 
+   <object idref="ClassNode20"/> 
    <object idref="ClassNode2"/> 
   </void> 
   <void method="connect"> 
@@ -913,7 +906,7 @@ YHTEYSTIEDOT</string>
      <string>1</string> 
     </void> 
    </object> 
-   <object idref="ClassNode21"/> 
+   <object idref="ClassNode20"/> 
    <object idref="ClassNode3"/> 
   </void> 
   <void method="connect"> 
@@ -953,7 +946,19 @@ YHTEYSTIEDOT</string>
     </void> 
    </object> 
    <object idref="ClassNode2"/> 
+   <object idref="ClassNode21"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="V"/> 
+    </void> 
+   </object> 
    <object idref="ClassNode22"/> 
+   <object idref="ClassNode0"/> 
   </void> 
  </object> 
 </java> 

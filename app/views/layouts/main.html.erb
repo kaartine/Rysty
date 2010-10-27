@@ -42,7 +42,7 @@
       <p class="box"><%= link_to t(:t_login), '/login' %></p>
     <% else %>
       <p class="box">
-        <%=link_to t(:t_my_account), '/my_account' %><br />
+        <%=link_to t(:t_my_account), '/my_account' %><br />user_id: <%= session[:id] %><br />
         <%=link_to t(:t_logout), '/logout' %>
       </p>
     <% end %>
@@ -78,13 +78,21 @@
         </ul>
       </li>
        -->
-    <% if session[:admin] == true %>
+    <% if is_admin %>
       <li class="secondary"><%=link_to t(:t_admin), '#' %>
         <ul>
           <li><%=link_to t(:t_new_contest), new_admin_contest_path %></li>
           <li><%=link_to t(:t_new_user), new_admin_user_path %></li>
           <li><%=link_to t(:t_users_list), admin_users_path %></li>
         </ul>
+      </li>
+    <% end %>
+    <% if is_club_admin %>
+      <li class="secondary"><%=link_to t(:t_my_clubs), login_required_club_admins_path %>
+      </li>
+    <% end %>
+    <% if is_contest_admin %>
+      <li class="secondary"><%=link_to t(:t_my_contests), login_required_contest_admins_path %>
       </li>
     <% end %>
     </ul>

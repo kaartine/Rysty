@@ -96,6 +96,10 @@ module ApplicationHelper
     session[:admin]
   end
       
+  def is_contest_admin
+    session[:contest_admin]
+  end
+
   def is_league_admin
     session[:league_admin]
   end
