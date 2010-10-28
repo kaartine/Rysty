@@ -11,7 +11,7 @@
     <td> <%= link_to(contest.id, login_required_contest_admins_path) %> </td>
     <td> <%= link_to(contest.short_name, login_required_contest_admins_path) %> </td>
     <td> <%= link_to(contest.name, login_required_contest_admins_path)%> </td>
-    <td> <%= link_to(t(:t_add_new_game), new_login_required_contest_admin_path(contest)) %> </td>
+    <td> <%= link_to(t(:t_add_new_game), new_login_required_contest_game_path(contest)) %> </td>
     </tr>
 <% end %>
 </table>

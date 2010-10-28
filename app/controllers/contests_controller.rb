@@ -5,7 +5,7 @@ class ContestsController < ApplicationController
     @season = params[:season] if !params[:season].nil?
       
     if params[:contest].nil?
-      @contest = Contest.first(:conditions => ["season = ?",@season], :include => :teams)  
+      @contest = Contest.first(:conditions => ["season = ?",@season], :include => :teams)
     else
       @contest = Contest.find(params[:contest][:id], :include => :teams)
     end

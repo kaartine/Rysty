@@ -8,8 +8,9 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :games
   map.resources :teams
-  map.resources :contests
-  map.resources :users, :has_one => :person
+  map.resources :contests, :has_many => :games
+  map.resources :contests, :has_many => :teams
+  map.resources :users
   #map.resources :users, :has_one => :contact_info
   
   map.connect 'my_account', :controller => 'users', :action => 'my_account'
@@ -42,18 +43,21 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # Sample resource route within a namespace:
-     map.namespace :admin do |admin|
-       # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
-       admin.resources :clubs
-       admin.resources :contests
-       admin.resources :users
-     end
+  map.namespace :admin do |admin|
+    # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
+    admin.resources :clubs
+    admin.resources :contests
+    admin.resources :users
+  end
 
   map.namespace :login_required do |admin|
     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
     admin.resources :followed_contests
     admin.resources :club_admins
-    admin.resources :contest_admins  
+    admin.resources :contest_admins
+    admin.resources :contests do |ga|
+      ga.resources :games
+    end
   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.

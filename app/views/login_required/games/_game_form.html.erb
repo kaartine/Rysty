@@ -1,0 +1,8 @@
+<br />
+<% form_for [:login_required, :contest, @game] do |g| %>
+  <%= g.select( :home_team, @teams.collect do |team| [team.short_name, team.id] end )%>
+    vs.
+  <%= g.select( :guest_team, @teams.collect do |team| [team.short_name, team.id] end )%>
+<%= g.submit %>
+
+<% end %>

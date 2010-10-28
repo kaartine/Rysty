@@ -7,6 +7,7 @@ class LoginRequired::ContestAdminsController < LoginRequired::LoginRequiredContr
   
   def new
     @game = Game.new
-    @teams = Team.all(:order => "short_name ASC", :include => [:contest_teams], :conditions => ['season = ? AND contest_teams.id = ?', 2010, params[:id]])
+    @teams = Team.all(:order => "short_name ASC", :include => [:contest_teams], 
+      :conditions => ['season = ? AND contest_teams.id = ?', 2010, params[:id]])
   end
 end

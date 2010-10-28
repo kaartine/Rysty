@@ -2,7 +2,10 @@ class Team < ActiveRecord::Base
   has_one :contact_info
   has_one :club
   
-  attr_accessor :points, :wins, :draws, :games, :losts, :goals_for, :goals_against 
+  has_many :contest_teams
+  has_many :contests, :through => :contest_teams
+  
+  attr_accessor :points, :wins, :draws, :games, :losts, :goals_for, :goals_against, :contests
   
   def calculate_points(contest, id)
     @games = Game.all(:conditions => ['contest_id = ? AND (home_team_id = ? OR guest_team_id = ?)', contest, id, id]).count

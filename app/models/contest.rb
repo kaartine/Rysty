@@ -1,9 +1,12 @@
 class Contest < ActiveRecord::Base
-  has_one :league
-  has_many :teams, :through => :contest_teams
-  has_many :contest_teams
   belongs_to :followed_contests
+
   has_many :contest_admins
+  has_many :games
+  has_one :league
+  
+  has_many :contest_teams
+  has_many :teams, :through => :contest_teams
   
   attr_accessor :followed_contests_id
   
