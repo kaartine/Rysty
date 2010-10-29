@@ -1,8 +1,20 @@
 <br />
 <% form_for [:login_required, :contest, @game] do |g| %>
-  <%= g.select( :home_team, @teams.collect do |team| [team.short_name, team.id] end )%>
+  <%= error_messages_for :object => @game %>
+  <%= g.hidden_field :contest_id %>
+
+  <%= g.select( :home_team_id, @teams.collect do |team| [team.short_name, team.id] end )%>
     vs.
-  <%= g.select( :guest_team, @teams.collect do |team| [team.short_name, team.id] end )%>
+  <%= g.select( :guest_team_id, @teams.collect do |team| [team.short_name, team.id] end )%>
+<br /><br />
+<%= t :t_date %>
+<%= g.datetime_select( :when, :start_year => Time.now.year-1, :prompt => {:hour => true}, :minute_step => 5, :default => Time.now )%>
+
+    
+  
+  <br />
+<br />
+<br />
 <%= g.submit %>
 
 <% end %>

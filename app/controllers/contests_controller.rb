@@ -11,6 +11,9 @@ class ContestsController < ApplicationController
     end
      
     calculate_team_points(@contest.id)
+    
+    @games = Game.all(:conditions => ['contest_id = ? AND winner_id IS NULL AND draw IS NULL', @contest.id], :limit => '5')
+      puts "fame cout" + @games.count.to_s +  ' ' + @contest.id.to_s
   end
   
   def show

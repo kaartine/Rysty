@@ -4,6 +4,7 @@ class Team < ActiveRecord::Base
   
   has_many :contest_teams
   has_many :contests, :through => :contest_teams
+  has_many :games
   
   attr_accessor :points, :wins, :draws, :games, :losts, :goals_for, :goals_against, :contests
   

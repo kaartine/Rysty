@@ -27,4 +27,24 @@
 <div class="clear"></div>
 <div class="grid_8">
 <%= render :partial => "standings_table" %>
-</div> 
+</div>
+
+<h3><%= t(:t_games) %></h3>
+
+<table class="nav">
+  <tr>  
+    <th><%=t :t_id %></th>
+    <th><%=t :home_team_id %></th>
+    <th><%=t :guest_team_id %></th>
+    <th><%=t :t_date%></th>
+    </tr>
+<% for @game in @games %>    
+<tr>  
+  <td><%=@game.id%></td>
+  <td><%=@game.home_team.name %></td>
+  <td><%=@game.guest_team.name %></td>
+  <td><%=@game.when %></td>
+</tr>
+<% end %>
+</table>
+

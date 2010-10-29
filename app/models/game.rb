@@ -5,13 +5,13 @@ class Game < ActiveRecord::Base
   
   validate :result_of_game
   
-  has_one :home_team, :class_name => "Team" 
-  has_one :guest_team, :class_name => "Team"
+  belongs_to :home_team, :class_name => "Team" 
+  belongs_to :guest_team, :class_name => "Team"
   
   belongs_to :contest
   belongs_to :event
   
-  attr_accessor :home_team_id, :guest_team_id, :contest_id, :event_id
+  private
   
   def result_of_game
     if @winner_id
@@ -30,8 +30,7 @@ class Game < ActiveRecord::Base
       if @home_goals != @gust_goals
         errors.add_to_base('Teams have different amount of goals even though game is draw.')
       end
-    elsif @draw && @winner_id
-      errors.add_to_base('There cannot be winner and draw flag set at the same time.')
+      # if draw and winner then won in overtime
     end
   end
 end

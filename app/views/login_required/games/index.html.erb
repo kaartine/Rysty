@@ -1,9 +1,25 @@
 <h3><%= t(:t_games) %></h3>
 
 <table class="nav">
-  <tr>
+  <tr>  
     <th><%=t :t_id %></th>
-    <th><%=t :t_ %></th>
-    <th><%=t :t_ %></th>
-    <th></th>
+    <th><%=t :t_date %></th>
+    <th><%=t :home_team_id %></th>
+    <th><%=t :guest_team_id %></th>
+<th><%=t :t_home_goals %></th>
+<th><%=t :t_guest_goals %></th>
+<th><%=t :t_draw %></th>
+
+    </tr>
+<% for @game in @games %>    
+<tr>  
+  <td><%=@game.id%></td>
+  <td><%=@game.when %></td>
+  <td><%=@game.home_team.name %></td>
+  <td><%=@game.guest_team.name %></td>
+  <td><%=@game.home_goals %></td>
+  <td><%=@game.guest_goals %></td>
+  <td><%=@game.draw %></td>
+</tr>
+<% end %>
 </table>
