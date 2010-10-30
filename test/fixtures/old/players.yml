@@ -1,0 +1,14 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  number: 1
+  stick: MyString
+  position: MyString
+  person: 
+  
+two:
+  number: 2
+  stick: MyString
+  position: MyString
+  person: 
+

@@ -8,7 +8,7 @@ admin:
    salt: 1234
    contact_info_id: 1
    admin: true
-#
+
 leaguead:
    id: 2
    username: leagueadmin
