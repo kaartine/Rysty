@@ -11,7 +11,6 @@ module ContestsHelper
   end
     
   def contest_contests_grouped_in_years
-    puts (APP_CONFIG['current_season']-1)
     container = Array.new
     (APP_CONFIG['current_season']-1).downto(APP_CONFIG['first_season']).each do |i|
       Contest.all(:order => "name ASC", :conditions => ['season = ? ' + contests_except_those_that_are_followed,i]).each do |j|

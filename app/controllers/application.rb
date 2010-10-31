@@ -49,7 +49,6 @@ protected
   end
   
   def access_denied_to_this_site
-    puts "site"
     session[:return_to] = request.request_uri
     redirect_to :controller => '/'
   end

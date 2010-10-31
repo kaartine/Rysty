@@ -1,7 +1,7 @@
 class LoginRequired::GamesController < LoginRequired::LoginRequiredController
   
   def index
-    @games = Game.all(params[:contest_id])
+    @games = Game.all(:conditions => ['contest_id = ?', params[:contest_id]])
   end
   
   def new

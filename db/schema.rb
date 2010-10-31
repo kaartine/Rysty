@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 28) do
   create_table "contest_admins", :force => true do |t|
     t.integer  "user_id"
     t.datetime "valid_until"
+    t.integer  "contest_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -181,7 +182,7 @@ ActiveRecord::Schema.define(:version => 28) do
     t.integer  "winner_id"
     t.boolean  "draw"
     t.integer  "contest_id"
-    t.integer  "event_id"
+    t.datetime "when"
     t.integer  "home_goals"
     t.integer  "guest_goals"
     t.integer  "spectators"

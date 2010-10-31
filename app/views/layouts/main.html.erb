@@ -24,7 +24,7 @@
   <div class="clear"></div>
   <div class="grid_2">
 	  <p>
-        <%= link_to(image_tag("rysty/topleft_logo.gif", :alt => "Rysty"), '/') %>
+        <%= link_to(image_tag("rysty/topleft_logo.gif", :alt => "Rysty"), ActionController::Base.relative_url_root+'/') %>
 	  </p>
   </div>
   <!-- end .grid_1 -->
@@ -39,11 +39,11 @@
   </div>
   <div class="grid_2">
       <% if session[:id] == nil %>
-      <p class="box"><%= link_to t(:t_login), '/login' %></p>
+      <p class="box"><%= link_to t(:t_login), ActionController::Base.relative_url_root+'/login' %></p>
     <% else %>
       <p class="box">
         <%=link_to t(:t_my_account), '/my_account' %><br />user_id: <%= session[:id] %><br />
-        <%=link_to t(:t_logout), '/logout' %>
+        <%=link_to t(:t_logout), ActionController::Base.relative_url_root+'/logout' %>
       </p>
     <% end %>
   </div>
