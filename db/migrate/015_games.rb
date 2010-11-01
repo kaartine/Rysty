@@ -5,6 +5,7 @@ class Games < ActiveRecord::Migration
       t.references :guest_team, :class_name => "Team"
       t.references :winner, :class_name => "Team"
       t.boolean :draw
+      t.boolean :played
       t.references :contest
       t.datetime :when
       t.integer :home_goals

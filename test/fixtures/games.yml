@@ -6,6 +6,7 @@ one:
     contest_id: 1
     home_goals: 6
     guest_goals: 0
+    played: true
 
 two:
     home_team_id: 2 
@@ -15,6 +16,7 @@ two:
     contest_id: 1
     home_goals: 7
     guest_goals: 12
+    played: true
     
 three:
     home_team_id: 1 
@@ -24,6 +26,7 @@ three:
     contest_id: 1
     home_goals: 3
     guest_goals: 3
+    played: true
     
 four:
     home_team_id: 1 
@@ -33,6 +36,7 @@ four:
     contest_id: 1
     home_goals: 5
     guest_goals: 10
+    played: true
     
 five:
     home_team_id: 3 
@@ -42,14 +46,17 @@ five:
     contest_id: 1
     home_goals: 5
     guest_goals: 5
+    played: true
 
 six:
     home_team_id: 3 
     guest_team_id: 4
     contest_id: 1
+    played: false
 
 seven:
     home_team_id: 4 
     guest_team_id: 2
     contest_id: 1
+    played: false
     

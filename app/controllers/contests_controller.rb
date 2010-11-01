@@ -4,20 +4,26 @@ class ContestsController < ApplicationController
     @season = APP_CONFIG["current_season"] if @season.nil?        
     @season = params[:season] if !params[:season].nil?
       
-    if params[:contest].nil?
+    if params[:contest].nil? && session[:user_contest_id].nil?
       @contest = Contest.first(:conditions => ["season = ?",@season], :include => :teams)
-    else
+    elsif !params[:contest].nil?
       @contest = Contest.find(params[:contest][:id], :include => :teams)
+    else
+      @contest = Contest.find(session[:user_contest_id], :include => :teams)
     end
+    
+    session[:user_contest_id] = @contest.id
      
     calculate_team_points(@contest.id)
     
-    @games = Game.all(:conditions => ['contest_id = ? AND winner_id IS NULL AND draw IS NULL', @contest.id], :limit => '5')
+    @games = Game.all(:conditions => ['contest_id = ? AND played <> true', @contest.id], :limit => '5')
   end
   
   def show
     @contest = Contest.find(params[:id], :include => :teams)
     calculate_team_points(params[:id])
+      
+    session[:user_contest_id] = params[:id]
   end
   
   private
