@@ -9,8 +9,7 @@ function hides(elem, based_on) {
   }
 </script>
 
-<% form_for([:admin, @user]) do |f| %>
-    <%= error_messages_for :object => @user %>
+<%= form_for([:admin, @user]) do |f| %>
     
     <p>
     <%= f.label :username%><br />
@@ -68,7 +67,7 @@ function hides(elem, based_on) {
   $.each($elems, function(i, v) {hides(v, rights_admin);});" %>
   %= label_tag :admin %><br /><br />
 
-  <% semantic_form_for [:admin, @user] do |f| %>  
+  <%= semantic_form_for [:admin, @user] do |f| %>  
     <% f.inputs do %>  
       <%= f.input :username %>
       <%= f.input :admin, :label => t(:t_admin) %>

@@ -2,7 +2,7 @@
 
 fi:
   stats: "Tilastot"
-  
+    
   t_add: "Lisää"
   t_add_contest_to_list: "Seuraa uutta sarjaa"
   t_add_new_game: "Lisää uusi peli"
@@ -15,6 +15,8 @@ fi:
   t_clubs: "Joukkueet"
   t_destroy: "Tuhoa"
   t_edit: "Muokkaa"
+  t_en: "en"
+  t_fi: "fi"
   t_followed_contest: "Seurattu sarja"
   t_followed_contests: "Seuratut sarjat"
   t_home_goals: "KM"

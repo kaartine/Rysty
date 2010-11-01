@@ -16,21 +16,22 @@ class LoginRequired::FollowedContestsController < LoginRequired::LoginRequiredCo
     @followed_contest.destroy
 
     respond_to do |format|
-      format.html { redirect_to('/') }
+      format.html { redirect_to('home') }
       format.xml  { head :ok }
     end
   end
   
   def create
-    @followed_contest = FollowedContest.new(params[:followed_contest])
+    @followed_contest = FollowedContest.new
+    @f_contest = FollowedContest.new(params[:followed_contest])
       
     respond_to do |format|
-      @followed_contest.user_id = session[:id]
+      @f_contest.user_id = session[:id]
       
-      if @followed_contest.valid?
+      if @f_contest.valid?
       
         Contest.transaction do
-          @followed_contest.save!
+          @f_contest.save!
       
           flash[:notice] = t(:t_followed_contest) + " " + t(:t_was_successfully_added)
           format.html { redirect_to(login_required_followed_contests_url) }

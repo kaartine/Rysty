@@ -5,7 +5,7 @@
 <div class="grid_3">
 <h5><%= t(:t_current_season) + ' ' + @season.to_s%></h5>
 
-<% form_for @contest, :url => { :action => "index" } do |f| %>
+<%= form_for @contest, :url => { :action => "index" } do |f| %>
   <br /><br />
   <%= t(:t_contest) %>:
   <%= f.select(:id, contest_contests_to_choose_from(@season), {}, {:onChange => "contest_submit.click();"}) %>
@@ -14,7 +14,7 @@
 </div>
 <div class="grid_4">
 <h5><%= t(:t_other_seasons)%></h5>
-<% form_for @contest, :url => { :action => "index" } do |f| %>
+<%= form_for @contest, :url => { :action => "index" } do |f| %>
   <br /><br />
   <%= t(:t_contest) %>:
   <%= f.select(:id, contest_contests_grouped_in_years, {}, {:onChange => "contest_submit.click();"}) %>

@@ -5,3 +5,7 @@
 *.old
 *.log
 *.bak
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*

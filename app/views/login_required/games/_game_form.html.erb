@@ -1,5 +1,5 @@
 <br />
-<% form_for [:login_required, :contest, @game] do |g| %>
+<%= form_for [:login_required, :contest, @game] do |g| %>
   <%= error_messages_for :object => @game %>
   <%= g.hidden_field :contest_id %>
 

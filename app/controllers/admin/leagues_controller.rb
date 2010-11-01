@@ -9,7 +9,7 @@ class Admin::LeaguesController < Admin::AdminController
   end
 
   def edit
-    @leagues = League.find(:all)
+    @leagues = League.all()
 
     respond_to do |format|
       format.html # index.html.erb
@@ -32,7 +32,7 @@ class Admin::LeaguesController < Admin::AdminController
   end
 
   def index
-    @leagues = League.find(:all)
+    @leagues = League.all()
 
     respond_to do |format|
       format.html # index.html.erb

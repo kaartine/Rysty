@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       if session[:return_to] != nil
         redirect_to session[:return_to]
       else
-        redirect_to '/'
+        redirect_to root_path
       end
     else
       flash[:error] = 'Invalid login.'
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def logout
     reset_session
     flash[:message] = 'Logged out.'
-    redirect_to :controller => '/'
+    redirect_to :controller => 'home'
   end
 
   def my_account

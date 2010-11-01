@@ -1,7 +1,6 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
+  protect_from_forgery
+  
   include SslRequirement
 
   helper :all # include all helpers, all the time
@@ -79,5 +78,4 @@ protected
       session[:team_admin] = TeamAdmin.exists?(['user_id = ?',user.id])
       session[:contest_admin] = ContestAdmin.exists?(['user_id = ?',user.id])
   end
-
 end

@@ -4,7 +4,7 @@ class HeadLinesController < ApplicationController
   # GET /head_lines
   # GET /head_lines.xml
   def index
-    @head_lines = HeadLine.find(:all)
+    @head_lines = HeadLine.all()
   end
 
   # GET /head_lines/1

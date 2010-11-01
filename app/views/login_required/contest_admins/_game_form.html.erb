@@ -1,6 +1,6 @@
 
 <br />
-<% form_for @game do |g| %>
+<%= form_for @game do |g| %>
   <%= g.select :home_team, @teams.collect do |c| [c.short_name, c.id] end %>
     vs.
   <%= g.select :guest_team, @teams.collect do |c| [c.short_name, c.id] end %>

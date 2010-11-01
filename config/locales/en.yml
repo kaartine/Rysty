@@ -2,7 +2,4 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  stats: "Statistics"
-  players: "Players"
-  list_players: "List Players"
-  news:    "News"
+  hello: "Hello world"

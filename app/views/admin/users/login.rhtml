@@ -3,7 +3,7 @@
 <% if flash[:error] %><div><%= flash[:error] %></div><% end %>
 
 <br />
-<% form_for( @user, :url => { :controller => 'users', :action => 'process_login' } ) do |f| %>
+<%= form_for( @user, :url => { :controller => 'users', :action => 'process_login' } ) do |f| %>
     <%= f.label :username %>: <%= f.text_field :username %>
     <%= f.label :password %>: <%= f.password_field :password %>
     

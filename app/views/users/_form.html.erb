@@ -1,6 +1,6 @@
 
  
-<% form_for([@user]) do |f| %>
+<%= form_for([@user]) do |f| %>
     <%= error_messages_for :object => [@person, @user] %>
     
     <p>
@@ -27,7 +27,7 @@
         <%= f.check_box :intranet %><br />
     <% end %>
         
-    <% fields_for @person do |a| %>
+    <%= fields_for @person do |a| %>
         
         <p>
         <%= a.label :first_name %><br />

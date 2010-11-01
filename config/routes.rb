@@ -1,76 +1,81 @@
-ActionController::Routing::Routes.draw do |map|
-#  map.resources :people, :has_many => :players
-#  map.resources :head_lines, :has_one => :person
-#  map.resources :clubs, :has_many => :teams
-#  map.resources :teams, :has_one => :club
+Rysty::Application.routes.draw do
+  match 'my_account', :controller => 'users', :action => 'my_account'
+  match 'login' => 'users#login'
+  match 'process_login' => 'users'
+  match 'logout' => 'users#logout'
   
-  map.resources :followed_contests, :has_one => :user
-  
-  map.resources :games
-  map.resources :teams
-  map.resources :contests, :has_many => :games
-  map.resources :contests, :has_many => :teams
-  map.resources :users
-  #map.resources :users, :has_one => :contact_info
-  
-  map.connect 'my_account', :controller => 'users', :action => 'my_account'
-  map.connect 'login', :controller => 'users', :action => 'login'
-  map.connect 'logout', :controller => 'users', :action => 'logout'
-  
-  # The priority is based upon order of creation: first created -> highest priority.
+  resources :contests
+   
+  # The priority is based upon order of creation:
+  # first created -> highest priority.
 
   # Sample of regular route:
-  #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
+  #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
-  #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
+  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   map.resources :products
+  #   resources :products
 
   # Sample resource route with options:
-  #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
+  #   resources :products do
+  #     member do
+  #       get 'short'
+  #       post 'toggle'
+  #     end
+  #
+  #     collection do
+  #       get 'sold'
+  #     end
+  #   end
 
   # Sample resource route with sub-resources:
-  #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-  
+  #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
+  #   end
+
   # Sample resource route with more complex sub-resources
-  #   map.resources :products do |products|
-  #     products.resources :comments
-  #     products.resources :sales, :collection => { :recent => :get }
+  #   resources :products do
+  #     resources :comments
+  #     resources :sales do
+  #       get 'recent', :on => :collection
+  #     end
   #   end
 
   # Sample resource route within a namespace:
-  map.namespace :admin do |admin|
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  #     resources :products
+  #   end
+  namespace :admin do
     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
-    admin.resources :clubs
-    admin.resources :contests
-    admin.resources :users
+    resources :clubs
+    resources :contests
+    resources :users
   end
 
-  map.namespace :login_required do |admin|
+  namespace :login_required do
     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
-    admin.resources :followed_contests
-    admin.resources :club_admins
-    admin.resources :contest_admins
-    admin.resources :contests do |ga|
-      ga.resources :games
+    resources :followed_contests
+    resources :club_admins
+    resources :contest_admins
+    resources :contests do
+      resources :games
     end
   end
 
-  # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  # map.root :controller => "welcome"
+  # You can have the root of your site routed with "root"
+  # just remember to delete public/index.html.
+  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 
-  # Install the default routes as the lowest priority.
-  # Note: These default routes make all actions in every controller accessible via GET requests. You should
-  # consider removing the them or commenting them out if you're using named routes and resources.
-  map.connect ':controller/:action'
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
-  
-  map.root :controller => "home"
+  # This is a legacy wild controller route that's not recommended for RESTful applications.
+  # Note: This route will make all actions in every controller accessible via GET requests.
+  # match ':controller(/:action(/:id(.:format)))'
 end

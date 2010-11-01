@@ -1,4 +1,3 @@
-# Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
   def edit_and_destroy(model, name)
@@ -8,6 +7,7 @@ module ApplicationHelper
     s += "<br />"
     s += link_to t(:t_destroy), model, :confirm => t(:t_are_you_sure), :method => :delete
     s += "</p>"
+    s.html_safe
   end
   
   def back_link(return_path)
@@ -49,18 +49,20 @@ module ApplicationHelper
     s << "</td><td>"
     s << destroy_link(model, name)
     s << "</td>"
+    s.html_safe
   end
 
   def create_new(name)
     s = ""
     add_command = "new_" + name + "_path"
     s += link_to t(:add), eval(add_command)
+    s.html_safe
   end
 
   def list_contests
     if FollowedContest.exists?(:user_id => session[:id])
       
-      f_contests = FollowedContest.find(:all, :conditions => ["user_id = ?", session[:id]], :include => :contest, :order => "contests.season DESC, contests.short_name ASC")
+      f_contests = FollowedContest.where(["user_id = ?", session[:id]] ).joins(:contest).order("contests.season DESC, contests.short_name ASC")
       
       s = ""
       last_season = 0
@@ -79,8 +81,9 @@ module ApplicationHelper
         s << "</li>"
       end
       s << "</ul>"
+      s.html_safe
     else       
-      t(:t_no_contests_to_follow) + '<br />'      
+      s = t(:t_no_contests_to_follow)
     end
   end
 

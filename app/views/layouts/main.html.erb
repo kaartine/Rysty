@@ -11,8 +11,9 @@
 <!--    <%= stylesheet_link_tag 'grid', :media => "all" %>-->
     <%= stylesheet_link_tag 'layout', :media => "all" %>
     <%= stylesheet_link_tag 'nav', :media => "all" %>
-    <%= javascript_include_tag 'jquery' %>
+    <%= javascript_include_tag 'jquery', 'rails' %>
 <!--    <%= stylesheet_link_tag 'scaffold' %> -->
+    <%= csrf_meta_tag %>  
 </head>
 
 <body>
@@ -24,7 +25,7 @@
   <div class="clear"></div>
   <div class="grid_2">
 	  <p>
-        <%= link_to(image_tag("rysty/topleft_logo.gif", :alt => "Rysty"), ActionController::Base.relative_url_root+'/') %>
+        <%= link_to(image_tag("rysty/topleft_logo.gif", :alt => "Rysty"), root_path) %>
 	  </p>
   </div>
   <!-- end .grid_1 -->
@@ -33,17 +34,17 @@
   </div>
   <div class="grid_2">
     <p>
-      <%= link_to(image_tag("finland.gif", :alt => t(:fi), :height => '16', :width => '26'), '?locale=fi') %>
-      <%= link_to(image_tag("united_kingdom.gif", :alt => t(:en), :height => '16', :width => '32'), '?locale=en') %>
+      <%= link_to(image_tag("finland.gif", :alt => t(:t_fi), :height => '16', :width => '26'), '?locale=fi') %>
+      <%= link_to(image_tag("united_kingdom.gif", :alt => t(:t_en), :height => '16', :width => '32'), '?locale=en') %>
     </p>
   </div>
   <div class="grid_2">
       <% if session[:id] == nil %>
-      <p class="box"><%= link_to t(:t_login), ActionController::Base.relative_url_root+'/login' %></p>
+      <p class="box"><%= link_to t(:t_login), root_path+'login' %></p>
     <% else %>
       <p class="box">
-        <%=link_to t(:t_my_account), '/my_account' %><br />user_id: <%= session[:id] %><br />
-        <%=link_to t(:t_logout), ActionController::Base.relative_url_root+'/logout' %>
+        <%=link_to t(:t_my_account), root_path+'my_account' %><br />user_id: <%= session[:id] %><br />
+        <%=link_to t(:t_logout), root_path+'logout' %>
       </p>
     <% end %>
   </div>

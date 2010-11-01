@@ -9,7 +9,7 @@ class Admin::ClubsController < Admin::AdminController
   end
 
   def edit
-    @clubs = Club.find(:all)
+    @clubs = Club.all()
 
     respond_to do |format|
       format.html # index.html.erb
@@ -32,7 +32,7 @@ class Admin::ClubsController < Admin::AdminController
   end
 
   def index
-    @clubs = Club.find(:all)
+    @clubs = Club.all()
 
     respond_to do |format|
       format.html # index.html.erb

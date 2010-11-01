@@ -5,7 +5,7 @@ class ClubsController < ApplicationController
   end
 
   def index
-    @clubs = Club.find(:all)
+    @clubs = Club.all()
 
     respond_to do |format|
       format.html # index.html.erb
