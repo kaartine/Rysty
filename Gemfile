@@ -30,3 +30,10 @@ gem 'pg', :require => 'pg'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+group :development, :test do  
+    gem "mocha"  
+    gem "rspec-rails", ">= 2.0.0.beta.19"  
+    gem "factory_girl_rails"  
+end
+ 

@@ -11,22 +11,22 @@ function hides(elem, based_on) {
 
 <%= form_for([:admin, @user]) do |f| %>
     
-    <p>
+    <div class="field">
     <%= f.label :username%><br />
     <%= f.text_field :username %>
-    </p>
+    </div>
     
-    <p>
+    <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password %>
-    </p>
+    </div>
     
-    <p>
+    <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
-    </p>
+    </div>
     
-    <p>
+    <div class="field">
             
     <%=check_box_tag 'rights[admin]', 'true', @rights[:admin], :onclick => "
     var $elems = [league_admin, club_admin, team_admin, rights_valid_until_date_1i, rights_valid_until_date_2i, rights_valid_until_date_3i];
@@ -50,15 +50,15 @@ function hides(elem, based_on) {
     
     <br /><br />
   
-    <p>
+    <div class="field">
     <%= label_tag t(:t_valid_until) %>
     <%= date_select("rights[valid_until]", "date", options = {:disabled => @rights[:admin]}) %>
-    </p>
+    </div>
     
-    </p>
-<p>  
+    </div>
+<div class="actions">  
 <%= f.submit t(:t_save) %>  
-</p>
+</div>
 
 <% end %>
 
