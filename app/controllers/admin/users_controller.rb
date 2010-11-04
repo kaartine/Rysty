@@ -68,12 +68,12 @@ class Admin::UsersController < Admin::AdminController
     def update
       get_userinfo
   
-      if params[:user][:password].blank?
-        params[:user].delete("password")
-      end
+#      if params[:user][:password_clear].blank?
+#        params[:user].delete("password")
+#      end
   
       respond_to do |format|
-        if @user.update_attributes(params[:user])
+        if @user.update_attributes(params[:user][:username],params[:user][:password_clear])
           flash[:notice] = t(:t_user) + " " + t(:t_was_successfully_updated) + params[:user].to_s + ' ' + @user.password
           format.html { redirect_to([:admin, @user]) }
           format.xml  { head :ok }
