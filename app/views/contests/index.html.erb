@@ -1,27 +1,28 @@
 
 <h1><%= t(:t_standings)%></h1>
 <br />
-
+<% unless @contest.nil? %>
 <div class="grid_3">
 <h5><%= t(:t_current_season) + ' ' + @season.to_s%></h5>
 
-<%= form_for @contest, :url => { :action => "index" } do |f| %>
-  <br /><br />
-  <%= t(:t_contest) %>:
-  <%= f.select(:id, contest_contests_to_choose_from(@season), {}, {:onChange => "contest_submit.click();"}) %>
-  <%= f.submit t(:t_show) %>
-<% end %>
+  <%= form_for @contest, :url => { :action => "index" } do |f| %>
+    <br /><br />
+    <%= t(:t_contest) %>:
+    <%= f.select(:id, contest_contests_to_choose_from(@season), {}, {:onChange => "contest_submit.click();"}) %>
+    <%= f.submit t(:t_show) %>
+  <% end %>
 </div>
+
 <div class="grid_4">
 <h5><%= t(:t_other_seasons)%></h5>
 <%= form_for @contest, :url => { :action => "index" } do |f| %>
   <br /><br />
   <%= t(:t_contest) %>:
   <%= f.select(:id, contest_contests_grouped_in_years, {}, {:onChange => "contest_submit.click();"}) %>
-  <%= f.submit t(:t_show) %>  
+  <%= f.submit t(:t_show) %>
 <% end %>
 </div>
- 
+
 <br />
 <br />
 <div class="clear"></div>
@@ -32,14 +33,14 @@
 <h3><%= t(:t_games) %></h3>
 
 <table class="nav">
-  <tr>  
+  <tr>
     <th><%=t :t_id %></th>
     <th><%=t :home_team_id %></th>
     <th><%=t :guest_team_id %></th>
     <th><%=t :t_date%></th>
     </tr>
-<% for @game in @games %>    
-<tr>  
+<% for @game in @games %>
+<tr>
   <td><%=@game.id%></td>
   <td><%=@game.home_team.name %></td>
   <td><%=@game.guest_team.name %></td>
@@ -47,4 +48,6 @@
 </tr>
 <% end %>
 </table>
-
+<% else %>
+  <%=t :t_no_contests %>
+<% end %>
